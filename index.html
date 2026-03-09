@@ -2980,7 +2980,7 @@
         }
         function resetCreds() {
             if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
-            showModal({ icon: 'warning', title: 'รีเซ็ตข้อมูล Admin?', html: 'จะรีเซ็ต Username และ Password กลับเป็น<br><b style="color:var(--main);">admin / fumiko2026</b>', confirmText: 'รีเซ็ต', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => { if (!r.isConfirmed) return; localStorage.removeItem(ADMIN_CREDS_KEY); showToast('↩️ รีเซ็ตเรียบร้อย — กรุณา Login ใหม่', 'info', 3500); setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000); });
+            showModal({ icon: 'warning', title: 'รีเซ็ตข้อมูล Admin?', html: 'จะรีเซ็ต Username และ Password กลับเป็น<br><b style="color:var(--main);">admin / admin123</b>', confirmText: 'รีเซ็ต', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => { if (!r.isConfirmed) return; localStorage.removeItem(ADMIN_CREDS_KEY); showToast('↩️ รีเซ็ตเรียบร้อย — กรุณา Login ใหม่', 'info', 3500); setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000); });
         }
 
         // ===================== EXPORT / IMPORT =====================
@@ -3026,4 +3026,5 @@
 </body>
 
 </html>
+
 
