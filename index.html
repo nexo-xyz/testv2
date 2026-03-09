@@ -1,0 +1,3018 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://img2.pic.in.th/pic/NEXO-SHOP-2-Photoroom.png" type="image/png"
+        sizes="16x16">
+    <title>NEXO BIO V2</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Sarabun:wght@300;400;500&family=Kanit:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&family=Charm:wght@400;700&family=Itim&family=Kodchasan:wght@300;400;500;600&family=Krub:wght@300;400;500;600&family=Mali:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&family=Pridi:wght@300;400;500;600&family=Taviraj:wght@300;400;500;600&family=Trirong:wght@300;400;500;600&family=Srisakdi:wght@400;700&family=Bai+Jamjuree:wght@300;400;500;600&family=Chonburi&family=Athiti:wght@300;400;500;600&family=Fahkwang:wght@300;400;500;600&family=K2D:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            /* ===== สีหลัก ===== */
+            --bg: #0B0B2A;
+            --main: #BB86FC;
+            --dark: #C084FC;
+            --accent: #FF71CF;
+            --white: #FFFFFF;
+            --glow: rgba(187, 134, 252, 0.5);
+            --font-main: 'Mitr', sans-serif;
+
+            /* ===== การ์ด / Section ===== */
+            --card-bg: rgba(25, 25, 70, 0.45);
+            --card-border: var(--main);
+            --card-shadow: rgba(187, 134, 252, 0.5);
+            --section-title-color: var(--dark);
+            --divider-color: var(--main);
+
+            /* ===== ข้อความ ===== */
+            --text-body: rgba(255, 255, 255, 0.8);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --text-faint: rgba(255, 255, 255, 0.4);
+
+            /* ===== ชื่อร้าน / Header ===== */
+            --shop-name-color: #FFFFFF;
+            --status-dot-color: #7cfc00;
+            --badge-border: var(--main);
+            --badge-bg: rgba(255, 255, 255, 0.05);
+
+            /* ===== Tag แนวงาน ===== */
+            --tag-bg: rgba(255, 255, 255, 0.05);
+            --tag-border: var(--main);
+            --tag-hover-bg: rgba(187, 134, 252, 0.2);
+
+            /* ===== Portfolio Card ===== */
+            --port-card-bg: rgba(255, 255, 255, 0.05);
+            --port-card-border: rgba(187, 134, 252, 0.3);
+
+            /* ===== Bulk Note (ราคา) ===== */
+            --bulk-note-bg: rgba(187, 134, 252, 0.1);
+            --bulk-note-border: rgba(187, 134, 252, 0.3);
+            --bulk-note-text: rgba(255, 255, 255, 0.75);
+
+            /* ===== Do/Don't ===== */
+            --do-bg: rgba(0, 200, 100, 0.08);
+            --do-border: rgba(0, 200, 100, 0.3);
+            --do-title: #4cde80;
+            --dont-bg: rgba(255, 80, 80, 0.08);
+            --dont-border: rgba(255, 80, 80, 0.3);
+            --dont-title: #ff6060;
+            --dodont-text: rgba(255, 255, 255, 0.75);
+
+            /* ===== Timeline ===== */
+            --tl-fast-bg: rgba(0, 200, 100, 0.1);
+            --tl-fast-border: rgba(0, 200, 100, 0.3);
+            --tl-fast-num: #4cde80;
+            --tl-mid-bg: rgba(187, 134, 252, 0.1);
+            --tl-mid-border: rgba(187, 134, 252, 0.3);
+            --tl-mid-num: var(--main);
+            --tl-slow-bg: rgba(255, 113, 207, 0.1);
+            --tl-slow-border: rgba(255, 113, 207, 0.3);
+            --tl-slow-num: var(--accent);
+            --tl-label: rgba(255, 255, 255, 0.6);
+
+            /* ===== Payment Chips ===== */
+            --pay-chip-bg: rgba(255, 255, 255, 0.06);
+            --pay-chip-border: rgba(187, 134, 252, 0.3);
+            --pay-chip-text: rgba(255, 255, 255, 0.8);
+
+            /* ===== Group Items ===== */
+            --group-item-bg: rgba(255, 255, 255, 0.04);
+            --group-item-border: rgba(187, 134, 252, 0.25);
+            --group-tag-bg: rgba(187, 134, 252, 0.12);
+            --group-tag-border: rgba(187, 134, 252, 0.3);
+            --group-tag-text: rgba(255, 255, 255, 0.75);
+            --group-link-bg: rgba(255, 255, 255, 0.06);
+            --group-link-border: rgba(187, 134, 252, 0.35);
+            --group-link-text: var(--main);
+            --group-note-text: var(--dark);
+
+            /* ===== หัวข้อกลุ่ม ===== */
+            --gh-deco-color: var(--main);
+            --gh-title-color: var(--main);
+            --gh-sub-color: rgba(255, 255, 255, 0.65);
+            --gh-deco2-color: rgba(255, 255, 255, 0.4);
+
+            /* ===== Footer ===== */
+            --footer-name-color: var(--main);
+            --footer-text-color: rgba(255, 255, 255, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-main);
+        }
+
+        body {
+            background: var(--bg);
+            display: flex;
+            justify-content: center;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at 20% 20%, rgba(187, 134, 252, 0.06) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(255, 113, 207, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* BG Emojis */
+        .bg-emojis {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .floating-emoji {
+            position: absolute;
+            font-size: 22px;
+            opacity: 0.5;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+            animation: float-bg 18s infinite linear;
+        }
+
+        @keyframes float-bg {
+            0% {
+                transform: translateY(110vh) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 20px 15px 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header-box {
+            text-align: center;
+            padding: 40px 15px 30px;
+        }
+
+        h1 {
+            color: var(--shop-name-color);
+            text-shadow: 2px 2px 8px var(--glow);
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        /* Logo */
+        .logo-wrapper {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float-anim 5s ease-in-out infinite;
+        }
+
+        .logo-glow {
+            position: absolute;
+            width: 115%;
+            height: 115%;
+            background: var(--main);
+            border-radius: 50%;
+            filter: blur(35px);
+            opacity: 0.4;
+            animation: pulse-glow 4s infinite alternate;
+        }
+
+        .logo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            z-index: 5;
+            border: 3px solid var(--white);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes pulse-glow {
+            from {
+                transform: scale(0.95);
+            }
+
+            to {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes float-anim {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* Status badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: linear-gradient(135deg, rgba(187, 134, 252, 0.3), rgba(255, 113, 207, 0.3));
+            border: 1px solid var(--main);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 7px 18px;
+            border-radius: 20px;
+            box-shadow: 0 3px 12px var(--glow);
+            margin-top: 10px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--status-dot-color);
+            border-radius: 50%;
+            animation: blink 1.6s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.25;
+            }
+        }
+
+        /* Badge group */
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .badge {
+            background: var(--badge-bg);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            border: 1px solid var(--badge-border);
+        }
+
+        /* Buttons */
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: var(--font-main);
+            font-size: 14px;
+        }
+
+        .btn-outline {
+            border: 1.5px dashed var(--accent) !important;
+            color: var(--white);
+            background: transparent;
+            margin: 25px 0;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 113, 207, 0.1);
+        }
+
+        .btn-main {
+            background: linear-gradient(45deg, var(--main), var(--accent));
+            color: #fff;
+            box-shadow: 0 4px 15px var(--glow);
+            margin-top: 30px;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--glow);
+        }
+
+        /* Section */
+        .section {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 2px solid var(--card-border);
+            box-shadow: 0 0 15px var(--card-shadow);
+            animation: slideUp 0.55s ease both;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section h2 {
+            color: var(--section-title-color);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .section-divider {
+            height: 1.5px;
+            background: linear-gradient(to right, var(--divider-color), transparent);
+            opacity: 0.4;
+            border-radius: 2px;
+            margin-bottom: 18px;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .card {
+            background: var(--port-card-bg);
+            border: 1px solid var(--port-card-border);
+            border-radius: 18px;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--main);
+        }
+
+        .card img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 8px;
+        }
+
+        /* About text */
+        .about-text {
+            font-size: 0.88rem;
+            color: var(--text-body);
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        /* Tags */
+        .tag {
+            background: var(--tag-bg);
+            border: 1px solid var(--tag-border);
+            padding: 5px 14px;
+            border-radius: 15px;
+            font-size: 11px;
+            cursor: default;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .tag:hover {
+            background: var(--tag-hover-bg);
+        }
+
+        .tags-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* Price cards */
+        .price-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .price-card {
+            border-radius: 18px;
+            padding: 22px 14px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .price-card:hover {
+            transform: scale(1.03);
+        }
+
+        .price-card.purple {
+            background: linear-gradient(140deg, #BB86FC 0%, #9B59F5 60%, #7C3AED 100%);
+            box-shadow: 0 6px 20px rgba(187, 134, 252, 0.4);
+        }
+
+        .price-card.pink {
+            background: linear-gradient(140deg, #FF71CF 0%, #E855B5 60%, #C0399A 100%);
+            box-shadow: 0 6px 20px rgba(255, 113, 207, 0.35);
+        }
+
+        .price-card.gold {
+            background: linear-gradient(140deg, #FFE44A 0%, #F5C800 60%, #E8A800 100%);
+            box-shadow: 0 6px 20px rgba(245, 200, 0, 0.28);
+        }
+
+        .price-card.silver {
+            background: linear-gradient(140deg, #E8E8F4 0%, #CACADE 60%, #B0B0C8 100%);
+            box-shadow: 0 6px 20px rgba(160, 160, 200, 0.22);
+        }
+
+        .price-card.blue {
+            background: linear-gradient(140deg, #60A5FA 0%, #3B82F6 60%, #1D4ED8 100%);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+        }
+
+        .price-card.green {
+            background: linear-gradient(140deg, #4ADE80 0%, #22C55E 60%, #15803D 100%);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.35);
+        }
+
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -20%;
+            width: 55%;
+            height: 55%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .price-card-type {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.88);
+            margin-bottom: 4px;
+        }
+
+        .price-card-amount {
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: white;
+            line-height: 1;
+        }
+
+        .price-card-unit {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.78);
+            margin-top: 2px;
+        }
+
+        .bulk-note {
+            background: var(--bulk-note-bg);
+            border: 1px solid var(--bulk-note-border);
+            border-radius: 14px;
+            padding: 12px 16px;
+            font-size: 0.82rem;
+            color: var(--bulk-note-text);
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .contact-note {
+            text-align: center;
+            margin-top: 13px;
+            font-size: 0.81rem;
+            color: var(--text-muted);
+        }
+
+        /* Do/Don't */
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .do-box {
+            background: var(--do-bg);
+            border: 1.5px solid var(--do-border);
+            border-radius: 16px;
+            padding: 14px;
+        }
+
+        .dont-box {
+            background: var(--dont-bg);
+            border: 1.5px solid var(--dont-border);
+            border-radius: 16px;
+            padding: 14px;
+        }
+
+        .do-box h4 {
+            font-size: 0.8rem;
+            color: var(--do-title);
+            margin-bottom: 8px;
+        }
+
+        .dont-box h4 {
+            font-size: 0.8rem;
+            color: var(--dont-title);
+            margin-bottom: 8px;
+        }
+
+        .do-box li,
+        .dont-box li {
+            font-size: 0.78rem;
+            color: var(--dodont-text);
+            line-height: 1.8;
+            margin-left: 14px;
+        }
+
+        /* Steps */
+        .step-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .step-num {
+            min-width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--main), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 3px 10px var(--glow);
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            font-size: 0.86rem;
+            color: var(--text-body);
+            line-height: 1.75;
+            padding-top: 5px;
+        }
+
+        /* Timeline */
+        .tl-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .tl-item {
+            border-radius: 14px;
+            padding: 12px 8px;
+            text-align: center;
+        }
+
+        .tl-item.fast {
+            background: var(--tl-fast-bg);
+            border: 1.5px solid var(--tl-fast-border);
+        }
+
+        .tl-item.mid {
+            background: var(--tl-mid-bg);
+            border: 1.5px solid var(--tl-mid-border);
+        }
+
+        .tl-item.slow {
+            background: var(--tl-slow-bg);
+            border: 1.5px solid var(--tl-slow-border);
+        }
+
+        .tl-item.fast .tl-num {
+            color: var(--tl-fast-num);
+        }
+
+        .tl-item.mid .tl-num {
+            color: var(--tl-mid-num);
+        }
+
+        .tl-item.slow .tl-num {
+            color: var(--tl-slow-num);
+        }
+
+        .tl-num {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .tl-label {
+            font-size: 0.7rem;
+            color: var(--tl-label);
+            margin-top: 4px;
+        }
+
+        /* Payment chips */
+        .pay-chip {
+            background: var(--pay-chip-bg);
+            border: 1px solid var(--pay-chip-border);
+            border-radius: 12px;
+            padding: 8px 14px;
+            font-size: 0.82rem;
+            color: var(--pay-chip-text);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Group items */
+        .group-item {
+            background: var(--group-item-bg);
+            border: 1px solid var(--group-item-border);
+            border-radius: 18px;
+            padding: 16px;
+            margin-bottom: 14px;
+            transition: 0.2s;
+        }
+
+        .group-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--main);
+            box-shadow: 0 4px 15px var(--glow);
+        }
+
+        .group-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .group-name {
+            font-size: 0.88rem;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .group-price {
+            background: linear-gradient(135deg, var(--main), var(--accent));
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px var(--glow);
+            white-space: nowrap;
+        }
+
+        .group-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 8px 0;
+        }
+
+        .group-tag {
+            background: var(--group-tag-bg);
+            border: 1px solid var(--group-tag-border);
+            border-radius: 12px;
+            padding: 3px 10px;
+            font-size: 0.75rem;
+            color: var(--group-tag-text);
+        }
+
+        .group-note {
+            font-size: 0.78rem;
+            color: var(--group-note-text);
+            margin: 6px 0;
+            opacity: 0.85;
+        }
+
+        .group-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .group-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--group-link-bg);
+            border: 1px solid var(--group-link-border);
+            border-radius: 10px;
+            padding: 5px 12px;
+            font-size: 0.76rem;
+            color: var(--group-link-text);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .group-link:hover {
+            background: rgba(187, 134, 252, 0.2);
+            color: white;
+        }
+
+        /* See all button */
+        .see-all-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 14px;
+            border-radius: 20px;
+            background: linear-gradient(45deg, var(--main), var(--accent));
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px var(--glow);
+            transition: 0.25s;
+            margin-top: 4px;
+        }
+
+        .see-all-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--glow);
+        }
+
+        /* Contact buttons */
+        .contact-btns {
+            display: grid;
+            gap: 12px;
+        }
+
+        .contact-btns.cols-1 {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-btns.cols-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .contact-btns.cols-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 14px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: 0.25s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-fb {
+            background: linear-gradient(135deg, #4267B2, #5B80D8);
+            color: white;
+            box-shadow: 0 4px 15px rgba(66, 103, 178, 0.35);
+        }
+
+        .btn-line {
+            background: linear-gradient(135deg, #00B500, #30D030);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 180, 0, 0.3);
+        }
+
+        .btn-ig {
+            background: linear-gradient(135deg, #e1306c, #fd1d1d, #fcb045);
+            color: white;
+            box-shadow: 0 4px 15px rgba(225, 48, 108, 0.35);
+        }
+
+        .btn-tw {
+            background: linear-gradient(135deg, #1DA1F2, #0d8bd9);
+            color: white;
+            box-shadow: 0 4px 15px rgba(29, 161, 242, 0.35);
+        }
+
+        .btn-tt {
+            background: linear-gradient(135deg, #010101, #69C9D0);
+            color: white;
+            box-shadow: 0 4px 15px rgba(105, 201, 208, 0.3);
+        }
+
+        .btn-yt {
+            background: linear-gradient(135deg, #FF0000, #cc0000);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .btn-discord {
+            background: linear-gradient(135deg, #5865F2, #7289da);
+            color: white;
+            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.35);
+        }
+
+        .btn-email {
+            background: linear-gradient(135deg, #EA4335, #FBBC05);
+            color: white;
+            box-shadow: 0 4px 15px rgba(234, 67, 53, 0.3);
+        }
+
+        .btn-custom {
+            background: linear-gradient(45deg, var(--main), var(--accent));
+            color: white;
+            box-shadow: 0 4px 15px var(--glow);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px 20px;
+        }
+
+        .footer .shop-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--footer-name-color);
+            text-shadow: 0 0 15px var(--glow);
+            margin-bottom: 8px;
+        }
+
+        .footer .footer-text {
+            font-size: 0.76rem;
+            color: var(--footer-text-color);
+            line-height: 1.8;
+        }
+
+        /* Loading */
+        #loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        #loading-overlay.hidden {
+            display: none;
+        }
+
+        .loading-bar-wrap {
+            width: 200px;
+            height: 4px;
+            background: rgba(187, 134, 252, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .loading-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--main), var(--accent));
+            border-radius: 4px;
+            animation: loadBar 1.5s ease-in-out infinite;
+        }
+
+        @keyframes loadBar {
+            0% {
+                width: 0%;
+                margin-left: 0;
+            }
+
+            50% {
+                width: 60%;
+                margin-left: 20%;
+            }
+
+            100% {
+                width: 0%;
+                margin-left: 100%;
+            }
+        }
+
+        /* Toast */
+        #toast {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            z-index: 9998;
+            display: none;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        #toast.show {
+            display: flex;
+            animation: slideIn 0.3s ease;
+        }
+
+        #toast.success {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+        }
+
+        #toast.error {
+            background: linear-gradient(135deg, #f44336, #b71c1c);
+        }
+
+        #toast.info {
+            background: linear-gradient(135deg, var(--main), var(--accent));
+        }
+
+        #toast.warning {
+            background: linear-gradient(135deg, #FF9800, #F57C00);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Custom Modal */
+        .cmodal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 10001;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .cmodal-overlay.show {
+            display: flex;
+        }
+
+        .cmodal-box {
+            background: #1a1a3e;
+            border: 1.5px solid var(--main);
+            border-radius: 22px;
+            padding: 36px 32px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 30px var(--glow);
+            animation: slideUp 0.3s ease;
+        }
+
+        .cmodal-btn {
+            padding: 11px 24px;
+            border-radius: 30px;
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .cmodal-btn-confirm {
+            background: linear-gradient(45deg, var(--main), var(--accent));
+            color: white;
+        }
+
+        .cmodal-btn-cancel {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .cmodal-btn-danger {
+            background: linear-gradient(135deg, #f44336, #b71c1c);
+            color: white;
+        }
+
+        /* Login Overlay */
+        #login-overlay,
+        #admin-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        #login-overlay.show,
+        #admin-overlay.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Login Box */
+        .login-box {
+            background: #12122e;
+            border: 1.5px solid var(--main);
+            border-radius: 22px;
+            padding: 40px 32px;
+            width: 100%;
+            max-width: 360px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 40px var(--glow);
+        }
+
+        /* Admin Panel */
+        #admin-panel {
+            background: #0d0d2b;
+            border: 1.5px solid var(--main);
+            border-radius: 22px;
+            padding: 28px;
+            width: 100%;
+            max-width: 960px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 0 40px var(--glow);
+        }
+
+        /* Admin inputs */
+        .admin-input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1.5px solid rgba(187, 134, 252, 0.3);
+            border-radius: 10px;
+            font-family: var(--font-main);
+            font-size: 0.88rem;
+            outline: none;
+            transition: border 0.2s;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .admin-input:focus {
+            border-color: var(--main);
+            box-shadow: 0 0 10px var(--glow);
+        }
+
+        .admin-input option {
+            background: #1a1a3e;
+            color: white;
+        }
+
+        textarea.admin-input {
+            resize: vertical;
+        }
+
+        /* Admin buttons */
+        .admin-btn-save {
+            background: linear-gradient(45deg, var(--main), var(--accent));
+            color: white;
+            border: none;
+            padding: 11px 22px;
+            border-radius: 30px;
+            font-family: var(--font-main);
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .admin-btn-save:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--glow);
+        }
+
+        .admin-btn-add {
+            background: rgba(187, 134, 252, 0.1);
+            color: var(--main);
+            border: 1px solid rgba(187, 134, 252, 0.3);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-family: var(--font-main);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .admin-btn-add:hover {
+            background: rgba(187, 134, 252, 0.2);
+        }
+
+        .admin-btn-del {
+            background: rgba(255, 80, 80, 0.1);
+            color: #ff6060;
+            border: 1px solid rgba(255, 80, 80, 0.3);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-family: var(--font-main);
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .admin-btn-del:hover {
+            background: rgba(255, 80, 80, 0.2);
+        }
+
+        /* Admin sections */
+        .admin-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(187, 134, 252, 0.15);
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+
+        .admin-section-title {
+            font-size: 0.9rem;
+            color: var(--dark);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Tabs */
+        .tab-btn {
+            padding: 9px 18px;
+            border: 1.5px solid rgba(187, 134, 252, 0.3);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: var(--font-main);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(45deg, var(--main), var(--accent));
+            color: white;
+            border-color: transparent;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Item row */
+        .item-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .item-row .admin-input {
+            margin-bottom: 0;
+            flex: 1;
+        }
+
+        /* Color inputs */
+        .color-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .color-row label {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.6);
+            min-width: 140px;
+        }
+
+        .color-swatch {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 2px solid rgba(187, 134, 252, 0.3);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .color-text {
+            width: 100px;
+            padding: 6px 10px;
+            border: 1.5px solid rgba(187, 134, 252, 0.3);
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-family: monospace;
+            outline: none;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+
+        /* Contact button styles chips */
+        .style-chip {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 2px solid transparent;
+            color: white;
+            transition: all 0.15s;
+        }
+
+        .style-chip.selected {
+            border-color: white;
+            transform: scale(1.08);
+        }
+
+        .chip-fb {
+            background: #4267B2;
+        }
+
+        .chip-line {
+            background: #00B500;
+        }
+
+        .chip-ig {
+            background: linear-gradient(135deg, #e1306c, #fcb045);
+        }
+
+        .chip-tw {
+            background: #1DA1F2;
+        }
+
+        .chip-tt {
+            background: #010101;
+        }
+
+        .chip-yt {
+            background: #FF0000;
+        }
+
+        .chip-discord {
+            background: #5865F2;
+        }
+
+        .chip-email {
+            background: #EA4335;
+        }
+
+        .chip-custom {
+            background: linear-gradient(45deg, #BB86FC, #FF71CF);
+        }
+
+        /* Contact btn card */
+        .contact-btn-card {
+            border: 1.5px solid rgba(187, 134, 252, 0.2);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 14px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .contact-btn-preview {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        /* Font options */
+        .font-option {
+            border: 2px solid rgba(187, 134, 252, 0.2);
+            border-radius: 14px;
+            padding: 14px 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .font-option:hover {
+            border-color: var(--main);
+        }
+
+        .font-option.selected {
+            border-color: var(--main);
+            background: rgba(187, 134, 252, 0.1);
+            box-shadow: 0 3px 12px var(--glow);
+        }
+
+        /* History */
+        .history-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(187, 134, 252, 0.2);
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.85rem;
+        }
+
+        .history-item:hover {
+            border-color: var(--main);
+            transform: translateX(5px);
+        }
+
+        /* GS status */
+        .gs-ok {
+            background: rgba(0, 200, 100, 0.15);
+            color: #4cde80;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .gs-err {
+            background: rgba(255, 80, 80, 0.15);
+            color: #ff6060;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .gs-loading {
+            background: rgba(187, 134, 252, 0.15);
+            color: var(--main);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Info box */
+        .info-box {
+            background: rgba(187, 134, 252, 0.08);
+            border: 1px solid rgba(187, 134, 252, 0.3);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            font-size: 0.83rem;
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        /* Groups Header Title in main page */
+        .groups-header-section {
+            text-align: center;
+            padding: 30px 20px 20px;
+        }
+
+        .groups-header-deco {
+            font-size: 0.9rem;
+            color: var(--gh-deco-color);
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            opacity: 0.7;
+        }
+
+        .groups-header-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--gh-title-color);
+            text-shadow: 0 0 20px var(--glow);
+            animation: float-anim 5s ease-in-out infinite;
+            letter-spacing: 1px;
+        }
+
+        .groups-header-sub {
+            font-size: 1rem;
+            color: var(--gh-sub-color);
+            margin-top: 8px;
+            line-height: 1.7;
+        }
+
+        .groups-header-deco2 {
+            font-size: 0.82rem;
+            color: var(--gh-deco2-color);
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        .spin {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Admin del button */
+        .admin-btn-del {
+            background: linear-gradient(135deg, rgba(255, 80, 80, 0.15), rgba(200, 20, 20, 0.15));
+            border: 1.5px solid rgba(255, 80, 80, 0.4);
+            color: #ff6060;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-family: var(--font-main);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .admin-btn-del:hover {
+            background: rgba(255, 80, 80, 0.25);
+            border-color: #ff6060;
+        }
+
+        @media(max-width: 500px) {
+            .do-dont-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .contact-btns.cols-2,
+            .contact-btns.cols-3 {
+                grid-template-columns: 1fr;
+            }
+
+            #admin-panel {
+                padding: 16px;
+            }
+
+            .groups-header-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Loading -->
+    <div id="loading-overlay">
+        <div style="font-size:3rem;animation:float-anim 2s ease-in-out infinite;">✨</div>
+        <div style="font-size:1rem;color:var(--dark);font-weight:300;">กำลังโหลด...</div>
+        <div class="loading-bar-wrap">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- BG Emojis (dynamic) -->
+    <div class="bg-emojis" id="bg-emojis"></div>
+
+    <!-- Main Content -->
+    <div class="container" id="main-content"></div>
+
+    <!-- Admin FAB -->
+    <button id="admin-fab" title="Admin Panel"
+        style="position:fixed;bottom:24px;right:24px;z-index:9999;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--main),var(--accent));border:none;color:white;font-size:22px;cursor:pointer;box-shadow:0 4px 20px var(--glow);display:flex;align-items:center;justify-content:center;transition:all 0.3s;">
+        <i class="fas fa-cog"></i>
+    </button>
+
+    <!-- Toast -->
+    <div id="toast"></div>
+
+    <!-- Custom Modal -->
+    <div id="cmodal" class="cmodal-overlay">
+        <div class="cmodal-box">
+            <div id="cmodal-icon" style="font-size:3rem;margin-bottom:14px;"></div>
+            <div id="cmodal-title" style="font-size:1.2rem;font-weight:600;color:var(--white);margin-bottom:8px;"></div>
+            <div id="cmodal-text" style="font-size:0.88rem;color:var(--dark);line-height:1.7;margin-bottom:20px;"></div>
+            <div id="cmodal-actions" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;"></div>
+        </div>
+    </div>
+
+    <!-- Login -->
+    <div id="login-overlay">
+        <div class="login-box">
+            <div style="text-align:center;margin-bottom:24px;">
+                <div style="font-size:2.5rem;margin-bottom:8px;">🔐</div>
+                <h2 style="color:var(--main);font-size:1.3rem;">Fumiko Admin</h2>
+                <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-top:4px;">กรุณาเข้าสู่ระบบ</p>
+            </div>
+            <input type="text" id="login-user" class="admin-input" placeholder="Username">
+            <input type="password" id="login-pass" class="admin-input" placeholder="Password">
+            <div style="display:flex;gap:10px;margin-top:8px;">
+                <button onclick="doLogin()" class="admin-btn-save" style="flex:1;">เข้าสู่ระบบ ✨</button>
+                <button onclick="closeLogin()" class="admin-btn-add" style="flex:1;">ยกเลิก</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-overlay">
+        <div id="admin-panel">
+            <button onclick="closeAdmin()"
+                style="position:absolute;top:18px;right:18px;background:rgba(255,80,80,0.1);border:1px solid rgba(255,80,80,0.3);width:40px;height:40px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#ff6060;transition:all 0.2s;">
+                <i class="fas fa-times"></i>
+            </button>
+            <div
+                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:10px;">
+                <h2 style="color:var(--main);font-size:1.2rem;display:flex;align-items:center;gap:8px;"><i
+                        class="fas fa-magic"></i> NEXO BIO V2 - Admin Panel ✨</h2>
+                <button onclick="adminLogout()"
+                    style="background:rgba(255,80,80,0.1);color:#ff6060;border:1px solid rgba(255,80,80,0.3);padding:8px 16px;border-radius:30px;font-family:var(--font-main);cursor:pointer;font-size:0.85rem;display:flex;align-items:center;gap:6px;"><i
+                        class="fas fa-sign-out-alt"></i> ออกจากระบบ</button>
+            </div>
+
+            <!-- Export/Import/Sync -->
+            <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap;">
+                <button onclick="exportData()" class="admin-btn-add"><i class="fas fa-download"></i> Export</button>
+                <button onclick="document.getElementById('import-file').click()" class="admin-btn-add"><i
+                        class="fas fa-upload"></i> Import</button>
+                <button onclick="syncWithGoogleSheets()" class="admin-btn-add"><i class="fas fa-sync-alt"></i> Sync
+                    Sheets</button>
+                <button onclick="loadFromGoogleSheets(true)" class="admin-btn-add"><i
+                        class="fas fa-cloud-download-alt"></i> โหลดจาก Sheets</button>
+                <button onclick="showHistory()" class="admin-btn-add"><i class="fas fa-history"></i> History</button>
+            </div>
+            <input type="file" id="import-file" accept=".json" style="display:none;" onchange="importData(event)">
+
+            <!-- Tabs -->
+            <div
+                style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;border-bottom:1px solid rgba(187,134,252,0.2);padding-bottom:14px;">
+                <button class="tab-btn active" onclick="switchTab('tab-header',this)"><i class="fas fa-home"></i>
+                    ส่วนหัว</button>
+                <button class="tab-btn" onclick="switchTab('tab-colors',this)"><i class="fas fa-palette"></i> สี &
+                    ธีม</button>
+                <button class="tab-btn" onclick="switchTab('tab-font',this)"><i class="fas fa-font"></i> ฟอนต์</button>
+                <button class="tab-btn" onclick="switchTab('tab-bgemoji',this)"><i class="fas fa-star"></i> BG
+                    อิโมจิ</button>
+                <button class="tab-btn" onclick="switchTab('tab-sections',this)"><i class="fas fa-layer-group"></i>
+                    ส่วนต่างๆ</button>
+                <button class="tab-btn" onclick="switchTab('tab-groups-headers',this)"><i class="fas fa-heading"></i>
+                    หัวข้อกลุ่ม</button>
+                <button class="tab-btn" onclick="switchTab('tab-group-sections',this)"><i class="fas fa-list"></i>
+                    กลุ่มย่อย</button>
+                <button class="tab-btn" onclick="switchTab('tab-all-groups',this)"><i class="fas fa-th-large"></i>
+                    ดูทั้งหมด</button>
+                <button class="tab-btn" onclick="switchTab('tab-contact',this)"><i class="fas fa-phone"></i>
+                    ติดต่อ</button>
+                <button class="tab-btn" onclick="switchTab('tab-footer',this)"><i class="fas fa-bookmark"></i>
+                    ส่วนท้าย</button>
+                <button class="tab-btn" onclick="switchTab('tab-gs',this)"><i class="fab fa-google"></i> Google
+                    Sheets</button>
+                <button class="tab-btn" onclick="switchTab('tab-security',this)"><i class="fas fa-shield-alt"></i>
+                    ความปลอดภัย</button>
+            </div>
+
+            <!-- Tab: Header -->
+            <div id="tab-header" class="tab-content active">
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fas fa-image" style="color:var(--main);"></i> รูปโลโก้
+                    </div>
+                    <input type="text" id="a-logo-img" class="admin-input" placeholder="URL รูปโลโก้">
+                </div>
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fas fa-store" style="color:var(--main);"></i> ข้อมูลร้าน
+                    </div>
+                    <input type="text" id="a-shop-name" class="admin-input" placeholder="ชื่อร้าน">
+                    <textarea id="a-shop-desc" class="admin-input" placeholder="คำอธิบายร้าน (รองรับ HTML)"
+                        rows="3"></textarea>
+                    <input type="text" id="a-status-text" class="admin-input" placeholder="ข้อความสถานะ">
+                </div>
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fas fa-tags" style="color:var(--main);"></i> Badge
+                        ใต้คำอธิบาย</div>
+                    <div id="badges-list"></div>
+                    <button class="admin-btn-add" onclick="addBadge()"><i class="fas fa-plus"></i> เพิ่ม Badge</button>
+                </div>
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fas fa-external-link-alt" style="color:var(--main);"></i>
+                        ปุ่มเช็คคิว (outline button)</div>
+                    <div class="item-row">
+                        <input type="text" id="a-queue-text" class="admin-input" placeholder="ข้อความปุ่ม">
+                        <input type="text" id="a-queue-link" class="admin-input" placeholder="URL">
+                    </div>
+                </div>
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fas fa-image" style="color:var(--main);"></i> รูป Detail
+                        (ใต้ส่วนหัว)</div>
+                    <input type="text" id="a-detail-title" class="admin-input" placeholder="หัวข้อ section detail">
+                    <input type="text" id="a-detail-img" class="admin-input" placeholder="URL รูปภาพ detail">
+                </div>
+                <button onclick="saveHeader()" class="admin-btn-save"><i class="fas fa-save"></i> บันทึกส่วนหัว</button>
+            </div>
+
+            <!-- Tab: Colors -->
+            <div id="tab-colors" class="tab-content">
+                <div class="info-box"><i class="fas fa-info-circle"></i> ปรับสีได้ทุกส่วน — คลิกกล่องสีหรือพิมพ์ HEX
+                    แล้วกด <b>บันทึกสี</b></div>
+
+                <div class="admin-section">
+                    <div class="admin-section-title">🎨 สีหลัก (Theme)</div>
+                    <div class="color-row"><label>สีหลัก (--main)</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-main"
+                                class="color-swatch" onchange="syncColorText('main',this.value)"><input type="text"
+                                id="color-main-text" class="color-text" oninput="syncColorPicker('main',this.value)">
+                        </div>
+                    </div>
+                    <div class="color-row"><label>สีรอง (--dark)</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-dark"
+                                class="color-swatch" onchange="syncColorText('dark',this.value)"><input type="text"
+                                id="color-dark-text" class="color-text" oninput="syncColorPicker('dark',this.value)">
+                        </div>
+                    </div>
+                    <div class="color-row"><label>สีเน้น (--accent)</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-accent"
+                                class="color-swatch" onchange="syncColorText('accent',this.value)"><input type="text"
+                                id="color-accent-text" class="color-text"
+                                oninput="syncColorPicker('accent',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>พื้นหลัง (--bg)</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-bg"
+                                class="color-swatch" onchange="syncColorText('bg',this.value)"><input type="text"
+                                id="color-bg-text" class="color-text" oninput="syncColorPicker('bg',this.value)"></div>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <div class="admin-section-title">🃏 การ์ด / Section</div>
+                    <div class="color-row"><label>พื้นหลังการ์ด</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-card-bg-hex"
+                                class="color-swatch" onchange="syncColorTextRaw('card-bg',this.value)"><input
+                                type="text" id="color-card-bg-text" class="color-text" placeholder="rgba(...)"
+                                oninput="syncVarDirect('card-bg',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>ขอบการ์ด</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-card-border"
+                                class="color-swatch" onchange="syncColorText('card-border',this.value)"><input
+                                type="text" id="color-card-border-text" class="color-text"
+                                oninput="syncColorPicker('card-border',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>หัวข้อ Section</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-section-title-color" class="color-swatch"
+                                onchange="syncColorText('section-title-color',this.value)"><input type="text"
+                                id="color-section-title-color-text" class="color-text"
+                                oninput="syncColorPicker('section-title-color',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>เส้นคั่น (Divider)</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-divider-color" class="color-swatch"
+                                onchange="syncColorText('divider-color',this.value)"><input type="text"
+                                id="color-divider-color-text" class="color-text"
+                                oninput="syncColorPicker('divider-color',this.value)"></div>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <div class="admin-section-title">✏️ ข้อความ</div>
+                    <div class="color-row"><label>ชื่อร้าน (h1)</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-shop-name-color" class="color-swatch"
+                                onchange="syncColorText('shop-name-color',this.value)"><input type="text"
+                                id="color-shop-name-color-text" class="color-text"
+                                oninput="syncColorPicker('shop-name-color',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>ข้อความทั่วไป</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-text-body-hex" class="color-swatch"
+                                onchange="syncColorTextRaw('text-body',this.value)"><input type="text"
+                                id="color-text-body-text" class="color-text" placeholder="rgba(...)"
+                                oninput="syncVarDirect('text-body',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>ข้อความจาง</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-text-muted-hex" class="color-swatch"
+                                onchange="syncColorTextRaw('text-muted',this.value)"><input type="text"
+                                id="color-text-muted-text" class="color-text" placeholder="rgba(...)"
+                                oninput="syncVarDirect('text-muted',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>จุดสถานะออนไลน์</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-status-dot-color" class="color-swatch"
+                                onchange="syncColorText('status-dot-color',this.value)"><input type="text"
+                                id="color-status-dot-color-text" class="color-text"
+                                oninput="syncColorPicker('status-dot-color',this.value)"></div>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <div class="admin-section-title">🏷️ Tag / Badge</div>
+                    <div class="color-row"><label>Badge พื้นหลัง</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-badge-border" class="color-swatch"
+                                onchange="syncColorText('badge-border',this.value)"><input type="text"
+                                id="color-badge-border-text" class="color-text"
+                                oninput="syncColorPicker('badge-border',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>Tag ขอบ</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-tag-border"
+                                class="color-swatch" onchange="syncColorText('tag-border',this.value)"><input
+                                type="text" id="color-tag-border-text" class="color-text"
+                                oninput="syncColorPicker('tag-border',this.value)"></div>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <div class="admin-section-title">✅ รับ / ❌ ไม่รับ</div>
+                    <div class="color-row"><label>✅ ชื่อหัวข้อ "รับทำ"</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-do-title"
+                                class="color-swatch" onchange="syncColorText('do-title',this.value)"><input type="text"
+                                id="color-do-title-text" class="color-text"
+                                oninput="syncColorPicker('do-title',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>❌ ชื่อหัวข้อ "ไม่รับ"</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-dont-title"
+                                class="color-swatch" onchange="syncColorText('dont-title',this.value)"><input
+                                type="text" id="color-dont-title-text" class="color-text"
+                                oninput="syncColorPicker('dont-title',this.value)"></div>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <div class="admin-section-title">⏱ Timeline</div>
+                    <div class="color-row"><label>เร็ว — สีตัวเลข</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-tl-fast-num"
+                                class="color-swatch" onchange="syncColorText('tl-fast-num',this.value)"><input
+                                type="text" id="color-tl-fast-num-text" class="color-text"
+                                oninput="syncColorPicker('tl-fast-num',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>กลาง — สีตัวเลข</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-tl-mid-num"
+                                class="color-swatch" onchange="syncColorText('tl-mid-num',this.value)"><input
+                                type="text" id="color-tl-mid-num-text" class="color-text"
+                                oninput="syncColorPicker('tl-mid-num',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>ช้า — สีตัวเลข</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-tl-slow-num"
+                                class="color-swatch" onchange="syncColorText('tl-slow-num',this.value)"><input
+                                type="text" id="color-tl-slow-num-text" class="color-text"
+                                oninput="syncColorPicker('tl-slow-num',this.value)"></div>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <div class="admin-section-title">👥 กลุ่ม / Group Items</div>
+                    <div class="color-row"><label>ข้อความลิงก์กลุ่ม</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-group-link-text" class="color-swatch"
+                                onchange="syncColorText('group-link-text',this.value)"><input type="text"
+                                id="color-group-link-text-text" class="color-text"
+                                oninput="syncColorPicker('group-link-text',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>สี Note กลุ่ม</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-group-note-text" class="color-swatch"
+                                onchange="syncColorText('group-note-text',this.value)"><input type="text"
+                                id="color-group-note-text-text" class="color-text"
+                                oninput="syncColorPicker('group-note-text',this.value)"></div>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <div class="admin-section-title">📌 หัวข้อกลุ่ม (Groups Header)</div>
+                    <div class="color-row"><label>เครื่องหมาย Deco</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-gh-deco-color" class="color-swatch"
+                                onchange="syncColorText('gh-deco-color',this.value)"><input type="text"
+                                id="color-gh-deco-color-text" class="color-text"
+                                oninput="syncColorPicker('gh-deco-color',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>ชื่อหัวข้อกลุ่ม</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-gh-title-color" class="color-swatch"
+                                onchange="syncColorText('gh-title-color',this.value)"><input type="text"
+                                id="color-gh-title-color-text" class="color-text"
+                                oninput="syncColorPicker('gh-title-color',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>คำอธิบายกลุ่ม</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-gh-sub-color-hex" class="color-swatch"
+                                onchange="syncColorTextRaw('gh-sub-color',this.value)"><input type="text"
+                                id="color-gh-sub-color-text" class="color-text" placeholder="rgba(...)"
+                                oninput="syncVarDirect('gh-sub-color',this.value)"></div>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <div class="admin-section-title">🔻 Footer</div>
+                    <div class="color-row"><label>ชื่อร้าน Footer</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-footer-name-color" class="color-swatch"
+                                onchange="syncColorText('footer-name-color',this.value)"><input type="text"
+                                id="color-footer-name-color-text" class="color-text"
+                                oninput="syncColorPicker('footer-name-color',this.value)"></div>
+                    </div>
+                    <div class="color-row"><label>ข้อความ Footer</label>
+                        <div style="display:flex;gap:6px;align-items:center;"><input type="color"
+                                id="color-footer-text-color-hex" class="color-swatch"
+                                onchange="syncColorTextRaw('footer-text-color',this.value)"><input type="text"
+                                id="color-footer-text-color-text" class="color-text" placeholder="rgba(...)"
+                                oninput="syncVarDirect('footer-text-color',this.value)"></div>
+                    </div>
+                </div>
+
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                    <button onclick="saveColors()" class="admin-btn-save"><i class="fas fa-save"></i>
+                        บันทึกสีทั้งหมด</button>
+                    <button onclick="resetColors()" class="admin-btn-add"><i class="fas fa-undo"></i>
+                        รีเซ็ตค่าเริ่มต้น</button>
+                </div>
+            </div>
+
+            <!-- Tab: Font -->
+            <div id="tab-font" class="tab-content">
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fas fa-font" style="color:var(--main);"></i>
+                        เลือกฟอนต์ภาษาไทย</div>
+                    <div id="font-grid"
+                        style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:16px;">
+                    </div>
+                    <button onclick="saveFont()" class="admin-btn-save"><i class="fas fa-save"></i> บันทึกฟอนต์</button>
+                </div>
+            </div>
+
+            <!-- Tab: BG Emoji -->
+            <div id="tab-bgemoji" class="tab-content">
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fas fa-star" style="color:var(--main);"></i>
+                        อิโมจิพื้นหลัง</div>
+                    <div id="bgemoji-list"></div>
+                    <button class="admin-btn-add" onclick="addBgEmoji()"><i class="fas fa-plus"></i>
+                        เพิ่มอิโมจิ</button>
+                </div>
+                <button onclick="saveBgEmoji()" class="admin-btn-save"><i class="fas fa-save"></i> บันทึก</button>
+            </div>
+
+            <!-- Tab: Sections -->
+            <div id="tab-sections" class="tab-content">
+                <div class="info-box"><i class="fas fa-info-circle"></i> แต่ละส่วนสามารถเลือกให้แสดงก่อนกลุ่ม
+                    หรืออยู่ใต้หัวข้อกลุ่มที่ต้องการ</div>
+                <div id="sections-list"></div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+                    <button class="admin-btn-add" onclick="addSection('about')"><i class="fas fa-plus"></i>
+                        เกี่ยวกับร้าน</button>
+                    <button class="admin-btn-add" onclick="addSection('tags')"><i class="fas fa-plus"></i>
+                        แนวงาน</button>
+                    <button class="admin-btn-add" onclick="addSection('price')"><i class="fas fa-plus"></i>
+                        ราคา</button>
+                    <button class="admin-btn-add" onclick="addSection('dodont')"><i class="fas fa-plus"></i>
+                        รับ/ไม่รับ</button>
+                    <button class="admin-btn-add" onclick="addSection('steps')"><i class="fas fa-plus"></i>
+                        วิธีสั่ง</button>
+                    <button class="admin-btn-add" onclick="addSection('portfolio')"><i class="fas fa-plus"></i>
+                        Portfolio Grid</button>
+                    <button class="admin-btn-add" onclick="addSection('image')"><i class="fas fa-plus"></i>
+                        รูปภาพเดี่ยว</button>
+                </div>
+            </div>
+
+            <!-- Tab: Groups Headers -->
+            <div id="tab-groups-headers" class="tab-content">
+                <div id="groups-headers-list"></div>
+                <button class="admin-btn-add" onclick="addGroupsHeader()"><i class="fas fa-plus"></i>
+                    เพิ่มหัวข้อกลุ่ม</button>
+            </div>
+
+            <!-- Tab: Group Sections -->
+            <div id="tab-group-sections" class="tab-content">
+                <div id="group-sections-list"></div>
+                <button class="admin-btn-add" onclick="addGroupSection()"><i class="fas fa-plus"></i>
+                    เพิ่มกลุ่มย่อย</button>
+            </div>
+
+            <!-- Tab: All Groups -->
+            <div id="tab-all-groups" class="tab-content">
+                <div id="all-groups-list"></div>
+                <button class="admin-btn-add" onclick="addAllGroupsSection()"><i class="fas fa-plus"></i>
+                    เพิ่มปุ่มดูทั้งหมด</button>
+            </div>
+
+            <!-- Tab: Contact -->
+            <div id="tab-contact" class="tab-content">
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fas fa-link" style="color:var(--main);"></i> ปุ่มติดต่อ
+                    </div>
+                    <div id="contact-btns-list"></div>
+                    <button class="admin-btn-add" onclick="addContactBtn()"><i class="fas fa-plus"></i>
+                        เพิ่มปุ่ม</button>
+                </div>
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fas fa-info-circle" style="color:var(--main);"></i>
+                        ข้อความท้าย</div>
+                    <input type="text" id="a-contact-note" class="admin-input" placeholder="ข้อความท้ายส่วนติดต่อ">
+                </div>
+                <button onclick="saveContact()" class="admin-btn-save"><i class="fas fa-save"></i>
+                    บันทึกส่วนติดต่อ</button>
+            </div>
+
+            <!-- Tab: Footer -->
+            <div id="tab-footer" class="tab-content">
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fas fa-copyright" style="color:var(--main);"></i>
+                        ส่วนท้าย</div>
+                    <input type="text" id="a-footer-name" class="admin-input" placeholder="ชื่อร้านท้ายสุด">
+                    <textarea id="a-footer-text" class="admin-input" placeholder="ข้อความท้าย (รองรับ HTML)"
+                        rows="3"></textarea>
+                </div>
+                <button onclick="saveFooter()" class="admin-btn-save"><i class="fas fa-save"></i>
+                    บันทึกส่วนท้าย</button>
+            </div>
+
+            <!-- Tab: Google Sheets -->
+            <div id="tab-gs" class="tab-content">
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fab fa-google" style="color:var(--main);"></i> ตั้งค่า
+                        Google Sheets</div>
+                    <p style="color:rgba(255,255,255,0.5);font-size:0.83rem;margin-bottom:12px;">⚠️ ต้อง Deploy Google
+                        Apps Script เป็น Web App แล้วใส่ URL ที่นี่</p>
+                    <input type="text" id="gs-webapp-url" class="admin-input" placeholder="Web App URL (จาก Deploy)">
+                    <input type="text" id="gs-sheet-id" class="admin-input" placeholder="Spreadsheet ID">
+                    <input type="text" id="gs-api-key" class="admin-input" placeholder="API Key (ไม่จำเป็น)">
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;">
+                        <button class="admin-btn-save" onclick="saveGsConfig()">บันทึก</button>
+                        <button class="admin-btn-add" onclick="testGsConnection()">ทดสอบ</button>
+                        <button class="admin-btn-add" onclick="loadFromGoogleSheets(true)">โหลดข้อมูล</button>
+                        <span id="gs-status"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Security -->
+            <div id="tab-security" class="tab-content">
+                <div class="info-box"
+                    style="background:rgba(255,113,207,0.08);border-color:rgba(255,113,207,0.3);color:var(--accent);">
+                    <i class="fas fa-lock"></i> การเปลี่ยน Username / Password จะมีผลทันที — กรุณาจำไว้ให้ดี
+                </div>
+
+                <!-- Current credentials display -->
+                <div class="admin-section" style="border-color:rgba(187,134,252,0.3);">
+                    <div class="admin-section-title"><i class="fas fa-user-circle" style="color:var(--main);"></i>
+                        ข้อมูลผู้ดูแลปัจจุบัน</div>
+                    <div
+                        style="display:flex;align-items:center;gap:12px;background:rgba(187,134,252,0.06);border:1px solid rgba(187,134,252,0.2);border-radius:12px;padding:14px 16px;margin-bottom:8px;">
+                        <div
+                            style="width:40px;height:40px;background:linear-gradient(135deg,var(--main),var(--accent));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">
+                            👤</div>
+                        <div>
+                            <div style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:2px;">Username
+                                ปัจจุบัน</div>
+                            <div id="current-username-display"
+                                style="font-size:1rem;font-weight:500;color:var(--main);">—</div>
+                        </div>
+                    </div>
+                    <div
+                        style="display:flex;align-items:center;gap:12px;background:rgba(187,134,252,0.06);border:1px solid rgba(187,134,252,0.2);border-radius:12px;padding:14px 16px;">
+                        <div
+                            style="width:40px;height:40px;background:linear-gradient(135deg,var(--accent),var(--main));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">
+                            🔑</div>
+                        <div>
+                            <div style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:2px;">Password</div>
+                            <div style="font-size:1rem;font-weight:500;color:var(--main);">••••••••</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Change Username -->
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fas fa-user-edit" style="color:var(--main);"></i> เปลี่ยน
+                        Username</div>
+                    <label
+                        style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">Username
+                        ใหม่</label>
+                    <input type="text" id="new-username" class="admin-input" placeholder="กรอก Username ใหม่"
+                        autocomplete="off">
+                    <label
+                        style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">ยืนยันด้วย
+                        Password ปัจจุบัน</label>
+                    <div style="position:relative;">
+                        <input type="password" id="confirm-pass-for-user" class="admin-input"
+                            placeholder="Password ปัจจุบัน" autocomplete="off" style="padding-right:44px;">
+                        <button onclick="togglePassVis('confirm-pass-for-user','eye-u')"
+                            style="position:absolute;right:12px;top:50%;transform:translateY(-60%);background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:14px;"><i
+                                id="eye-u" class="fas fa-eye"></i></button>
+                    </div>
+                    <button onclick="changeUsername()" class="admin-btn-save" style="margin-top:4px;"><i
+                            class="fas fa-check"></i> บันทึก Username ใหม่</button>
+                </div>
+
+                <!-- Change Password -->
+                <div class="admin-section">
+                    <div class="admin-section-title"><i class="fas fa-key" style="color:var(--main);"></i> เปลี่ยน
+                        Password</div>
+                    <label
+                        style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">Password
+                        ปัจจุบัน</label>
+                    <div style="position:relative;">
+                        <input type="password" id="old-password" class="admin-input" placeholder="Password เดิม"
+                            autocomplete="current-password" style="padding-right:44px;">
+                        <button onclick="togglePassVis('old-password','eye-old')"
+                            style="position:absolute;right:12px;top:50%;transform:translateY(-60%);background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:14px;"><i
+                                id="eye-old" class="fas fa-eye"></i></button>
+                    </div>
+                    <label
+                        style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">Password
+                        ใหม่ (อย่างน้อย 6 ตัวอักษร)</label>
+                    <div style="position:relative;">
+                        <input type="password" id="new-password" class="admin-input" placeholder="Password ใหม่"
+                            autocomplete="new-password" style="padding-right:44px;"
+                            oninput="checkPassStrength(this.value)">
+                        <button onclick="togglePassVis('new-password','eye-new')"
+                            style="position:absolute;right:12px;top:50%;transform:translateY(-60%);background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:14px;"><i
+                                id="eye-new" class="fas fa-eye"></i></button>
+                    </div>
+                    <!-- Password strength bar -->
+                    <div style="margin-bottom:10px;">
+                        <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:4px;overflow:hidden;">
+                            <div id="pass-strength-bar"
+                                style="height:100%;width:0%;border-radius:4px;transition:all 0.3s;"></div>
+                        </div>
+                        <div id="pass-strength-label"
+                            style="font-size:0.75rem;margin-top:4px;color:rgba(255,255,255,0.4);"></div>
+                    </div>
+                    <label style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">ยืนยัน
+                        Password ใหม่</label>
+                    <div style="position:relative;">
+                        <input type="password" id="confirm-new-password" class="admin-input"
+                            placeholder="ยืนยัน Password ใหม่" autocomplete="new-password" style="padding-right:44px;">
+                        <button onclick="togglePassVis('confirm-new-password','eye-cfm')"
+                            style="position:absolute;right:12px;top:50%;transform:translateY(-60%);background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:14px;"><i
+                                id="eye-cfm" class="fas fa-eye"></i></button>
+                    </div>
+                    <button onclick="changePassword()" class="admin-btn-save" style="margin-top:4px;"><i
+                            class="fas fa-shield-alt"></i> บันทึก Password ใหม่</button>
+                </div>
+
+                <!-- Danger zone: reset to default -->
+                <div class="admin-section" style="border-color:rgba(255,80,80,0.25);background:rgba(255,80,80,0.04);">
+                    <div class="admin-section-title" style="color:#ff6060;"><i class="fas fa-exclamation-triangle"></i>
+                        Danger Zone</div>
+                    <p style="font-size:0.83rem;color:rgba(255,255,255,0.5);margin-bottom:12px;">รีเซ็ต Username &
+                        Password กลับเป็นค่าเริ่มต้น (<b style="color:rgba(255,255,255,0.7);">admin / fumiko2026</b>)
+                    </p>
+                    <button onclick="resetCreds()" class="admin-btn-del" style="padding:10px 20px;font-size:0.88rem;"><i
+                            class="fas fa-undo"></i> รีเซ็ตเป็นค่าเริ่มต้น</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===================== CONFIG =====================
+        const GS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzR-oTGUx8iU1d_o8X_6ekDwFrlQmbD-gRQHBu9CdsOUGVtgXQbPVm3KWDYH_Rq5g/exec'; // ใส่ URL ของคุณ
+        const DATA_KEY = 'fumiko_data';
+        const COLOR_KEY = 'fumiko_colors';
+        const FONT_KEY = 'fumiko_font';
+        const GS_CONFIG_KEY = 'fumiko_gs_config';
+        const HISTORY_KEY = 'fumiko_history';
+        const ADMIN_CREDS_KEY = 'fumiko_admin_creds';
+        let isAdminLoggedIn = false;
+
+        // ===================== DEFAULT COLORS =====================
+        const DEFAULT_COLORS = {
+            // Theme
+            main: '#BB86FC', dark: '#C084FC', accent: '#FF71CF', bg: '#0B0B2A',
+            // Card
+            'card-border': '#BB86FC',
+            'section-title-color': '#C084FC',
+            'divider-color': '#BB86FC',
+            // Text
+            'shop-name-color': '#FFFFFF',
+            'status-dot-color': '#7cfc00',
+            'badge-border': '#BB86FC',
+            'tag-border': '#BB86FC',
+            // Do/Dont
+            'do-title': '#4cde80',
+            'dont-title': '#ff6060',
+            // Timeline
+            'tl-fast-num': '#4cde80',
+            'tl-mid-num': '#BB86FC',
+            'tl-slow-num': '#FF71CF',
+            // Group
+            'group-link-text': '#BB86FC',
+            'group-note-text': '#C084FC',
+            // Groups Header
+            'gh-deco-color': '#BB86FC',
+            'gh-title-color': '#BB86FC',
+            // Footer
+            'footer-name-color': '#BB86FC',
+            // RGBA values (stored as string)
+            'card-bg': 'rgba(25,25,70,0.45)',
+            'text-body': 'rgba(255,255,255,0.8)',
+            'text-muted': 'rgba(255,255,255,0.5)',
+            'gh-sub-color': 'rgba(255,255,255,0.65)',
+            'footer-text-color': 'rgba(255,255,255,0.4)',
+        };
+
+        // HEX-only vars (can use color picker directly)
+        const HEX_VARS = ['main', 'dark', 'accent', 'bg', 'card-border', 'section-title-color', 'divider-color',
+            'shop-name-color', 'status-dot-color', 'badge-border', 'tag-border', 'do-title', 'dont-title',
+            'tl-fast-num', 'tl-mid-num', 'tl-slow-num', 'group-link-text', 'group-note-text',
+            'gh-deco-color', 'gh-title-color', 'footer-name-color'];
+
+        function loadColors() {
+            try { return { ...DEFAULT_COLORS, ...JSON.parse(localStorage.getItem(COLOR_KEY) || '{}') }; }
+            catch { return { ...DEFAULT_COLORS }; }
+        }
+        function applyColors(c) {
+            const R = document.documentElement.style;
+            Object.keys(DEFAULT_COLORS).forEach(k => {
+                const val = c[k] || DEFAULT_COLORS[k];
+                R.setProperty('--' + k, val);
+            });
+            // Special: glow derived from main
+            const m = c.main || DEFAULT_COLORS.main;
+            R.setProperty('--glow', hexToRgba(m.startsWith('#') ? m : DEFAULT_COLORS.main, 0.5));
+            document.body.style.background = c.bg || DEFAULT_COLORS.bg;
+        }
+        function hexToRgba(hex, a) {
+            if (!hex || !hex.startsWith('#') || hex.length < 7) return `rgba(187,134,252,${a})`;
+            const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
+            return `rgba(${r},${g},${b},${a})`;
+        }
+        function saveColors() {
+            const c = {};
+            HEX_VARS.forEach(k => {
+                const el = document.getElementById('color-' + k + '-text') || document.getElementById('color-' + k + '-text');
+                if (el) c[k] = el.value;
+            });
+            // RGBA vars
+            ['card-bg', 'text-body', 'text-muted', 'gh-sub-color', 'footer-text-color'].forEach(k => {
+                const el = document.getElementById('color-' + k + '-text');
+                if (el) c[k] = el.value;
+            });
+            localStorage.setItem(COLOR_KEY, JSON.stringify(c));
+            applyColors(c);
+            showToast('🎨 บันทึกสีทั้งหมดเรียบร้อย');
+        }
+        function resetColors() {
+            localStorage.removeItem(COLOR_KEY);
+            applyColors(DEFAULT_COLORS);
+            fillColorAdmin(DEFAULT_COLORS);
+            showToast('↩️ รีเซ็ตสีเป็นค่าเริ่มต้นแล้ว');
+        }
+        function fillColorAdmin(c) {
+            HEX_VARS.forEach(k => {
+                const picker = document.getElementById('color-' + k);
+                const text = document.getElementById('color-' + k + '-text');
+                const val = c[k] || DEFAULT_COLORS[k];
+                if (picker && val && val.startsWith('#')) picker.value = val;
+                if (text) text.value = val;
+            });
+            // RGBA vars — only fill text, skip picker
+            ['card-bg', 'text-body', 'text-muted', 'gh-sub-color', 'footer-text-color'].forEach(k => {
+                const text = document.getElementById('color-' + k + '-text');
+                if (text) text.value = c[k] || DEFAULT_COLORS[k];
+            });
+        }
+        // Sync hex picker → text input + apply live
+        function syncColorText(k, v) {
+            const el = document.getElementById('color-' + k + '-text');
+            if (el) el.value = v;
+            document.documentElement.style.setProperty('--' + k, v);
+            if (k === 'main') document.documentElement.style.setProperty('--glow', hexToRgba(v, 0.5));
+            if (k === 'bg') document.body.style.background = v;
+        }
+        // Sync text input → hex picker + apply live (HEX only)
+        function syncColorPicker(k, v) {
+            if (/^#[0-9A-Fa-f]{6}$/.test(v)) {
+                const el = document.getElementById('color-' + k);
+                if (el) el.value = v;
+                document.documentElement.style.setProperty('--' + k, v);
+                if (k === 'main') document.documentElement.style.setProperty('--glow', hexToRgba(v, 0.5));
+                if (k === 'bg') document.body.style.background = v;
+            }
+        }
+        // For RGBA vars: picker → convert hex to rgba-ish text display
+        function syncColorTextRaw(k, v) {
+            const el = document.getElementById('color-' + k + '-text');
+            if (el) el.value = v;
+            document.documentElement.style.setProperty('--' + k, v);
+        }
+        // For RGBA vars: text input directly applies
+        function syncVarDirect(k, v) {
+            document.documentElement.style.setProperty('--' + k, v);
+        }
+
+        // ===================== FONTS =====================
+        const THAI_FONTS = [
+            { name: 'Mitr', preview: 'สวัสดีครับ' }, { name: 'Sarabun', preview: 'สวัสดีครับ' }, { name: 'Kanit', preview: 'สวัสดีครับ' },
+            { name: 'Prompt', preview: 'สวัสดีครับ' }, { name: 'Charm', preview: 'สวัสดีครับ' }, { name: 'Itim', preview: 'สวัสดีครับ' },
+            { name: 'Kodchasan', preview: 'สวัสดีครับ' }, { name: 'Krub', preview: 'สวัสดีครับ' }, { name: 'Mali', preview: 'สวัสดีครับ' },
+            { name: 'Noto Sans Thai', preview: 'สวัสดีครับ' }, { name: 'Noto Serif Thai', preview: 'สวัสดีครับ' }, { name: 'Pridi', preview: 'สวัสดีครับ' },
+            { name: 'Taviraj', preview: 'สวัสดีครับ' }, { name: 'Trirong', preview: 'สวัสดีครับ' }, { name: 'Srisakdi', preview: 'สวัสดีครับ' },
+            { name: 'Bai Jamjuree', preview: 'สวัสดีครับ' }, { name: 'Chonburi', preview: 'สวัสดีครับ' }, { name: 'Athiti', preview: 'สวัสดีครับ' },
+            { name: 'Fahkwang', preview: 'สวัสดีครับ' }, { name: 'K2D', preview: 'สวัสดีครับ' }
+        ];
+        let selectedFont = localStorage.getItem(FONT_KEY) || 'Mitr';
+        function applyFont(f) { document.documentElement.style.setProperty('--font-main', `'${f}',sans-serif`); document.body.style.fontFamily = `'${f}',sans-serif`; }
+        function renderFontGrid() {
+            const c = document.getElementById('font-grid'); c.innerHTML = '';
+            THAI_FONTS.forEach(font => {
+                const d = document.createElement('div');
+                d.className = 'font-option' + (selectedFont === font.name ? ' selected' : '');
+                d.innerHTML = `<div style="font-family:'${font.name}',sans-serif;font-size:1.1rem;color:var(--white);">สวัสดี ✨</div><div style="font-size:0.75rem;color:var(--dark);margin-top:4px;">${font.name}</div>`;
+                d.onclick = () => { selectedFont = font.name; document.querySelectorAll('.font-option').forEach(e => e.classList.remove('selected')); d.classList.add('selected'); applyFont(font.name); };
+                c.appendChild(d);
+            });
+        }
+        function saveFont() { localStorage.setItem(FONT_KEY, selectedFont); applyFont(selectedFont); showToast('✅ บันทึกฟอนต์แล้ว'); }
+
+        // ===================== CONTACT STYLES =====================
+        const CONTACT_STYLES = [
+            { id: 'fb', label: 'Facebook', icon: '📘', cssClass: 'btn-fb' }, { id: 'line', label: 'Line', icon: '💬', cssClass: 'btn-line' },
+            { id: 'ig', label: 'Instagram', icon: '📸', cssClass: 'btn-ig' }, { id: 'tw', label: 'Twitter/X', icon: '🐦', cssClass: 'btn-tw' },
+            { id: 'tt', label: 'TikTok', icon: '🎵', cssClass: 'btn-tt' }, { id: 'yt', label: 'YouTube', icon: '▶️', cssClass: 'btn-yt' },
+            { id: 'discord', label: 'Discord', icon: '🎮', cssClass: 'btn-discord' }, { id: 'email', label: 'Email', icon: '📧', cssClass: 'btn-email' },
+            { id: 'custom', label: 'Custom', icon: '⭐', cssClass: 'btn-custom' }
+        ];
+        function getStyleById(id) { return CONTACT_STYLES.find(s => s.id === id) || CONTACT_STYLES[CONTACT_STYLES.length - 1]; }
+
+        // ===================== MODAL / TOAST =====================
+        function showModal({ icon = '', title = '', html = '', confirmText = 'ตกลง', cancelText = null, dangerConfirm = false, timer }) {
+            return new Promise(resolve => {
+                const iconMap = { success: '✅', error: '❌', warning: '⚠️', info: 'ℹ️', question: '❓' };
+                document.getElementById('cmodal-icon').textContent = iconMap[icon] || icon;
+                document.getElementById('cmodal-title').textContent = title;
+                document.getElementById('cmodal-text').innerHTML = html;
+                const actions = document.getElementById('cmodal-actions'); actions.innerHTML = '';
+                const cb = document.createElement('button');
+                cb.className = 'cmodal-btn ' + (dangerConfirm ? 'cmodal-btn-danger' : 'cmodal-btn-confirm');
+                cb.textContent = confirmText; cb.onclick = () => { closeModal(); resolve({ isConfirmed: true }) }; actions.appendChild(cb);
+                if (cancelText) { const cab = document.createElement('button'); cab.className = 'cmodal-btn cmodal-btn-cancel'; cab.textContent = cancelText; cab.onclick = () => { closeModal(); resolve({ isConfirmed: false, dismiss: 'cancel' }) }; actions.appendChild(cab); }
+                document.getElementById('cmodal').classList.add('show');
+                if (timer) setTimeout(() => { closeModal(); resolve({ isConfirmed: false, dismiss: 'timer' }) }, timer);
+            });
+        }
+        function closeModal() { document.getElementById('cmodal').classList.remove('show'); }
+        document.getElementById('cmodal').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+
+        function showToast(msg, type = 'success', dur = 2200) {
+            const t = document.getElementById('toast'); t.className = 'show ' + type; t.innerHTML = msg;
+            clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), dur);
+        }
+
+        // ===================== GOOGLE SHEETS =====================
+        function getGsConfig() {
+            try {
+                const s = JSON.parse(localStorage.getItem(GS_CONFIG_KEY) || '{}');
+                return { webAppUrl: GS_WEBAPP_URL || s.webAppUrl || '', sheetId: s.sheetId || '', apiKey: s.apiKey || '' };
+            } catch { return { webAppUrl: GS_WEBAPP_URL || '', sheetId: '', apiKey: '' }; }
+        }
+        function saveGsConfig() {
+            const c = {
+                webAppUrl: document.getElementById('gs-webapp-url').value.trim(),
+                sheetId: document.getElementById('gs-sheet-id').value.trim(),
+                apiKey: document.getElementById('gs-api-key').value.trim()
+            };
+            localStorage.setItem(GS_CONFIG_KEY, JSON.stringify(c));
+            showToast('✅ บันทึกการตั้งค่า Sheets');
+        }
+        function fetchViaJsonp(url, ms) {
+            ms = ms || 10000;
+            return new Promise((res, rej) => {
+                const cb = 'jsonp_' + Math.round(1e6 * Math.random()) + '_' + Date.now();
+                let s = null, t = null;
+                function clean() { if (t) clearTimeout(t); if (window[cb]) delete window[cb]; if (s && s.parentNode) s.parentNode.removeChild(s); }
+                window[cb] = d => { clean(); res(d); };
+                t = setTimeout(() => { clean(); rej(new Error('timeout')); }, ms);
+                s = document.createElement('script');
+                s.src = url + (url.includes('?') ? '&' : '?') + 'callback=' + cb;
+                s.onerror = () => { clean(); rej(new Error('fail')); };
+                document.body.appendChild(s);
+            });
+        }
+        async function loadFromGoogleSheets(showUI) {
+            const cfg = getGsConfig(), url = cfg.webAppUrl;
+            if (!url) {
+                if (showUI) showModal({ icon: 'warning', title: 'ไม่ได้ตั้งค่า URL', html: 'กรุณาตั้งค่า Web App URL ใน tab Google Sheets', confirmText: 'ตกลง' });
+                return false;
+            }
+            if (showUI) showToast('<i class="fas fa-spinner spin"></i> กำลังโหลดจาก Sheets...', 'info', 10000);
+            try {
+                const r = await fetchViaJsonp(url.replace(/\/$/, '') + '?action=getData', 10000);
+                if (r && r.status === 'success' && r.data) {
+                    localStorage.setItem(DATA_KEY, JSON.stringify(r.data));
+                    if (showUI) {
+                        showToast('✅ โหลดข้อมูลสำเร็จ');
+                        renderSite();
+                        if (document.getElementById('admin-overlay').classList.contains('show')) openAdmin();
+                    }
+                    return true;
+                } else throw new Error('Invalid data format');
+            } catch (e) {
+                console.warn('GS fail:', e.message);
+                if (showUI) showModal({ icon: 'error', title: 'โหลดล้มเหลว', html: 'ไม่สามารถเชื่อมต่อ Google Sheets ได้<br><small>กรุณาตรวจสอบ URL และการ Deploy</small>', confirmText: 'ตกลง' });
+                return false;
+            }
+        }
+        async function saveToGoogleSheets(data) {
+            const cfg = getGsConfig();
+            if (!cfg.webAppUrl) return false;
+            try {
+                await fetch(cfg.webAppUrl, {
+                    method: 'POST', mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'updateData', data })
+                });
+                return true;
+            } catch { return false; }
+        }
+        async function testGsConnection() {
+            const s = document.getElementById('gs-status');
+            s.style.display = 'inline-flex'; s.className = 'gs-loading';
+            s.innerHTML = '<i class="fas fa-spinner spin"></i> ทดสอบ...';
+            const url = document.getElementById('gs-webapp-url').value.trim();
+            if (!url) { s.className = 'gs-err'; s.innerHTML = '<i class="fas fa-times-circle"></i> กรุณากรอก URL'; return; }
+            try {
+                await fetchViaJsonp(url.replace(/\/$/, '') + '?action=ping', 5000);
+                s.className = 'gs-ok'; s.innerHTML = '<i class="fas fa-check-circle"></i> เชื่อมต่อสำเร็จ';
+            } catch {
+                s.className = 'gs-err'; s.innerHTML = '<i class="fas fa-exclamation-triangle"></i> เชื่อมต่อไม่ได้';
+            }
+        }
+
+        // ===================== INITIAL DATA =====================
+        function getInitialData() {
+            return {
+                header: {
+                    logoImg: 'https://img2.pic.in.th/pic/NEXO-SHOP-2-Photoroom.png',
+                    shopName: 'NEXO BIO V2',
+                    shopDesc: '###',
+                    statusText: 'สถานะของร้าน',
+                    badges: ['###'],
+                    queueText: 'เช็คคิวงาน ✨',
+                    queueLink: '#',
+                    detailTitle: 'ตัวอย่าง',
+                    detailImg: 'https://img2.pic.in.th/a359dd21-5107-4d71-8353-eab0b7fd25d0.jpg'
+                },
+                bgEmojis: [
+                    { emoji: '✨', left: '10%', delay: 0 }, { emoji: '🪐', left: '30%', delay: 4 },
+                    { emoji: '💫', left: '55%', delay: 8 }, { emoji: '🧸', left: '75%', delay: 2 }, { emoji: '🌸', left: '90%', delay: 6 }
+                ],
+                sections: [
+                    {
+                        type: 'portfolio', title: 'ผลงานของร้าน', headerIndex: -1,
+                        items: [
+                            { img: 'https://img2.pic.in.th/a359dd21-5107-4d71-8353-eab0b7fd25d0.jpg', label: 'test1', link: '#' },
+                            { img: 'https://img2.pic.in.th/fdfdba13-2628-432a-bc03-477b8d2f5e63.jpg', label: 'test2', link: '#' }
+                        ],
+                        mainBtnText: 'สั่งงานคลิกเลย', mainBtnLink: '#'
+                    }
+                ],
+                groupsHeaders: [{ deco: '✦ ✦ ✦', title: 'หัวข้อใหม่', sub: 'คำอธิบาย', deco2: 'ข้อความท้าย' }],
+                groupSections: [{
+                    headerIndex: 0, title: 'หัวข้อใหม่', groups: [
+                        { name: 'test1', price: '', tags: ['Collab'], note: '', links: [{ text: '🔗 ดูรายละเอียด', url: '#' }], img: 'https://img2.pic.in.th/a359dd21-5107-4d71-8353-eab0b7fd25d0.jpg' },
+                        { name: 'test2', price: '', tags: ['Collab'], note: '', links: [{ text: '🔗 ดูรายละเอียด', url: '#' }], img: 'https://img2.pic.in.th/fdfdba13-2628-432a-bc03-477b8d2f5e63.jpg' }
+                    ]
+                }],
+                allGroupsSections: [],
+                contact: {
+                    buttons: [
+                        { icon: '📘', text: 'Facebook', link: '#', style: 'fb' },
+                        { icon: '💬', text: 'Line', link: '#', style: 'line' }
+                    ],
+                    note: 'รายละเอียดเพิ่มเติมถ้ามี'
+                },
+                footer: { name: 'NEXO ✦', text: '' }
+            };
+        }
+        function loadData() {
+            try {
+                const r = localStorage.getItem(DATA_KEY);
+                if (!r) return getInitialData();
+                const p = JSON.parse(r), d = getInitialData();
+                // compat: ตรวจสอบ headerIndex
+                if (p.sections) p.sections = p.sections.map(s => ({
+                    ...s, headerIndex: s.headerIndex !== undefined ? s.headerIndex : -1
+                }));
+                return { ...d, ...p };
+            } catch { return getInitialData(); }
+        }
+        async function saveData(data, notify, addHist) {
+            if (notify === undefined) notify = true;
+            if (addHist === undefined) addHist = true;
+            try {
+                localStorage.setItem(DATA_KEY, JSON.stringify(data));
+                if (addHist) addToHistory(data);
+                saveToGoogleSheets(data); // fire-and-forget
+                if (notify) showToast('✅ บันทึกเรียบร้อย');
+                renderSite();
+                return true;
+            } catch { return false; }
+        }
+        function addToHistory(data) {
+            try {
+                const h = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+                h.unshift({ timestamp: new Date().toISOString(), data: JSON.parse(JSON.stringify(data)) });
+                if (h.length > 20) h.pop();
+                localStorage.setItem(HISTORY_KEY, JSON.stringify(h));
+            } catch { }
+        }
+        function showHistory() {
+            const history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+            if (!history.length) { showModal({ icon: 'info', title: 'ไม่มีประวัติ', html: 'ยังไม่มีประวัติการบันทึก', confirmText: 'ตกลง' }); return; }
+            let html = '<div style="max-height:300px;overflow-y:auto;">';
+            history.forEach((item, i) => {
+                const date = new Date(item.timestamp).toLocaleString('th-TH');
+                html += `<div class="history-item" onclick="restoreHistory(${i});closeModal()"><div><i class="fas fa-clock"></i> ${date}</div><i class="fas fa-undo"></i></div>`;
+            });
+            html += '</div>';
+            showModal({ icon: '', title: '📜 ประวัติการบันทึก', html, confirmText: 'ปิด' });
+        }
+        function restoreHistory(i) {
+            const h = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
+            if (h[i]) { saveData(h[i].data, true, false); showToast('✅ กู้คืนสำเร็จ'); }
+        }
+
+        // ===================== RENDER SITE =====================
+        function renderBgEmojis(emojis) {
+            const c = document.getElementById('bg-emojis'); c.innerHTML = '';
+            (emojis || []).forEach(e => {
+                const s = document.createElement('span');
+                s.className = 'floating-emoji';
+                s.style.cssText = `left:${e.left};animation-delay:${e.delay}s;`;
+                s.textContent = e.emoji; c.appendChild(s);
+            });
+        }
+
+        function renderSite() {
+            const data = loadData();
+            renderBgEmojis(data.bgEmojis);
+            const c = document.getElementById('main-content');
+            let html = '';
+            // Header
+            html += `<div class="header-box">
+      <div class="logo-wrapper"><div class="logo-glow"></div><div class="logo"><img src="${data.header.logoImg}" alt="${data.header.shopName}"></div></div>
+      <h1>${data.header.shopName}</h1>
+      <p style="white-space:pre-line;margin-top:10px;font-size:13px;color:var(--dark);opacity:0.9;">${data.header.shopDesc || ''}</p>
+      <span class="status-badge"><span class="status-dot"></span>${data.header.statusText}</span>
+      <div class="badge-group">${(data.header.badges || []).map(b => `<span class="badge">${b}</span>`).join('')}</div>
+      ${data.header.queueText ? `<a href="${data.header.queueLink || '#'}" target="_blank" class="btn btn-outline">${data.header.queueText}</a>` : ''}
+    </div>`;
+            // Detail section
+            if (data.header.detailImg) {
+                html += `<div class="section"><h2>${data.header.detailTitle || 'Detail'}</h2><div class="section-divider"></div><img src="${data.header.detailImg}" alt="Detail" style="width:100%;border-radius:15px;border:1px solid var(--main);"></div>`;
+            }
+            // Sections (headerIndex === -1)
+            data.sections.forEach(s => { if ((s.headerIndex || 0) === -1 || s.headerIndex === undefined) html += renderSection(s); });
+            // Groups Headers
+            data.groupsHeaders.forEach((header, hi) => {
+                html += `<div class="groups-header-section"><div class="groups-header-deco">${header.deco}</div><div class="groups-header-title">${header.title}</div><div class="groups-header-sub">${header.sub}</div><div class="groups-header-deco2">${header.deco2}</div></div>`;
+                data.sections.forEach(s => { if (s.headerIndex === hi) html += renderSection(s); });
+                data.groupSections.filter(gs => gs.headerIndex === hi).forEach(gs => {
+                    html += `<div class="section"><h2>${gs.title}</h2><div class="section-divider"></div>`;
+                    // Check if groups have images → use grid
+                    const hasImg = (gs.groups || []).some(g => g.img);
+                    if (hasImg) {
+                        html += `<div class="grid">`;
+                        (gs.groups || []).forEach(g => {
+                            html += `<a href="${(g.links && g.links[0]) ? g.links[0].url : '#'}" target="_blank" class="card">${g.img ? `<img src="${g.img}">` : ''}${g.name ? `<span style="font-size:11px;">${g.name}</span>` : ''}${g.price ? `<div class="group-price" style="margin-top:6px;">${g.price}</div>` : ''}</a>`;
+                        });
+                        html += `</div>`;
+                    } else {
+                        (gs.groups || []).forEach(g => { html += renderGroupItem(g); });
+                    }
+                    html += `</div>`;
+                });
+            });
+            // All Groups Sections
+            data.allGroupsSections.forEach(s => {
+                html += `<div class="section"><h2>${s.title}</h2><div class="section-divider"></div><a href="${s.buttonLink}" target="_blank" class="see-all-btn">${s.buttonText}</a></div>`;
+            });
+            // Contact
+            const btns = data.contact.buttons || [];
+            const colsClass = btns.length === 1 ? 'cols-1' : btns.length >= 3 ? 'cols-3' : 'cols-2';
+            html += `<div class="section"><h2>💌 ติดต่อสั่งงาน</h2><div class="section-divider"></div>
+      <div class="contact-btns ${colsClass}">${btns.map(btn => { const st = getStyleById(btn.style); return `<a href="${btn.link}" target="_blank" class="contact-btn ${st.cssClass}">${btn.icon} ${btn.text}</a>`; }).join('')}</div>
+      ${data.contact.note ? `<div class="contact-note">${data.contact.note}</div>` : ''}
+    </div>`;
+            // Footer
+            html += `<div class="footer"><div class="shop-name">${data.footer.name}</div>${data.footer.text ? `<div class="footer-text">${data.footer.text}</div>` : ''}</div>`;
+            c.innerHTML = html;
+        }
+
+        function renderSection(s) {
+            switch (s.type) {
+                case 'about': return `<div class="section"><h2>${s.title}</h2><div class="section-divider"></div><div class="about-text">${s.text}</div></div>`;
+                case 'tags': return `<div class="section"><h2>${s.title}</h2><div class="section-divider"></div><div class="tags-wrap">${(s.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}</div></div>`;
+                case 'price': return `<div class="section"><h2>${s.title}</h2><div class="section-divider"></div><div class="price-grid">${(s.priceCards || []).map(c => `<div class="price-card ${c.class || 'purple'}"><div class="price-card-type">${c.type}</div><div class="price-card-amount">${c.amount}</div><div class="price-card-unit">${c.unit}</div></div>`).join('')}</div>${s.bulkNote ? `<div class="bulk-note">${s.bulkNote}</div>` : ''}</div>`;
+                case 'dodont': return `<div class="section"><h2>${s.title}</h2><div class="section-divider"></div><div class="do-dont-grid"><div class="do-box"><h4>✅ รับทำ</h4><ul>${(s.doList || []).map(i => `<li>${i}</li>`).join('')}</ul></div><div class="dont-box"><h4>❌ ไม่รับ</h4><ul>${(s.dontList || []).map(i => `<li>${i}</li>`).join('')}</ul></div></div></div>`;
+                case 'steps': return `<div class="section"><h2>${s.title}</h2><div class="section-divider"></div>${(s.steps || []).map((step, i) => `<div class="step-row"><div class="step-num">${i + 1}</div><div class="step-text">${step}</div></div>`).join('')}${s.timeline ? `<div style="margin-top:14px;"><div style="font-size:0.76rem;color:var(--text-muted);margin-bottom:10px;font-weight:500;">⏱ ระยะเวลา</div><div class="tl-grid"><div class="tl-item fast"><div class="tl-num">${s.timeline.fast.day}</div><div class="tl-label">${s.timeline.fast.label}</div></div><div class="tl-item mid"><div class="tl-num">${s.timeline.mid.day}</div><div class="tl-label">${s.timeline.mid.label}</div></div><div class="tl-item slow"><div class="tl-num">${s.timeline.slow.day}</div><div class="tl-label">${s.timeline.slow.label}</div></div></div></div>` : ''}${(s.payments && s.payments.length) ? `<div style="margin-top:14px;"><div style="font-size:0.76rem;color:var(--text-muted);margin-bottom:9px;font-weight:500;">💳 ช่องทางชำระเงิน</div><div style="display:flex;gap:10px;flex-wrap:wrap;">${s.payments.map(p => `<div class="pay-chip">${p}</div>`).join('')}</div></div>` : ''}</div>`;
+                case 'portfolio': return `<div class="section"><h2>${s.title}</h2><div class="section-divider"></div><div class="grid">${(s.items || []).map(item => `<a href="${item.link || '#'}" target="_blank" class="card"><img src="${item.img}"><span style="font-size:12px;">${item.label}</span></a>`).join('')}</div>${s.mainBtnText ? `<a href="${s.mainBtnLink || '#'}" class="btn btn-main">${s.mainBtnText}</a>` : ''}</div>`;
+                case 'image': return `<div class="section"><h2>${s.title}</h2><div class="section-divider"></div><img src="${s.imgUrl}" alt="${s.title}" style="width:100%;border-radius:15px;border:1px solid var(--main);"></div>`;
+                default: return '';
+            }
+        }
+        function renderGroupItem(g) {
+            return `<div class="group-item"><div class="group-header"><div class="group-name">${g.name}</div>${g.price ? `<div class="group-price">${g.price} ฿</div>` : ''}</div><div class="group-tags">${(g.tags || []).map(t => `<span class="group-tag">${t}</span>`).join('')}</div>${g.note ? `<div class="group-note">${g.note}</div>` : ''}<div class="group-links">${(g.links || []).map(l => `<a href="${l.url}" target="_blank" class="group-link">${l.text}</a>`).join('')}</div></div>`;
+        }
+
+        // ===================== ADMIN RENDER =====================
+        function buildHeaderOptions(hi) {
+            const d = loadData();
+            let o = `<option value="-1"${hi === -1 ? ' selected' : ''}>📌 แสดงทั่วไป (ก่อนกลุ่ม)</option>`;
+            d.groupsHeaders.forEach((h, i) => { o += `<option value="${i}"${hi === i ? ' selected' : ''}>🔰 ${h.title || 'กลุ่มที่' + (i + 1)}</option>`; });
+            return o;
+        }
+        function renderAdminSections() {
+            const data = loadData();
+            // Sections
+            const sl = document.getElementById('sections-list'); sl.innerHTML = '';
+            data.sections.forEach((s, i) => {
+                const hi = s.headerIndex != null ? s.headerIndex : -1;
+                const div = document.createElement('div'); div.className = 'admin-section';
+                div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
+          <div class="admin-section-title" style="margin:0;"><i class="fas fa-layer-group" style="color:var(--main);"></i> ${s.title || s.type}</div>
+          <button class="admin-btn-del" onclick="deleteSection(${i})"><i class="fas fa-trash"></i> ลบ</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;background:rgba(187,134,252,0.06);border:1px solid rgba(187,134,252,0.2);border-radius:10px;padding:10px 12px;margin-bottom:12px;">
+          <label style="font-size:0.82rem;color:var(--dark);white-space:nowrap;">แสดงใน:</label>
+          <select onchange="updateSectionHeader(${i},parseInt(this.value))" style="flex:1;padding:7px;border:1px solid rgba(187,134,252,0.3);border-radius:8px;font-family:var(--font-main);font-size:0.85rem;background:#1a1a3e;color:white;">${buildHeaderOptions(hi)}</select>
+        </div>
+        ${renderSectionEditForm(s, i)}`;
+                sl.appendChild(div);
+            });
+            // Groups Headers
+            const ghl = document.getElementById('groups-headers-list'); ghl.innerHTML = '';
+            data.groupsHeaders.forEach((h, i) => {
+                const div = document.createElement('div'); div.className = 'admin-section';
+                div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+          <div class="admin-section-title" style="margin:0;">หัวข้อกลุ่มที่ ${i + 1}</div>
+          <button class="admin-btn-del" onclick="deleteGroupsHeader(${i})"><i class="fas fa-trash"></i> ลบ</button>
+        </div>
+        <input type="text" class="admin-input" placeholder="เครื่องหมาย deco" value="${h.deco}" onchange="updateGroupsHeader(${i},'deco',this.value)">
+        <input type="text" class="admin-input" placeholder="หัวข้อ" value="${h.title}" onchange="updateGroupsHeader(${i},'title',this.value)">
+        <input type="text" class="admin-input" placeholder="คำอธิบาย" value="${h.sub}" onchange="updateGroupsHeader(${i},'sub',this.value)">
+        <input type="text" class="admin-input" placeholder="ข้อความท้าย" value="${h.deco2}" onchange="updateGroupsHeader(${i},'deco2',this.value)">`;
+                ghl.appendChild(div);
+            });
+            // Group Sections
+            const gsl = document.getElementById('group-sections-list'); gsl.innerHTML = '';
+            data.groupSections.forEach((gs, i) => {
+                const div = document.createElement('div'); div.className = 'admin-section';
+                let hOpts = '<option value="-1">ไม่มีหัวข้อ</option>';
+                data.groupsHeaders.forEach((h, hi) => { hOpts += `<option value="${hi}"${gs.headerIndex === hi ? ' selected' : ''}>${h.title}</option>`; });
+                div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+          <div class="admin-section-title" style="margin:0;">${gs.title}</div>
+          <button class="admin-btn-del" onclick="deleteGroupSection(${i})"><i class="fas fa-trash"></i> ลบ</button>
+        </div>
+        <select style="width:100%;padding:10px;border:1px solid rgba(187,134,252,0.3);border-radius:10px;margin-bottom:10px;font-family:var(--font-main);background:#1a1a3e;color:white;" onchange="updateGroupSectionHeader(${i},this.value)">${hOpts}</select>
+        <input type="text" class="admin-input" placeholder="ชื่อกลุ่มย่อย" value="${gs.title}" onchange="updateGroupSection(${i},'title',this.value)">
+        ${(gs.groups || []).map((g, gi) => renderGroupEditForm(g, i, gi)).join('')}
+        <button class="admin-btn-add" onclick="addGroup(${i})"><i class="fas fa-plus"></i> เพิ่มกลุ่ม</button>`;
+                gsl.appendChild(div);
+            });
+            // All Groups
+            const agl = document.getElementById('all-groups-list'); agl.innerHTML = '';
+            data.allGroupsSections.forEach((s, i) => {
+                const div = document.createElement('div'); div.className = 'admin-section';
+                div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+          <div class="admin-section-title" style="margin:0;">ปุ่มดูทั้งหมด ${i + 1}</div>
+          <button class="admin-btn-del" onclick="deleteAllGroupsSection(${i})"><i class="fas fa-trash"></i> ลบ</button>
+        </div>
+        <input type="text" class="admin-input" placeholder="หัวข้อ" value="${s.title}" onchange="updateAllGroupsSection(${i},'title',this.value)">
+        <input type="text" class="admin-input" placeholder="ข้อความปุ่ม" value="${s.buttonText}" onchange="updateAllGroupsSection(${i},'buttonText',this.value)">
+        <input type="text" class="admin-input" placeholder="ลิงก์" value="${s.buttonLink}" onchange="updateAllGroupsSection(${i},'buttonLink',this.value)">`;
+                agl.appendChild(div);
+            });
+            // Render badges admin
+            renderBadgesAdmin();
+            // Render bg emoji admin
+            renderBgEmojiAdmin();
+        }
+
+        function renderGroupEditForm(g, si, gi) {
+            return `<div style="border:1px solid rgba(187,134,252,0.2);border-radius:12px;padding:14px;margin-bottom:10px;background:rgba(255,255,255,0.02);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <span style="font-size:0.85rem;color:var(--dark);">กลุ่มที่ ${gi + 1}</span>
+        <button class="admin-btn-del" onclick="deleteGroup(${si},${gi})"><i class="fas fa-trash"></i> ลบ</button>
+      </div>
+      <input type="text" class="admin-input" placeholder="รูปภาพ URL (ถ้ามี)" value="${g.img || ''}" onchange="updateGroup(${si},${gi},'img',this.value)">
+      <input type="text" class="admin-input" placeholder="ชื่อกลุ่ม" value="${g.name || ''}" onchange="updateGroup(${si},${gi},'name',this.value)">
+      <input type="text" class="admin-input" placeholder="ราคา" value="${g.price || ''}" onchange="updateGroup(${si},${gi},'price',this.value)">
+      <div id="gtags-${si}-${gi}">${(g.tags || []).map((t, ti) => `<div class="item-row"><input type="text" class="admin-input" value="${t}" onchange="updateGroupTag(${si},${gi},${ti},this.value)"><button class="admin-btn-del" onclick="deleteGroupTag(${si},${gi},${ti})"><i class="fas fa-trash"></i></button></div>`).join('')}</div>
+      <button class="admin-btn-add" onclick="addGroupTag(${si},${gi})" style="margin-bottom:8px;"><i class="fas fa-plus"></i> เพิ่มแท็ก</button>
+      <input type="text" class="admin-input" placeholder="หมายเหตุ" value="${g.note || ''}" onchange="updateGroup(${si},${gi},'note',this.value)">
+      <div id="glinks-${si}-${gi}">${(g.links || []).map((l, li) => `<div class="item-row"><input type="text" class="admin-input" placeholder="ข้อความ" value="${l.text}" onchange="updateGroupLink(${si},${gi},${li},'text',this.value)"><input type="text" class="admin-input" placeholder="URL" value="${l.url}" onchange="updateGroupLink(${si},${gi},${li},'url',this.value)"><button class="admin-btn-del" onclick="deleteGroupLink(${si},${gi},${li})"><i class="fas fa-trash"></i></button></div>`).join('')}</div>
+      <button class="admin-btn-add" onclick="addGroupLink(${si},${gi})"><i class="fas fa-plus"></i> เพิ่มลิงก์</button>
+    </div>`;
+        }
+
+        function renderSectionEditForm(s, i) {
+            switch (s.type) {
+                case 'about': return `<input type="text" class="admin-input" placeholder="หัวข้อ" value="${s.title}" onchange="updateSection(${i},'title',this.value)"><textarea class="admin-input" placeholder="เนื้อหา (รองรับ HTML)" rows="4" onchange="updateSection(${i},'text',this.value)">${s.text || ''}</textarea>`;
+                case 'tags': return `<input type="text" class="admin-input" placeholder="หัวข้อ" value="${s.title}" onchange="updateSection(${i},'title',this.value)"><div id="stags-${i}">${(s.tags || []).map((t, ti) => `<div class="item-row"><input type="text" class="admin-input" value="${t}" onchange="updateTag(${i},${ti},this.value)"><button class="admin-btn-del" onclick="deleteTag(${i},${ti})"><i class="fas fa-trash"></i></button></div>`).join('')}</div><button class="admin-btn-add" onclick="addTag(${i})"><i class="fas fa-plus"></i> เพิ่มแท็ก</button>`;
+                case 'price': return `<input type="text" class="admin-input" placeholder="หัวข้อ" value="${s.title}" onchange="updateSection(${i},'title',this.value)"><div id="sprice-${i}">${(s.priceCards || []).map((c, ci) => `<div class="item-row"><input type="text" class="admin-input" placeholder="ประเภท" value="${c.type}" onchange="updatePriceCard(${i},${ci},'type',this.value)"><input type="text" class="admin-input" placeholder="ราคา" value="${c.amount}" onchange="updatePriceCard(${i},${ci},'amount',this.value)"><input type="text" class="admin-input" placeholder="หน่วย" value="${c.unit}" onchange="updatePriceCard(${i},${ci},'unit',this.value)"><select class="admin-input" onchange="updatePriceCard(${i},${ci},'class',this.value)" style="width:100px;"><option value="purple"${c.class === 'purple' ? ' selected' : ''}>ม่วง</option><option value="pink"${c.class === 'pink' ? ' selected' : ''}>ชมพู</option><option value="gold"${c.class === 'gold' ? ' selected' : ''}>ทอง</option><option value="silver"${c.class === 'silver' ? ' selected' : ''}>เงิน</option><option value="blue"${c.class === 'blue' ? ' selected' : ''}>น้ำเงิน</option><option value="green"${c.class === 'green' ? ' selected' : ''}>เขียว</option></select><button class="admin-btn-del" onclick="deletePriceCard(${i},${ci})"><i class="fas fa-trash"></i></button></div>`).join('')}</div><button class="admin-btn-add" onclick="addPriceCard(${i})"><i class="fas fa-plus"></i> เพิ่ม</button><textarea class="admin-input" placeholder="หมายเหตุ" rows="2" onchange="updateSection(${i},'bulkNote',this.value)" style="margin-top:8px;">${s.bulkNote || ''}</textarea>`;
+                case 'dodont': return `<input type="text" class="admin-input" placeholder="หัวข้อ" value="${s.title}" onchange="updateSection(${i},'title',this.value)"><h4 style="color:#4cde80;font-size:0.85rem;margin:10px 0;">✅ รับทำ</h4><div id="sdo-${i}">${(s.doList || []).map((item, ii) => `<div class="item-row"><input type="text" class="admin-input" value="${item}" onchange="updateDoItem(${i},${ii},this.value)"><button class="admin-btn-del" onclick="deleteDoItem(${i},${ii})"><i class="fas fa-trash"></i></button></div>`).join('')}</div><button class="admin-btn-add" onclick="addDoItem(${i})"><i class="fas fa-plus"></i> เพิ่ม</button><h4 style="color:#ff6060;font-size:0.85rem;margin:10px 0;">❌ ไม่รับ</h4><div id="sdont-${i}">${(s.dontList || []).map((item, ii) => `<div class="item-row"><input type="text" class="admin-input" value="${item}" onchange="updateDontItem(${i},${ii},this.value)"><button class="admin-btn-del" onclick="deleteDontItem(${i},${ii})"><i class="fas fa-trash"></i></button></div>`).join('')}</div><button class="admin-btn-add" onclick="addDontItem(${i})"><i class="fas fa-plus"></i> เพิ่ม</button>`;
+                case 'steps': return `<input type="text" class="admin-input" placeholder="หัวข้อ" value="${s.title}" onchange="updateSection(${i},'title',this.value)"><div id="ssteps-${i}">${(s.steps || []).map((step, si) => `<div class="item-row"><input type="text" class="admin-input" value="${step}" onchange="updateStep(${i},${si},this.value)"><button class="admin-btn-del" onclick="deleteStep(${i},${si})"><i class="fas fa-trash"></i></button></div>`).join('')}</div><button class="admin-btn-add" onclick="addStep(${i})"><i class="fas fa-plus"></i> เพิ่มขั้นตอน</button>${s.timeline ? `<h4 style="font-size:0.85rem;margin:10px 0;color:var(--dark);">⏱ ระยะเวลา</h4><div class="item-row"><input type="text" class="admin-input" placeholder="วันเร็วสุด" value="${s.timeline.fast.day}" onchange="updateTimeline(${i},'fast','day',this.value)"><input type="text" class="admin-input" placeholder="ป้ายกำกับ" value="${s.timeline.fast.label}" onchange="updateTimeline(${i},'fast','label',this.value)"></div><div class="item-row"><input type="text" class="admin-input" placeholder="วันปกติ" value="${s.timeline.mid.day}" onchange="updateTimeline(${i},'mid','day',this.value)"><input type="text" class="admin-input" placeholder="ป้ายกำกับ" value="${s.timeline.mid.label}" onchange="updateTimeline(${i},'mid','label',this.value)"></div><div class="item-row"><input type="text" class="admin-input" placeholder="วันช้าสุด" value="${s.timeline.slow.day}" onchange="updateTimeline(${i},'slow','day',this.value)"><input type="text" class="admin-input" placeholder="ป้ายกำกับ" value="${s.timeline.slow.label}" onchange="updateTimeline(${i},'slow','label',this.value)"></div>` : ''}${s.payments ? `<h4 style="font-size:0.85rem;margin:10px 0;color:var(--dark);">💳 ช่องทางชำระเงิน</h4><div id="spay-${i}">${s.payments.map((p, pi) => `<div class="item-row"><input type="text" class="admin-input" value="${p}" onchange="updatePayment(${i},${pi},this.value)"><button class="admin-btn-del" onclick="deletePayment(${i},${pi})"><i class="fas fa-trash"></i></button></div>`).join('')}</div><button class="admin-btn-add" onclick="addPayment(${i})"><i class="fas fa-plus"></i> เพิ่ม</button>` : ''}`;
+                case 'portfolio': return `<input type="text" class="admin-input" placeholder="หัวข้อ" value="${s.title}" onchange="updateSection(${i},'title',this.value)"><div id="sport-${i}">${(s.items || []).map((item, ii) => `<div style="border:1px solid rgba(187,134,252,0.2);border-radius:10px;padding:12px;margin-bottom:8px;"><div class="item-row"><input type="text" class="admin-input" placeholder="URL รูป" value="${item.img || ''}" onchange="updatePortfolioItem(${i},${ii},'img',this.value)"><input type="text" class="admin-input" placeholder="ชื่อ" value="${item.label || ''}" onchange="updatePortfolioItem(${i},${ii},'label',this.value)"><input type="text" class="admin-input" placeholder="ลิงก์" value="${item.link || ''}" onchange="updatePortfolioItem(${i},${ii},'link',this.value)"><button class="admin-btn-del" onclick="deletePortfolioItem(${i},${ii})"><i class="fas fa-trash"></i></button></div></div>`).join('')}</div><button class="admin-btn-add" onclick="addPortfolioItem(${i})"><i class="fas fa-plus"></i> เพิ่มรูป</button><h4 style="font-size:0.85rem;margin:10px 0;color:var(--dark);">ปุ่มหลัก</h4><div class="item-row"><input type="text" class="admin-input" placeholder="ข้อความปุ่ม" value="${s.mainBtnText || ''}" onchange="updateSection(${i},'mainBtnText',this.value)"><input type="text" class="admin-input" placeholder="ลิงก์ปุ่ม" value="${s.mainBtnLink || ''}" onchange="updateSection(${i},'mainBtnLink',this.value)"></div>`;
+                case 'image': return `<input type="text" class="admin-input" placeholder="หัวข้อ" value="${s.title}" onchange="updateSection(${i},'title',this.value)"><input type="text" class="admin-input" placeholder="URL รูปภาพ" value="${s.imgUrl || ''}" onchange="updateSection(${i},'imgUrl',this.value)">`;
+                default: return '';
+            }
+        }
+
+        // ===================== BADGES ADMIN =====================
+        function renderBadgesAdmin() {
+            const d = loadData();
+            const bl = document.getElementById('badges-list'); if (!bl) return; bl.innerHTML = '';
+            (d.header.badges || []).forEach((b, i) => {
+                const div = document.createElement('div'); div.className = 'item-row';
+                div.innerHTML = `<input type="text" class="admin-input" value="${b}" onchange="updateBadge(${i},this.value)"><button class="admin-btn-del" onclick="deleteBadge(${i})"><i class="fas fa-trash"></i></button>`;
+                bl.appendChild(div);
+            });
+        }
+        function updateBadge(i, v) { const d = loadData(); d.header.badges[i] = v; saveData(d, false, false); }
+        function deleteBadge(i) { const d = loadData(); d.header.badges.splice(i, 1); saveData(d, true, true); renderBadgesAdmin(); }
+        function addBadge() { const d = loadData(); if (!d.header.badges) d.header.badges = []; d.header.badges.push('✨ Badge ใหม่'); saveData(d, true, true); renderBadgesAdmin(); }
+
+        // ===================== BG EMOJI ADMIN =====================
+        function renderBgEmojiAdmin() {
+            const d = loadData();
+            const bl = document.getElementById('bgemoji-list'); if (!bl) return; bl.innerHTML = '';
+            (d.bgEmojis || []).forEach((e, i) => {
+                const div = document.createElement('div'); div.className = 'admin-section';
+                div.style.padding = '12px'; div.style.marginBottom = '8px';
+                div.innerHTML = `<div class="item-row">
+          <input type="text" class="admin-input" placeholder="อิโมจิ" value="${e.emoji}" oninput="updateBgEmoji(${i},'emoji',this.value)" style="max-width:80px;">
+          <input type="text" class="admin-input" placeholder="left (เช่น 20%)" value="${e.left}" oninput="updateBgEmoji(${i},'left',this.value)" style="max-width:100px;">
+          <input type="number" class="admin-input" placeholder="delay (วินาที)" value="${e.delay}" oninput="updateBgEmoji(${i},'delay',parseFloat(this.value))" style="max-width:100px;">
+          <button class="admin-btn-del" onclick="deleteBgEmoji(${i})"><i class="fas fa-trash"></i></button>
+        </div>`;
+                bl.appendChild(div);
+            });
+        }
+        function updateBgEmoji(i, f, v) { const d = loadData(); if (!d.bgEmojis[i]) return; d.bgEmojis[i][f] = v; saveData(d, false, false); }
+        function deleteBgEmoji(i) { const d = loadData(); d.bgEmojis.splice(i, 1); saveData(d, true, true); renderBgEmojiAdmin(); }
+        function addBgEmoji() { const d = loadData(); if (!d.bgEmojis) d.bgEmojis = []; d.bgEmojis.push({ emoji: '⭐', left: '50%', delay: 0 }); saveData(d, true, true); renderBgEmojiAdmin(); }
+        function saveBgEmoji() { const d = loadData(); saveData(d, true, true); showToast('✅ บันทึก BG อิโมจิแล้ว'); }
+
+        // ===================== CONTACT ADMIN =====================
+        function renderContactAdmin() {
+            const d = loadData();
+            const list = document.getElementById('contact-btns-list'); list.innerHTML = '';
+            (d.contact.buttons || []).forEach((btn, i) => {
+                const st = getStyleById(btn.style);
+                const div = document.createElement('div'); div.className = 'contact-btn-card';
+                const chips = CONTACT_STYLES.map(s => `<span class="style-chip chip-${s.id} ${btn.style === s.id ? 'selected' : ''}" onclick="updateContactBtnStyle(${i},'${s.id}')">${s.label}</span>`).join('');
+                div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+          <span style="font-size:0.9rem;color:var(--dark);">ปุ่มที่ ${i + 1}</span>
+          <button class="admin-btn-del" onclick="deleteContactBtn(${i})"><i class="fas fa-trash"></i> ลบ</button>
+        </div>
+        <div class="contact-btn-preview ${st.cssClass}" id="cp-${i}">${btn.icon} ${btn.text}</div>
+        <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-bottom:8px;">สีปุ่ม:</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">${chips}</div>
+        <div class="item-row"><input type="text" class="admin-input" placeholder="ไอคอน" value="${btn.icon}" style="max-width:70px;" oninput="updateContactBtn(${i},'icon',this.value)"><input type="text" class="admin-input" placeholder="ข้อความ" value="${btn.text}" oninput="updateContactBtn(${i},'text',this.value)"></div>
+        <input type="text" class="admin-input" placeholder="ลิงก์ URL" value="${btn.link}" oninput="updateContactBtn(${i},'link',this.value)">`;
+                list.appendChild(div);
+            });
+            const note = document.getElementById('a-contact-note'); if (note) note.value = d.contact.note || '';
+        }
+        function updateContactBtn(i, f, v) { const d = loadData(); d.contact.buttons[i][f] = v; const st = getStyleById(d.contact.buttons[i].style); const p = document.getElementById('cp-' + i); if (p) { p.className = 'contact-btn-preview ' + st.cssClass; p.textContent = d.contact.buttons[i].icon + ' ' + d.contact.buttons[i].text; } saveData(d, false, false); }
+        function updateContactBtnStyle(i, sid) { const d = loadData(); d.contact.buttons[i].style = sid; saveData(d, false, false); renderContactAdmin(); }
+        function deleteContactBtn(i) { showModal({ icon: 'warning', title: 'ยืนยันลบ', html: 'ลบปุ่มนี้?', confirmText: 'ใช่', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => { if (r.isConfirmed) { const d = loadData(); d.contact.buttons.splice(i, 1); saveData(d, true, true); renderContactAdmin(); } }); }
+        function addContactBtn() { const d = loadData(); if (!d.contact.buttons) d.contact.buttons = []; d.contact.buttons.push({ icon: '📌', text: 'ปุ่มใหม่', link: '#', style: 'custom' }); saveData(d, true, true); renderContactAdmin(); }
+        function saveContact() { const d = loadData(); d.contact.note = document.getElementById('a-contact-note').value; saveData(d, true, true); }
+
+        // ===================== UPDATE FUNCTIONS =====================
+        function updateSectionHeader(i, hi) { const d = loadData(); d.sections[i].headerIndex = hi; saveData(d, true, true); renderAdminSections(); }
+        function updateSection(i, f, v) { const d = loadData(); d.sections[i][f] = v; saveData(d, true, true); }
+        function updateTag(si, ti, v) { const d = loadData(); d.sections[si].tags[ti] = v; saveData(d, false, false); }
+        function deleteTag(si, ti) { const d = loadData(); d.sections[si].tags.splice(ti, 1); saveData(d, true, true); renderAdminSections(); }
+        function addTag(si) { const d = loadData(); if (!d.sections[si].tags) d.sections[si].tags = []; d.sections[si].tags.push('แท็กใหม่'); saveData(d, true, true); renderAdminSections(); }
+        function updatePriceCard(si, ci, f, v) { const d = loadData(); d.sections[si].priceCards[ci][f] = v; saveData(d, false, false); }
+        function deletePriceCard(si, ci) { const d = loadData(); d.sections[si].priceCards.splice(ci, 1); saveData(d, true, true); renderAdminSections(); }
+        function addPriceCard(si) { const d = loadData(); if (!d.sections[si].priceCards) d.sections[si].priceCards = []; d.sections[si].priceCards.push({ type: 'ประเภทใหม่', amount: '0', unit: 'บาท', class: 'purple' }); saveData(d, true, true); renderAdminSections(); }
+        function updateDoItem(si, ii, v) { const d = loadData(); d.sections[si].doList[ii] = v; saveData(d, false, false); }
+        function deleteDoItem(si, ii) { const d = loadData(); d.sections[si].doList.splice(ii, 1); saveData(d, true, true); renderAdminSections(); }
+        function addDoItem(si) { const d = loadData(); if (!d.sections[si].doList) d.sections[si].doList = []; d.sections[si].doList.push('รายการใหม่'); saveData(d, true, true); renderAdminSections(); }
+        function updateDontItem(si, ii, v) { const d = loadData(); d.sections[si].dontList[ii] = v; saveData(d, false, false); }
+        function deleteDontItem(si, ii) { const d = loadData(); d.sections[si].dontList.splice(ii, 1); saveData(d, true, true); renderAdminSections(); }
+        function addDontItem(si) { const d = loadData(); if (!d.sections[si].dontList) d.sections[si].dontList = []; d.sections[si].dontList.push('รายการใหม่'); saveData(d, true, true); renderAdminSections(); }
+        function updateStep(si, stp, v) { const d = loadData(); d.sections[si].steps[stp] = v; saveData(d, false, false); }
+        function deleteStep(si, stp) { const d = loadData(); d.sections[si].steps.splice(stp, 1); saveData(d, true, true); renderAdminSections(); }
+        function addStep(si) { const d = loadData(); if (!d.sections[si].steps) d.sections[si].steps = []; d.sections[si].steps.push('ขั้นตอนใหม่'); saveData(d, true, true); renderAdminSections(); }
+        function updateTimeline(si, type, field, v) { const d = loadData(); d.sections[si].timeline[type][field] = v; saveData(d, false, false); }
+        function updatePayment(si, pi, v) { const d = loadData(); d.sections[si].payments[pi] = v; saveData(d, false, false); }
+        function deletePayment(si, pi) { const d = loadData(); d.sections[si].payments.splice(pi, 1); saveData(d, true, true); renderAdminSections(); }
+        function addPayment(si) { const d = loadData(); if (!d.sections[si].payments) d.sections[si].payments = []; d.sections[si].payments.push('ช่องทางใหม่'); saveData(d, true, true); renderAdminSections(); }
+        function updatePortfolioItem(si, ii, f, v) { const d = loadData(); d.sections[si].items[ii][f] = v; saveData(d, false, false); }
+        function deletePortfolioItem(si, ii) { const d = loadData(); d.sections[si].items.splice(ii, 1); saveData(d, true, true); renderAdminSections(); }
+        function addPortfolioItem(si) { const d = loadData(); if (!d.sections[si].items) d.sections[si].items = []; d.sections[si].items.push({ img: '', label: 'รูปใหม่', link: '#' }); saveData(d, true, true); renderAdminSections(); }
+        function updateGroupsHeader(i, f, v) { const d = loadData(); d.groupsHeaders[i][f] = v; saveData(d, false, false); }
+        function updateGroupSectionHeader(i, hi) { const d = loadData(); d.groupSections[i].headerIndex = parseInt(hi); saveData(d, true, true); }
+        function updateGroupSection(i, f, v) { const d = loadData(); d.groupSections[i][f] = v; saveData(d, false, false); }
+        function updateGroup(si, gi, f, v) { const d = loadData(); d.groupSections[si].groups[gi][f] = v; saveData(d, false, false); }
+        function updateGroupTag(si, gi, ti, v) { const d = loadData(); d.groupSections[si].groups[gi].tags[ti] = v; saveData(d, false, false); }
+        function deleteGroupTag(si, gi, ti) { const d = loadData(); d.groupSections[si].groups[gi].tags.splice(ti, 1); saveData(d, true, true); renderAdminSections(); }
+        function addGroupTag(si, gi) { const d = loadData(); if (!d.groupSections[si].groups[gi].tags) d.groupSections[si].groups[gi].tags = []; d.groupSections[si].groups[gi].tags.push('แท็ก'); saveData(d, true, true); renderAdminSections(); }
+        function updateGroupLink(si, gi, li, f, v) { const d = loadData(); d.groupSections[si].groups[gi].links[li][f] = v; saveData(d, false, false); }
+        function deleteGroupLink(si, gi, li) { const d = loadData(); d.groupSections[si].groups[gi].links.splice(li, 1); saveData(d, true, true); renderAdminSections(); }
+        function addGroupLink(si, gi) { const d = loadData(); if (!d.groupSections[si].groups[gi].links) d.groupSections[si].groups[gi].links = []; d.groupSections[si].groups[gi].links.push({ text: '🔗 ลิงก์', url: '#' }); saveData(d, true, true); renderAdminSections(); }
+        function updateAllGroupsSection(i, f, v) { const d = loadData(); d.allGroupsSections[i][f] = v; saveData(d, false, false); }
+
+        function deleteSection(i) { showModal({ icon: 'warning', title: 'ยืนยันลบ', html: 'ลบ section นี้?', confirmText: 'ใช่', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => { if (r.isConfirmed) { const d = loadData(); d.sections.splice(i, 1); saveData(d, true, true); renderAdminSections(); showToast('🗑️ ลบแล้ว'); } }); }
+        function addSection(type) {
+            const ns = {
+                about: { type: 'about', title: '🐻 เกี่ยวกับร้าน', text: 'ข้อความเกี่ยวกับร้าน', headerIndex: -1 },
+                tags: { type: 'tags', title: '🎨 แนวงาน', tags: ['แท็กใหม่'], headerIndex: -1 },
+                price: { type: 'price', title: '💰 ราคา', priceCards: [{ type: 'ประเภท 1', amount: '0', unit: 'บาท', class: 'purple' }], bulkNote: '', headerIndex: -1 },
+                dodont: { type: 'dodont', title: '📌 รับ/ไม่รับ', doList: ['รับทำ'], dontList: ['ไม่รับ'], headerIndex: -1 },
+                steps: { type: 'steps', title: '📋 วิธีสั่ง', steps: ['ขั้นตอนที่ 1'], timeline: { fast: { day: '1', label: 'วัน (เร็ว)' }, mid: { day: '3', label: 'วัน (ปกติ)' }, slow: { day: '7', label: 'วัน (ช้า)' } }, payments: ['ช่องทาง'], headerIndex: -1 },
+                portfolio: { type: 'portfolio', title: '🎨 Portfolio', items: [], mainBtnText: 'ดูเพิ่มเติม', mainBtnLink: '#', headerIndex: -1 },
+                image: { type: 'image', title: 'รูปภาพ', imgUrl: '', headerIndex: -1 }
+            };
+            const d = loadData(); d.sections.push(ns[type]); saveData(d, true, true); renderAdminSections();
+        }
+        function deleteGroupsHeader(i) { showModal({ icon: 'warning', title: 'ยืนยันลบ', html: 'ลบหัวข้อกลุ่มนี้?', confirmText: 'ใช่', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => { if (r.isConfirmed) { const d = loadData(); d.groupsHeaders.splice(i, 1); d.groupSections = d.groupSections.filter(gs => gs.headerIndex !== i).map(gs => { if (gs.headerIndex > i) gs.headerIndex--; return gs; }); d.sections = d.sections.map(s => { if (s.headerIndex === i) s.headerIndex = -1; else if (s.headerIndex > i) s.headerIndex--; return s; }); saveData(d, true, true); renderAdminSections(); } }); }
+        function addGroupsHeader() { const d = loadData(); d.groupsHeaders.push({ deco: '✦ ✦ ✦', title: 'หัวข้อใหม่', sub: 'คำอธิบาย', deco2: 'ข้อความท้าย' }); saveData(d, true, true); renderAdminSections(); }
+        function deleteGroupSection(i) { showModal({ icon: 'warning', title: 'ยืนยันลบ', html: 'ลบกลุ่มย่อยนี้?', confirmText: 'ใช่', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => { if (r.isConfirmed) { const d = loadData(); d.groupSections.splice(i, 1); saveData(d, true, true); renderAdminSections(); } }); }
+        function addGroupSection() { const d = loadData(); d.groupSections.push({ headerIndex: 0, title: 'กลุ่มย่อยใหม่', groups: [{ name: 'ชื่อกลุ่ม', img: '', price: '', tags: [], note: '', links: [{ text: '🔗 ลิงก์', url: '#' }] }] }); saveData(d, true, true); renderAdminSections(); }
+        function deleteGroup(si, gi) { const d = loadData(); d.groupSections[si].groups.splice(gi, 1); saveData(d, true, true); renderAdminSections(); }
+        function addGroup(si) { const d = loadData(); d.groupSections[si].groups.push({ name: 'กลุ่มใหม่', img: '', price: '', tags: [], note: '', links: [] }); saveData(d, true, true); renderAdminSections(); }
+        function deleteAllGroupsSection(i) { showModal({ icon: 'warning', title: 'ยืนยันลบ', html: 'ลบปุ่มนี้?', confirmText: 'ใช่', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => { if (r.isConfirmed) { const d = loadData(); d.allGroupsSections.splice(i, 1); saveData(d, true, true); renderAdminSections(); } }); }
+        function addAllGroupsSection() { const d = loadData(); d.allGroupsSections.push({ title: '🔍 ดูทั้งหมด', buttonText: '📋 ดูเพิ่มเติม', buttonLink: '#' }); saveData(d, true, true); renderAdminSections(); }
+
+        // ===================== SAVE HEADER / FOOTER =====================
+        function saveHeader() {
+            const d = loadData();
+            d.header.logoImg = document.getElementById('a-logo-img').value;
+            d.header.shopName = document.getElementById('a-shop-name').value;
+            d.header.shopDesc = document.getElementById('a-shop-desc').value;
+            d.header.statusText = document.getElementById('a-status-text').value;
+            d.header.queueText = document.getElementById('a-queue-text').value;
+            d.header.queueLink = document.getElementById('a-queue-link').value;
+            d.header.detailTitle = document.getElementById('a-detail-title').value;
+            d.header.detailImg = document.getElementById('a-detail-img').value;
+            saveData(d, true, true); showToast('✅ บันทึกส่วนหัวแล้ว');
+        }
+        function saveFooter() { const d = loadData(); d.footer.name = document.getElementById('a-footer-name').value; d.footer.text = document.getElementById('a-footer-text').value; saveData(d, true, true); showToast('✅ บันทึกส่วนท้ายแล้ว'); }
+
+        // ===================== ADMIN OPEN/CLOSE =====================
+        function getCreds() { try { return JSON.parse(localStorage.getItem(ADMIN_CREDS_KEY)) || { user: 'admin', pass: 'admin2026' }; } catch { return { user: 'admin', pass: 'admin2026' }; } }
+        function openAdmin() {
+            if (!isAdminLoggedIn) { document.getElementById('login-overlay').classList.add('show'); setTimeout(() => document.getElementById('login-user').focus(), 100); return; }
+            const d = loadData();
+            document.getElementById('a-logo-img').value = d.header.logoImg || '';
+            document.getElementById('a-shop-name').value = d.header.shopName || '';
+            document.getElementById('a-shop-desc').value = d.header.shopDesc || '';
+            document.getElementById('a-status-text').value = d.header.statusText || '';
+            document.getElementById('a-queue-text').value = d.header.queueText || '';
+            document.getElementById('a-queue-link').value = d.header.queueLink || '';
+            document.getElementById('a-detail-title').value = d.header.detailTitle || '';
+            document.getElementById('a-detail-img').value = d.header.detailImg || '';
+            document.getElementById('a-footer-name').value = d.footer.name || '';
+            document.getElementById('a-footer-text').value = d.footer.text || '';
+            const gs = getGsConfig();
+            document.getElementById('gs-webapp-url').value = gs.webAppUrl || '';
+            document.getElementById('gs-sheet-id').value = gs.sheetId || '';
+            document.getElementById('gs-api-key').value = gs.apiKey || '';
+            fillColorAdmin(loadColors());
+            renderAdminSections();
+            renderContactAdmin();
+            renderFontGrid();
+            document.getElementById('admin-overlay').classList.add('show');
+        }
+        function closeAdmin() { document.getElementById('admin-overlay').classList.remove('show'); }
+        function closeLogin() { document.getElementById('login-overlay').classList.remove('show'); document.getElementById('login-user').value = ''; document.getElementById('login-pass').value = ''; }
+        function doLogin() {
+            const u = document.getElementById('login-user').value.trim(), p = document.getElementById('login-pass').value.trim(), creds = getCreds();
+            if (u === creds.user && p === creds.pass) { closeLogin(); isAdminLoggedIn = true; openAdmin(); }
+            else { showModal({ icon: 'error', title: 'เข้าสู่ระบบล้มเหลว', html: 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง', confirmText: 'ตกลง' }); document.getElementById('login-pass').value = ''; }
+        }
+        function adminLogout() { isAdminLoggedIn = false; closeAdmin(); showToast('👋 ออกจากระบบแล้ว'); }
+
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            if (btn) btn.classList.add('active');
+            if (tabId === 'tab-font') renderFontGrid();
+            if (tabId === 'tab-contact') renderContactAdmin();
+            if (tabId === 'tab-colors') fillColorAdmin(loadColors());
+            if (tabId === 'tab-security') refreshSecurityTab();
+        }
+
+        // ===================== SECURITY — USERNAME / PASSWORD =====================
+        function refreshSecurityTab() {
+            const creds = getCreds();
+            const el = document.getElementById('current-username-display');
+            if (el) el.textContent = creds.user;
+            // clear all fields
+            ['new-username', 'confirm-pass-for-user', 'old-password', 'new-password', 'confirm-new-password'].forEach(id => {
+                const el = document.getElementById(id); if (el) el.value = '';
+            });
+            // reset strength bar
+            const bar = document.getElementById('pass-strength-bar');
+            const label = document.getElementById('pass-strength-label');
+            if (bar) { bar.style.width = '0%'; bar.style.background = ''; }
+            if (label) label.textContent = '';
+        }
+
+        function togglePassVis(inputId, iconId) {
+            const inp = document.getElementById(inputId);
+            const ico = document.getElementById(iconId);
+            if (!inp) return;
+            if (inp.type === 'password') { inp.type = 'text'; if (ico) { ico.classList.remove('fa-eye'); ico.classList.add('fa-eye-slash'); } }
+            else { inp.type = 'password'; if (ico) { ico.classList.remove('fa-eye-slash'); ico.classList.add('fa-eye'); } }
+        }
+
+        function checkPassStrength(val) {
+            const bar = document.getElementById('pass-strength-bar');
+            const label = document.getElementById('pass-strength-label');
+            if (!bar || !label) return;
+            if (!val) { bar.style.width = '0%'; label.textContent = ''; return; }
+            let score = 0;
+            if (val.length >= 6) score++;
+            if (val.length >= 10) score++;
+            if (/[A-Z]/.test(val)) score++;
+            if (/[0-9]/.test(val)) score++;
+            if (/[^A-Za-z0-9]/.test(val)) score++;
+            const levels = [
+                { pct: '20%', color: '#ff4444', text: 'อ่อนมาก' },
+                { pct: '40%', color: '#ff8800', text: 'อ่อน' },
+                { pct: '60%', color: '#ffcc00', text: 'ปานกลาง' },
+                { pct: '80%', color: '#88cc00', text: 'แข็งแรง' },
+                { pct: '100%', color: '#4cde80', text: 'แข็งแรงมาก' }
+            ];
+            const lv = levels[Math.min(score - 1, 4)] || levels[0];
+            bar.style.width = lv.pct;
+            bar.style.background = lv.color;
+            label.style.color = lv.color;
+            label.textContent = 'ความแข็งแรง: ' + lv.text;
+        }
+
+        function changeUsername() {
+            if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
+            const newUser = document.getElementById('new-username').value.trim();
+            const confirmPass = document.getElementById('confirm-pass-for-user').value.trim();
+            const creds = getCreds();
+
+            if (!newUser) { showToast('⚠️ กรุณากรอก Username ใหม่', 'warning'); return; }
+            if (newUser.length < 3) { showToast('⚠️ Username ต้องมีอย่างน้อย 3 ตัวอักษร', 'warning'); return; }
+            if (!confirmPass) { showToast('⚠️ กรุณายืนยัน Password ปัจจุบัน', 'warning'); return; }
+            if (confirmPass !== creds.pass) {
+                showModal({ icon: 'error', title: 'Password ไม่ถูกต้อง', html: 'Password ปัจจุบันที่กรอกไม่ถูกต้อง กรุณาลองใหม่', confirmText: 'ตกลง' });
+                document.getElementById('confirm-pass-for-user').value = ''; return;
+            }
+            if (newUser === creds.user) { showToast('⚠️ Username ใหม่ต้องไม่ซ้ำกับของเดิม', 'warning'); return; }
+
+            showModal({ icon: 'question', title: 'ยืนยันเปลี่ยน Username', html: `เปลี่ยนจาก <b style="color:var(--main);">${creds.user}</b> เป็น <b style="color:var(--accent);">${newUser}</b>?`, confirmText: 'ยืนยัน', cancelText: 'ยกเลิก' }).then(r => {
+                if (!r.isConfirmed) return;
+                localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({ user: newUser, pass: creds.pass }));
+                refreshSecurityTab();
+                showToast('✅ เปลี่ยน Username เรียบร้อย — กรุณา Login ใหม่อีกครั้ง', 'success', 3500);
+                setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000);
+            });
+        }
+
+        function changePassword() {
+            if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
+            const oldPass = document.getElementById('old-password').value;
+            const newPass = document.getElementById('new-password').value;
+            const confirmPass = document.getElementById('confirm-new-password').value;
+            const creds = getCreds();
+
+            if (!oldPass) { showToast('⚠️ กรุณากรอก Password ปัจจุบัน', 'warning'); return; }
+            if (oldPass !== creds.pass) {
+                showModal({ icon: 'error', title: 'Password ปัจจุบันไม่ถูกต้อง', html: 'กรุณาตรวจสอบ Password เดิมของคุณ', confirmText: 'ตกลง' });
+                document.getElementById('old-password').value = ''; return;
+            }
+            if (!newPass || newPass.length < 6) { showToast('⚠️ Password ใหม่ต้องมีอย่างน้อย 6 ตัวอักษร', 'warning'); return; }
+            if (newPass !== confirmPass) {
+                showModal({ icon: 'error', title: 'Password ไม่ตรงกัน', html: 'Password ใหม่และการยืนยัน Password ไม่ตรงกัน', confirmText: 'ตกลง' });
+                document.getElementById('confirm-new-password').value = ''; return;
+            }
+            if (newPass === oldPass) { showToast('⚠️ Password ใหม่ต้องไม่ซ้ำกับรหัสเดิม', 'warning'); return; }
+
+            showModal({ icon: 'question', title: 'ยืนยันเปลี่ยน Password', html: 'คุณต้องการเปลี่ยน Password ใหม่ใช่ไหม?<br><small style="color:rgba(255,255,255,0.5);">ระบบจะ Logout อัตโนมัติ เพื่อความปลอดภัย</small>', confirmText: 'ยืนยัน', cancelText: 'ยกเลิก' }).then(r => {
+                if (!r.isConfirmed) return;
+                localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({ user: creds.user, pass: newPass }));
+                showToast('🔐 เปลี่ยน Password เรียบร้อย — กรุณา Login ใหม่', 'success', 3500);
+                setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000);
+            });
+        }
+
+        function resetCreds() {
+            if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
+            showModal({ icon: 'warning', title: 'รีเซ็ตข้อมูล Admin?', html: 'จะรีเซ็ต Username และ Password กลับเป็น<br><b style="color:var(--main);">admin / fumiko2026</b><br><small style="color:rgba(255,255,255,0.4);">ระบบจะ Logout อัตโนมัติ</small>', confirmText: 'รีเซ็ต', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => {
+                if (!r.isConfirmed) return;
+                localStorage.removeItem(ADMIN_CREDS_KEY);
+                showToast('↩️ รีเซ็ตเรียบร้อย — กรุณา Login ใหม่', 'info', 3500);
+                setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000);
+            });
+        }
+
+        // ===================== EXPORT / IMPORT =====================
+        function exportData() { const d = loadData(); const blob = new Blob([JSON.stringify(d, null, 2)], { type: 'application/json' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = `fumiko-backup-${new Date().toISOString().slice(0, 10)}.json`; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); }
+        function importData(e) { const f = e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = ev => { try { const d = JSON.parse(ev.target.result); saveData(d, true, true); showToast('✅ นำเข้าข้อมูลสำเร็จ'); openAdmin(); } catch { showModal({ icon: 'error', title: 'ไฟล์ไม่ถูกต้อง', html: 'กรุณาเลือกไฟล์ JSON', confirmText: 'ตกลง' }); } }; r.readAsText(f); e.target.value = ''; }
+        function syncWithGoogleSheets() { showModal({ icon: 'question', title: 'Sync Google Sheets', html: 'เลือกทิศทาง', confirmText: '📤 อัปโหลด', cancelText: '📥 ดาวน์โหลด' }).then(r => { if (r.isConfirmed) saveToGoogleSheets(loadData()).then(() => showToast('✅ อัปโหลดแล้ว')); else if (r.dismiss === 'cancel') loadFromGoogleSheets(true); }); }
+
+        // ===================== SYNC HELPER =====================
+        function syncWithGoogleSheets() {
+            showModal({
+                icon: 'question', title: 'Sync Google Sheets', html: 'เลือกทิศทาง',
+                confirmText: '📤 อัปโหลด', cancelText: '📥 ดาวน์โหลด'
+            }).then(r => {
+                if (r.isConfirmed) saveToGoogleSheets(loadData()).then(() => showToast('✅ อัปโหลดแล้ว'));
+                else if (r.dismiss === 'cancel') loadFromGoogleSheets(true);
+            });
+        }
+
+        // ===================== INIT =====================
+        async function initApp() {
+            applyFont(selectedFont);
+            applyColors(loadColors());
+
+            const gsUrl = GS_WEBAPP_URL || (() => {
+                try { return JSON.parse(localStorage.getItem(GS_CONFIG_KEY) || '{}').webAppUrl || ''; } catch { return ''; }
+            })();
+
+            if (gsUrl) {
+                const ok = await loadFromGoogleSheets(false);
+                if (ok) console.log('✅ Loaded from Google Sheets');
+                else console.warn('⚠️ Using cached/default data');
+            }
+
+            renderSite();
+            document.getElementById('loading-overlay').classList.add('hidden');
+        }
+
+        // Event Listeners
+        document.getElementById('admin-fab').addEventListener('click', openAdmin);
+        document.getElementById('admin-fab').addEventListener('mouseenter', e => { e.currentTarget.style.transform = 'scale(1.1) rotate(90deg)'; });
+        document.getElementById('admin-fab').addEventListener('mouseleave', e => { e.currentTarget.style.transform = 'scale(1) rotate(0deg)'; });
+        document.getElementById('login-pass').addEventListener('keypress', e => { if (e.key === 'Enter') doLogin(); });
+        document.getElementById('admin-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeAdmin(); });
+        document.getElementById('login-overlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeLogin(); });
+
+        initApp();
+    </script>
+</body>
+
+</html>
