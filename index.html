@@ -11,9 +11,9 @@
         href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Sarabun:wght@300;400;500&family=Kanit:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&family=Charm:wght@400;700&family=Itim&family=Kodchasan:wght@300;400;500;600&family=Krub:wght@300;400;500;600&family=Mali:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&family=Noto+Serif+Thai:wght@300;400;500;600&family=Pridi:wght@300;400;500;600&family=Taviraj:wght@300;400;500;600&family=Trirong:wght@300;400;500;600&family=Srisakdi:wght@400;700&family=Bai+Jamjuree:wght@300;400;500;600&family=Chonburi&family=Athiti:wght@300;400;500;600&family=Fahkwang:wght@300;400;500;600&family=K2D:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         :root {
-            /* ===== สีหลัก ===== */
             --bg: #0B0B2A;
             --main: #BB86FC;
             --dark: #C084FC;
@@ -21,40 +21,26 @@
             --white: #FFFFFF;
             --glow: rgba(187, 134, 252, 0.5);
             --font-main: 'Mitr', sans-serif;
-
-            /* ===== การ์ด / Section ===== */
             --card-bg: rgba(25, 25, 70, 0.45);
             --card-border: var(--main);
             --card-shadow: rgba(187, 134, 252, 0.5);
             --section-title-color: var(--dark);
             --divider-color: var(--main);
-
-            /* ===== ข้อความ ===== */
             --text-body: rgba(255, 255, 255, 0.8);
             --text-muted: rgba(255, 255, 255, 0.5);
             --text-faint: rgba(255, 255, 255, 0.4);
-
-            /* ===== ชื่อร้าน / Header ===== */
             --shop-name-color: #FFFFFF;
             --status-dot-color: #7cfc00;
             --badge-border: var(--main);
             --badge-bg: rgba(255, 255, 255, 0.05);
-
-            /* ===== Tag แนวงาน ===== */
             --tag-bg: rgba(255, 255, 255, 0.05);
             --tag-border: var(--main);
             --tag-hover-bg: rgba(187, 134, 252, 0.2);
-
-            /* ===== Portfolio Card ===== */
             --port-card-bg: rgba(255, 255, 255, 0.05);
             --port-card-border: rgba(187, 134, 252, 0.3);
-
-            /* ===== Bulk Note (ราคา) ===== */
             --bulk-note-bg: rgba(187, 134, 252, 0.1);
             --bulk-note-border: rgba(187, 134, 252, 0.3);
             --bulk-note-text: rgba(255, 255, 255, 0.75);
-
-            /* ===== Do/Don't ===== */
             --do-bg: rgba(0, 200, 100, 0.08);
             --do-border: rgba(0, 200, 100, 0.3);
             --do-title: #4cde80;
@@ -62,8 +48,6 @@
             --dont-border: rgba(255, 80, 80, 0.3);
             --dont-title: #ff6060;
             --dodont-text: rgba(255, 255, 255, 0.75);
-
-            /* ===== Timeline ===== */
             --tl-fast-bg: rgba(0, 200, 100, 0.1);
             --tl-fast-border: rgba(0, 200, 100, 0.3);
             --tl-fast-num: #4cde80;
@@ -74,13 +58,9 @@
             --tl-slow-border: rgba(255, 113, 207, 0.3);
             --tl-slow-num: var(--accent);
             --tl-label: rgba(255, 255, 255, 0.6);
-
-            /* ===== Payment Chips ===== */
             --pay-chip-bg: rgba(255, 255, 255, 0.06);
             --pay-chip-border: rgba(187, 134, 252, 0.3);
             --pay-chip-text: rgba(255, 255, 255, 0.8);
-
-            /* ===== Group Items ===== */
             --group-item-bg: rgba(255, 255, 255, 0.04);
             --group-item-border: rgba(187, 134, 252, 0.25);
             --group-tag-bg: rgba(187, 134, 252, 0.12);
@@ -90,14 +70,10 @@
             --group-link-border: rgba(187, 134, 252, 0.35);
             --group-link-text: var(--main);
             --group-note-text: var(--dark);
-
-            /* ===== หัวข้อกลุ่ม ===== */
             --gh-deco-color: var(--main);
             --gh-title-color: var(--main);
             --gh-sub-color: rgba(255, 255, 255, 0.65);
             --gh-deco2-color: rgba(255, 255, 255, 0.4);
-
-            /* ===== Footer ===== */
             --footer-name-color: var(--main);
             --footer-text-color: rgba(255, 255, 255, 0.4);
         }
@@ -128,7 +104,6 @@
             z-index: 0;
         }
 
-        /* BG Emojis */
         .bg-emojis {
             position: fixed;
             top: 0;
@@ -157,7 +132,6 @@
             }
         }
 
-        /* Container */
         .container {
             max-width: 500px;
             width: 100%;
@@ -166,7 +140,6 @@
             z-index: 1;
         }
 
-        /* Header */
         .header-box {
             text-align: center;
             padding: 40px 15px 30px;
@@ -179,7 +152,6 @@
             margin-bottom: 10px;
         }
 
-        /* Logo */
         .logo-wrapper {
             position: relative;
             width: 160px;
@@ -240,7 +212,6 @@
             }
         }
 
-        /* Status badge */
         .status-badge {
             display: inline-flex;
             align-items: center;
@@ -276,7 +247,6 @@
             }
         }
 
-        /* Badge group */
         .badge-group {
             display: flex;
             flex-wrap: wrap;
@@ -293,7 +263,6 @@
             border: 1px solid var(--badge-border);
         }
 
-        /* Buttons */
         .btn {
             display: block;
             text-align: center;
@@ -331,7 +300,6 @@
             box-shadow: 0 8px 25px var(--glow);
         }
 
-        /* Section */
         .section {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
@@ -369,7 +337,6 @@
             margin-bottom: 18px;
         }
 
-        /* Grid */
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -401,7 +368,6 @@
             margin-bottom: 8px;
         }
 
-        /* About text */
         .about-text {
             font-size: 0.88rem;
             color: var(--text-body);
@@ -409,7 +375,6 @@
             font-weight: 300;
         }
 
-        /* Tags */
         .tag {
             background: var(--tag-bg);
             border: 1px solid var(--tag-border);
@@ -431,7 +396,6 @@
             gap: 8px;
         }
 
-        /* Price cards */
         .price-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -532,7 +496,6 @@
             color: var(--text-muted);
         }
 
-        /* Do/Don't */
         .do-dont-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -573,7 +536,6 @@
             margin-left: 14px;
         }
 
-        /* Steps */
         .step-row {
             display: flex;
             align-items: flex-start;
@@ -603,7 +565,6 @@
             padding-top: 5px;
         }
 
-        /* Timeline */
         .tl-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -655,7 +616,6 @@
             margin-top: 4px;
         }
 
-        /* Payment chips */
         .pay-chip {
             background: var(--pay-chip-bg);
             border: 1px solid var(--pay-chip-border);
@@ -668,7 +628,6 @@
             gap: 6px;
         }
 
-        /* Group items */
         .group-item {
             background: var(--group-item-bg);
             border: 1px solid var(--group-item-border);
@@ -757,7 +716,6 @@
             color: white;
         }
 
-        /* See all button */
         .see-all-btn {
             display: flex;
             align-items: center;
@@ -781,7 +739,6 @@
             box-shadow: 0 8px 25px var(--glow);
         }
 
-        /* Contact buttons */
         .contact-btns {
             display: grid;
             gap: 12px;
@@ -870,7 +827,6 @@
             box-shadow: 0 4px 15px var(--glow);
         }
 
-        /* Footer */
         .footer {
             text-align: center;
             padding: 30px 20px 20px;
@@ -890,7 +846,6 @@
             line-height: 1.8;
         }
 
-        /* Loading */
         #loading-overlay {
             position: fixed;
             inset: 0;
@@ -939,7 +894,6 @@
             }
         }
 
-        /* Toast */
         #toast {
             position: fixed;
             bottom: 100px;
@@ -988,7 +942,6 @@
             }
         }
 
-        /* Custom Modal */
         .cmodal-overlay {
             display: none;
             position: fixed;
@@ -1044,7 +997,6 @@
             color: white;
         }
 
-        /* Login Overlay */
         #login-overlay,
         #admin-overlay {
             display: none;
@@ -1064,7 +1016,6 @@
             justify-content: center;
         }
 
-        /* Login Box */
         .login-box {
             background: #12122e;
             border: 1.5px solid var(--main);
@@ -1075,7 +1026,6 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 40px var(--glow);
         }
 
-        /* Admin Panel */
         #admin-panel {
             background: #0d0d2b;
             border: 1.5px solid var(--main);
@@ -1089,7 +1039,6 @@
             box-shadow: 0 0 40px var(--glow);
         }
 
-        /* Admin inputs */
         .admin-input {
             width: 100%;
             padding: 10px 14px;
@@ -1118,7 +1067,6 @@
             resize: vertical;
         }
 
-        /* Admin buttons */
         .admin-btn-save {
             background: linear-gradient(45deg, var(--main), var(--accent));
             color: white;
@@ -1154,21 +1102,25 @@
         }
 
         .admin-btn-del {
-            background: rgba(255, 80, 80, 0.1);
+            background: linear-gradient(135deg, rgba(255, 80, 80, 0.15), rgba(200, 20, 20, 0.15));
+            border: 1.5px solid rgba(255, 80, 80, 0.4);
             color: #ff6060;
-            border: 1px solid rgba(255, 80, 80, 0.3);
-            padding: 6px 12px;
+            padding: 8px 18px;
             border-radius: 20px;
             font-family: var(--font-main);
+            font-size: 0.85rem;
             cursor: pointer;
-            font-size: 0.8rem;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .admin-btn-del:hover {
-            background: rgba(255, 80, 80, 0.2);
+            background: rgba(255, 80, 80, 0.25);
+            border-color: #ff6060;
         }
 
-        /* Admin sections */
         .admin-section {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(187, 134, 252, 0.15);
@@ -1186,7 +1138,6 @@
             gap: 8px;
         }
 
-        /* Tabs */
         .tab-btn {
             padding: 9px 18px;
             border: 1.5px solid rgba(187, 134, 252, 0.3);
@@ -1213,7 +1164,6 @@
             display: block;
         }
 
-        /* Item row */
         .item-row {
             display: flex;
             gap: 8px;
@@ -1227,7 +1177,6 @@
             flex: 1;
         }
 
-        /* Color inputs */
         .color-row {
             display: flex;
             gap: 8px;
@@ -1263,7 +1212,6 @@
             color: white;
         }
 
-        /* Contact button styles chips */
         .style-chip {
             padding: 5px 12px;
             border-radius: 20px;
@@ -1316,7 +1264,6 @@
             background: linear-gradient(45deg, #BB86FC, #FF71CF);
         }
 
-        /* Contact btn card */
         .contact-btn-card {
             border: 1.5px solid rgba(187, 134, 252, 0.2);
             border-radius: 14px;
@@ -1337,7 +1284,6 @@
             margin-bottom: 12px;
         }
 
-        /* Font options */
         .font-option {
             border: 2px solid rgba(187, 134, 252, 0.2);
             border-radius: 14px;
@@ -1358,7 +1304,6 @@
             box-shadow: 0 3px 12px var(--glow);
         }
 
-        /* History */
         .history-item {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(187, 134, 252, 0.2);
@@ -1379,7 +1324,6 @@
             transform: translateX(5px);
         }
 
-        /* GS status */
         .gs-ok {
             background: rgba(0, 200, 100, 0.15);
             color: #4cde80;
@@ -1413,7 +1357,6 @@
             gap: 6px;
         }
 
-        /* Info box */
         .info-box {
             background: rgba(187, 134, 252, 0.08);
             border: 1px solid rgba(187, 134, 252, 0.3);
@@ -1425,7 +1368,6 @@
             line-height: 1.7;
         }
 
-        /* Groups Header Title in main page */
         .groups-header-section {
             text-align: center;
             padding: 30px 20px 20px;
@@ -1476,27 +1418,6 @@
             }
         }
 
-        /* Admin del button */
-        .admin-btn-del {
-            background: linear-gradient(135deg, rgba(255, 80, 80, 0.15), rgba(200, 20, 20, 0.15));
-            border: 1.5px solid rgba(255, 80, 80, 0.4);
-            color: #ff6060;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-family: var(--font-main);
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .admin-btn-del:hover {
-            background: rgba(255, 80, 80, 0.25);
-            border-color: #ff6060;
-        }
-
         @media(max-width: 500px) {
             .do-dont-grid {
                 grid-template-columns: 1fr !important;
@@ -1519,8 +1440,6 @@
 </head>
 
 <body>
-
-    <!-- Loading -->
     <div id="loading-overlay">
         <div style="font-size:3rem;animation:float-anim 2s ease-in-out infinite;">✨</div>
         <div style="font-size:1rem;color:var(--dark);font-weight:300;">กำลังโหลด...</div>
@@ -1529,22 +1448,16 @@
         </div>
     </div>
 
-    <!-- BG Emojis (dynamic) -->
     <div class="bg-emojis" id="bg-emojis"></div>
-
-    <!-- Main Content -->
     <div class="container" id="main-content"></div>
 
-    <!-- Admin FAB -->
     <button id="admin-fab" title="Admin Panel"
         style="position:fixed;bottom:24px;right:24px;z-index:9999;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--main),var(--accent));border:none;color:white;font-size:22px;cursor:pointer;box-shadow:0 4px 20px var(--glow);display:flex;align-items:center;justify-content:center;transition:all 0.3s;">
         <i class="fas fa-cog"></i>
     </button>
 
-    <!-- Toast -->
     <div id="toast"></div>
 
-    <!-- Custom Modal -->
     <div id="cmodal" class="cmodal-overlay">
         <div class="cmodal-box">
             <div id="cmodal-icon" style="font-size:3rem;margin-bottom:14px;"></div>
@@ -1554,24 +1467,22 @@
         </div>
     </div>
 
-    <!-- Login -->
     <div id="login-overlay">
         <div class="login-box">
             <div style="text-align:center;margin-bottom:24px;">
                 <div style="font-size:2.5rem;margin-bottom:8px;">🔐</div>
-                <h2 style="color:var(--main);font-size:1.3rem;">Fumiko Admin</h2>
+                <h2 style="color:var(--main);font-size:1.3rem;">Admin</h2>
                 <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-top:4px;">กรุณาเข้าสู่ระบบ</p>
             </div>
             <input type="text" id="login-user" class="admin-input" placeholder="Username">
             <input type="password" id="login-pass" class="admin-input" placeholder="Password">
             <div style="display:flex;gap:10px;margin-top:8px;">
-                <button onclick="doLogin()" class="admin-btn-save" style="flex:1;">เข้าสู่ระบบ ✨</button>
+                <button onclick="doLogin()" class="admin-btn-save" style="flex:1;">เข้าสู่ระบบ</button>
                 <button onclick="closeLogin()" class="admin-btn-add" style="flex:1;">ยกเลิก</button>
             </div>
         </div>
     </div>
 
-    <!-- Admin Panel -->
     <div id="admin-overlay">
         <div id="admin-panel">
             <button onclick="closeAdmin()"
@@ -1587,7 +1498,6 @@
                         class="fas fa-sign-out-alt"></i> ออกจากระบบ</button>
             </div>
 
-            <!-- Export/Import/Sync -->
             <div style="display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap;">
                 <button onclick="exportData()" class="admin-btn-add"><i class="fas fa-download"></i> Export</button>
                 <button onclick="document.getElementById('import-file').click()" class="admin-btn-add"><i
@@ -1600,7 +1510,6 @@
             </div>
             <input type="file" id="import-file" accept=".json" style="display:none;" onchange="importData(event)">
 
-            <!-- Tabs -->
             <div
                 style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;border-bottom:1px solid rgba(187,134,252,0.2);padding-bottom:14px;">
                 <button class="tab-btn active" onclick="switchTab('tab-header',this)"><i class="fas fa-home"></i>
@@ -1670,7 +1579,6 @@
             <div id="tab-colors" class="tab-content">
                 <div class="info-box"><i class="fas fa-info-circle"></i> ปรับสีได้ทุกส่วน — คลิกกล่องสีหรือพิมพ์ HEX
                     แล้วกด <b>บันทึกสี</b></div>
-
                 <div class="admin-section">
                     <div class="admin-section-title">🎨 สีหลัก (Theme)</div>
                     <div class="color-row"><label>สีหลัก (--main)</label>
@@ -1695,6 +1603,51 @@
                         <div style="display:flex;gap:6px;align-items:center;"><input type="color" id="color-bg"
                                 class="color-swatch" onchange="syncColorText('bg',this.value)"><input type="text"
                                 id="color-bg-text" class="color-text" oninput="syncColorPicker('bg',this.value)"></div>
+                    </div>
+                </div>
+
+                <div class="admin-section">
+                    <div class="admin-section-title">🖼️ พื้นหลังแบบรูปภาพ</div>
+                    <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px;">
+                        <label style="display:flex;align-items:center;gap:8px;"><input type="radio" name="bg-type"
+                                id="bg-type-color" value="color" checked onchange="toggleBgType()"><span
+                                style="color:var(--white);">ใช้สีพื้นหลัง</span></label>
+                        <label style="display:flex;align-items:center;gap:8px;"><input type="radio" name="bg-type"
+                                id="bg-type-image" value="image" onchange="toggleBgType()"><span
+                                style="color:var(--white);">ใช้รูปภาพ</span></label>
+                    </div>
+                    <div id="bg-image-settings" style="display:none;">
+                        <input type="text" id="bg-image-url" class="admin-input" placeholder="URL รูปภาพพื้นหลัง"
+                            onchange="updateBgImage()">
+                        <div style="display:flex;gap:8px;margin-top:8px;">
+                            <select id="bg-image-size" class="admin-input" style="width:100px;"
+                                onchange="updateBgImage()">
+                                <option value="cover">cover</option>
+                                <option value="contain">contain</option>
+                                <option value="auto">auto</option>
+                            </select>
+                            <select id="bg-image-repeat" class="admin-input" style="width:100px;"
+                                onchange="updateBgImage()">
+                                <option value="no-repeat">no-repeat</option>
+                                <option value="repeat">repeat</option>
+                                <option value="repeat-x">repeat-x</option>
+                                <option value="repeat-y">repeat-y</option>
+                            </select>
+                            <select id="bg-image-position" class="admin-input" style="width:120px;"
+                                onchange="updateBgImage()">
+                                <option value="center">center</option>
+                                <option value="top">top</option>
+                                <option value="bottom">bottom</option>
+                                <option value="left">left</option>
+                                <option value="right">right</option>
+                            </select>
+                        </div>
+                        <div style="margin-top:10px;padding:10px;background:rgba(255,255,255,0.05);border-radius:10px;">
+                            <div style="font-size:0.82rem;color:var(--dark);margin-bottom:5px;">ตัวอย่าง:</div>
+                            <div id="bg-image-preview"
+                                style="width:100%;height:100px;border-radius:8px;border:1px solid var(--main);background-size:cover;background-position:center;">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -2005,11 +1958,8 @@
             <!-- Tab: Security -->
             <div id="tab-security" class="tab-content">
                 <div class="info-box"
-                    style="background:rgba(255,113,207,0.08);border-color:rgba(255,113,207,0.3);color:var(--accent);">
-                    <i class="fas fa-lock"></i> การเปลี่ยน Username / Password จะมีผลทันที — กรุณาจำไว้ให้ดี
-                </div>
-
-                <!-- Current credentials display -->
+                    style="background:rgba(255,113,207,0.08);border-color:rgba(255,113,207,0.3);color:var(--accent);"><i
+                        class="fas fa-lock"></i> การเปลี่ยน Username / Password จะมีผลทันที — กรุณาจำไว้ให้ดี</div>
                 <div class="admin-section" style="border-color:rgba(187,134,252,0.3);">
                     <div class="admin-section-title"><i class="fas fa-user-circle" style="color:var(--main);"></i>
                         ข้อมูลผู้ดูแลปัจจุบัน</div>
@@ -2036,8 +1986,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Change Username -->
                 <div class="admin-section">
                     <div class="admin-section-title"><i class="fas fa-user-edit" style="color:var(--main);"></i> เปลี่ยน
                         Username</div>
@@ -2049,43 +1997,34 @@
                     <label
                         style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">ยืนยันด้วย
                         Password ปัจจุบัน</label>
-                    <div style="position:relative;">
-                        <input type="password" id="confirm-pass-for-user" class="admin-input"
-                            placeholder="Password ปัจจุบัน" autocomplete="off" style="padding-right:44px;">
-                        <button onclick="togglePassVis('confirm-pass-for-user','eye-u')"
+                    <div style="position:relative;"><input type="password" id="confirm-pass-for-user"
+                            class="admin-input" placeholder="Password ปัจจุบัน" autocomplete="off"
+                            style="padding-right:44px;"><button onclick="togglePassVis('confirm-pass-for-user','eye-u')"
                             style="position:absolute;right:12px;top:50%;transform:translateY(-60%);background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:14px;"><i
-                                id="eye-u" class="fas fa-eye"></i></button>
-                    </div>
+                                id="eye-u" class="fas fa-eye"></i></button></div>
                     <button onclick="changeUsername()" class="admin-btn-save" style="margin-top:4px;"><i
                             class="fas fa-check"></i> บันทึก Username ใหม่</button>
                 </div>
-
-                <!-- Change Password -->
                 <div class="admin-section">
                     <div class="admin-section-title"><i class="fas fa-key" style="color:var(--main);"></i> เปลี่ยน
                         Password</div>
                     <label
                         style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">Password
                         ปัจจุบัน</label>
-                    <div style="position:relative;">
-                        <input type="password" id="old-password" class="admin-input" placeholder="Password เดิม"
-                            autocomplete="current-password" style="padding-right:44px;">
-                        <button onclick="togglePassVis('old-password','eye-old')"
+                    <div style="position:relative;"><input type="password" id="old-password" class="admin-input"
+                            placeholder="Password เดิม" autocomplete="current-password"
+                            style="padding-right:44px;"><button onclick="togglePassVis('old-password','eye-old')"
                             style="position:absolute;right:12px;top:50%;transform:translateY(-60%);background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:14px;"><i
-                                id="eye-old" class="fas fa-eye"></i></button>
-                    </div>
+                                id="eye-old" class="fas fa-eye"></i></button></div>
                     <label
                         style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">Password
                         ใหม่ (อย่างน้อย 6 ตัวอักษร)</label>
-                    <div style="position:relative;">
-                        <input type="password" id="new-password" class="admin-input" placeholder="Password ใหม่"
-                            autocomplete="new-password" style="padding-right:44px;"
-                            oninput="checkPassStrength(this.value)">
-                        <button onclick="togglePassVis('new-password','eye-new')"
+                    <div style="position:relative;"><input type="password" id="new-password" class="admin-input"
+                            placeholder="Password ใหม่" autocomplete="new-password" style="padding-right:44px;"
+                            oninput="checkPassStrength(this.value)"><button
+                            onclick="togglePassVis('new-password','eye-new')"
                             style="position:absolute;right:12px;top:50%;transform:translateY(-60%);background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:14px;"><i
-                                id="eye-new" class="fas fa-eye"></i></button>
-                    </div>
-                    <!-- Password strength bar -->
+                                id="eye-new" class="fas fa-eye"></i></button></div>
                     <div style="margin-bottom:10px;">
                         <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:4px;overflow:hidden;">
                             <div id="pass-strength-bar"
@@ -2096,18 +2035,15 @@
                     </div>
                     <label style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">ยืนยัน
                         Password ใหม่</label>
-                    <div style="position:relative;">
-                        <input type="password" id="confirm-new-password" class="admin-input"
-                            placeholder="ยืนยัน Password ใหม่" autocomplete="new-password" style="padding-right:44px;">
-                        <button onclick="togglePassVis('confirm-new-password','eye-cfm')"
+                    <div style="position:relative;"><input type="password" id="confirm-new-password" class="admin-input"
+                            placeholder="ยืนยัน Password ใหม่" autocomplete="new-password"
+                            style="padding-right:44px;"><button
+                            onclick="togglePassVis('confirm-new-password','eye-cfm')"
                             style="position:absolute;right:12px;top:50%;transform:translateY(-60%);background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:14px;"><i
-                                id="eye-cfm" class="fas fa-eye"></i></button>
-                    </div>
+                                id="eye-cfm" class="fas fa-eye"></i></button></div>
                     <button onclick="changePassword()" class="admin-btn-save" style="margin-top:4px;"><i
                             class="fas fa-shield-alt"></i> บันทึก Password ใหม่</button>
                 </div>
-
-                <!-- Danger zone: reset to default -->
                 <div class="admin-section" style="border-color:rgba(255,80,80,0.25);background:rgba(255,80,80,0.04);">
                     <div class="admin-section-title" style="color:#ff6060;"><i class="fas fa-exclamation-triangle"></i>
                         Danger Zone</div>
@@ -2123,52 +2059,29 @@
 
     <script>
         // ===================== CONFIG =====================
-        const GS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzR-oTGUx8iU1d_o8X_6ekDwFrlQmbD-gRQHBu9CdsOUGVtgXQbPVm3KWDYH_Rq5g/exec'; // ใส่ URL ของคุณ
+        const GS_WEBAPP_URL = '';
         const DATA_KEY = 'fumiko_data';
         const COLOR_KEY = 'fumiko_colors';
         const FONT_KEY = 'fumiko_font';
         const GS_CONFIG_KEY = 'fumiko_gs_config';
         const HISTORY_KEY = 'fumiko_history';
         const ADMIN_CREDS_KEY = 'fumiko_admin_creds';
+        const BG_IMAGE_KEY = 'fumiko_bg_image';
         let isAdminLoggedIn = false;
 
         // ===================== DEFAULT COLORS =====================
         const DEFAULT_COLORS = {
-            // Theme
             main: '#BB86FC', dark: '#C084FC', accent: '#FF71CF', bg: '#0B0B2A',
-            // Card
-            'card-border': '#BB86FC',
-            'section-title-color': '#C084FC',
-            'divider-color': '#BB86FC',
-            // Text
-            'shop-name-color': '#FFFFFF',
-            'status-dot-color': '#7cfc00',
-            'badge-border': '#BB86FC',
-            'tag-border': '#BB86FC',
-            // Do/Dont
-            'do-title': '#4cde80',
-            'dont-title': '#ff6060',
-            // Timeline
-            'tl-fast-num': '#4cde80',
-            'tl-mid-num': '#BB86FC',
-            'tl-slow-num': '#FF71CF',
-            // Group
-            'group-link-text': '#BB86FC',
-            'group-note-text': '#C084FC',
-            // Groups Header
-            'gh-deco-color': '#BB86FC',
-            'gh-title-color': '#BB86FC',
-            // Footer
-            'footer-name-color': '#BB86FC',
-            // RGBA values (stored as string)
-            'card-bg': 'rgba(25,25,70,0.45)',
-            'text-body': 'rgba(255,255,255,0.8)',
-            'text-muted': 'rgba(255,255,255,0.5)',
-            'gh-sub-color': 'rgba(255,255,255,0.65)',
-            'footer-text-color': 'rgba(255,255,255,0.4)',
+            'card-border': '#BB86FC', 'section-title-color': '#C084FC', 'divider-color': '#BB86FC',
+            'shop-name-color': '#FFFFFF', 'status-dot-color': '#7cfc00', 'badge-border': '#BB86FC', 'tag-border': '#BB86FC',
+            'do-title': '#4cde80', 'dont-title': '#ff6060',
+            'tl-fast-num': '#4cde80', 'tl-mid-num': '#BB86FC', 'tl-slow-num': '#FF71CF',
+            'group-link-text': '#BB86FC', 'group-note-text': '#C084FC',
+            'gh-deco-color': '#BB86FC', 'gh-title-color': '#BB86FC', 'footer-name-color': '#BB86FC',
+            'card-bg': 'rgba(25,25,70,0.45)', 'text-body': 'rgba(255,255,255,0.8)', 'text-muted': 'rgba(255,255,255,0.5)',
+            'gh-sub-color': 'rgba(255,255,255,0.65)', 'footer-text-color': 'rgba(255,255,255,0.4)',
         };
 
-        // HEX-only vars (can use color picker directly)
         const HEX_VARS = ['main', 'dark', 'accent', 'bg', 'card-border', 'section-title-color', 'divider-color',
             'shop-name-color', 'status-dot-color', 'badge-border', 'tag-border', 'do-title', 'dont-title',
             'tl-fast-num', 'tl-mid-num', 'tl-slow-num', 'group-link-text', 'group-note-text',
@@ -2184,7 +2097,6 @@
                 const val = c[k] || DEFAULT_COLORS[k];
                 R.setProperty('--' + k, val);
             });
-            // Special: glow derived from main
             const m = c.main || DEFAULT_COLORS.main;
             R.setProperty('--glow', hexToRgba(m.startsWith('#') ? m : DEFAULT_COLORS.main, 0.5));
             document.body.style.background = c.bg || DEFAULT_COLORS.bg;
@@ -2194,27 +2106,44 @@
             const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
             return `rgba(${r},${g},${b},${a})`;
         }
+
+        // ✅ บันทึกสี + sync ไป Sheets
         function saveColors() {
             const c = {};
             HEX_VARS.forEach(k => {
-                const el = document.getElementById('color-' + k + '-text') || document.getElementById('color-' + k + '-text');
+                const el = document.getElementById('color-' + k + '-text');
                 if (el) c[k] = el.value;
             });
-            // RGBA vars
             ['card-bg', 'text-body', 'text-muted', 'gh-sub-color', 'footer-text-color'].forEach(k => {
                 const el = document.getElementById('color-' + k + '-text');
                 if (el) c[k] = el.value;
             });
             localStorage.setItem(COLOR_KEY, JSON.stringify(c));
             applyColors(c);
+
+            // ✅ Sync สีไป Google Sheets
+            const d = loadData();
+            d._colors = c;
+            localStorage.setItem(DATA_KEY, JSON.stringify(d));
+            saveToGoogleSheets(d);
+
+            const config = getBgImageConfig();
+            if (config.type === 'color') applyBgImage();
             showToast('🎨 บันทึกสีทั้งหมดเรียบร้อย');
         }
+
         function resetColors() {
             localStorage.removeItem(COLOR_KEY);
             applyColors(DEFAULT_COLORS);
             fillColorAdmin(DEFAULT_COLORS);
+            // ✅ Sync reset ไป Sheets ด้วย
+            const d = loadData();
+            delete d._colors;
+            localStorage.setItem(DATA_KEY, JSON.stringify(d));
+            saveToGoogleSheets(d);
             showToast('↩️ รีเซ็ตสีเป็นค่าเริ่มต้นแล้ว');
         }
+
         function fillColorAdmin(c) {
             HEX_VARS.forEach(k => {
                 const picker = document.getElementById('color-' + k);
@@ -2223,13 +2152,12 @@
                 if (picker && val && val.startsWith('#')) picker.value = val;
                 if (text) text.value = val;
             });
-            // RGBA vars — only fill text, skip picker
             ['card-bg', 'text-body', 'text-muted', 'gh-sub-color', 'footer-text-color'].forEach(k => {
                 const text = document.getElementById('color-' + k + '-text');
                 if (text) text.value = c[k] || DEFAULT_COLORS[k];
             });
         }
-        // Sync hex picker → text input + apply live
+
         function syncColorText(k, v) {
             const el = document.getElementById('color-' + k + '-text');
             if (el) el.value = v;
@@ -2237,7 +2165,6 @@
             if (k === 'main') document.documentElement.style.setProperty('--glow', hexToRgba(v, 0.5));
             if (k === 'bg') document.body.style.background = v;
         }
-        // Sync text input → hex picker + apply live (HEX only)
         function syncColorPicker(k, v) {
             if (/^#[0-9A-Fa-f]{6}$/.test(v)) {
                 const el = document.getElementById('color-' + k);
@@ -2247,29 +2174,26 @@
                 if (k === 'bg') document.body.style.background = v;
             }
         }
-        // For RGBA vars: picker → convert hex to rgba-ish text display
         function syncColorTextRaw(k, v) {
             const el = document.getElementById('color-' + k + '-text');
             if (el) el.value = v;
             document.documentElement.style.setProperty('--' + k, v);
         }
-        // For RGBA vars: text input directly applies
-        function syncVarDirect(k, v) {
-            document.documentElement.style.setProperty('--' + k, v);
-        }
+        function syncVarDirect(k, v) { document.documentElement.style.setProperty('--' + k, v); }
 
         // ===================== FONTS =====================
         const THAI_FONTS = [
-            { name: 'Mitr', preview: 'สวัสดีครับ' }, { name: 'Sarabun', preview: 'สวัสดีครับ' }, { name: 'Kanit', preview: 'สวัสดีครับ' },
-            { name: 'Prompt', preview: 'สวัสดีครับ' }, { name: 'Charm', preview: 'สวัสดีครับ' }, { name: 'Itim', preview: 'สวัสดีครับ' },
-            { name: 'Kodchasan', preview: 'สวัสดีครับ' }, { name: 'Krub', preview: 'สวัสดีครับ' }, { name: 'Mali', preview: 'สวัสดีครับ' },
-            { name: 'Noto Sans Thai', preview: 'สวัสดีครับ' }, { name: 'Noto Serif Thai', preview: 'สวัสดีครับ' }, { name: 'Pridi', preview: 'สวัสดีครับ' },
-            { name: 'Taviraj', preview: 'สวัสดีครับ' }, { name: 'Trirong', preview: 'สวัสดีครับ' }, { name: 'Srisakdi', preview: 'สวัสดีครับ' },
-            { name: 'Bai Jamjuree', preview: 'สวัสดีครับ' }, { name: 'Chonburi', preview: 'สวัสดีครับ' }, { name: 'Athiti', preview: 'สวัสดีครับ' },
-            { name: 'Fahkwang', preview: 'สวัสดีครับ' }, { name: 'K2D', preview: 'สวัสดีครับ' }
+            { name: 'Mitr' }, { name: 'Sarabun' }, { name: 'Kanit' }, { name: 'Prompt' }, { name: 'Charm' }, { name: 'Itim' },
+            { name: 'Kodchasan' }, { name: 'Krub' }, { name: 'Mali' }, { name: 'Noto Sans Thai' }, { name: 'Noto Serif Thai' },
+            { name: 'Pridi' }, { name: 'Taviraj' }, { name: 'Trirong' }, { name: 'Srisakdi' }, { name: 'Bai Jamjuree' },
+            { name: 'Chonburi' }, { name: 'Athiti' }, { name: 'Fahkwang' }, { name: 'K2D' }
         ];
         let selectedFont = localStorage.getItem(FONT_KEY) || 'Mitr';
-        function applyFont(f) { document.documentElement.style.setProperty('--font-main', `'${f}',sans-serif`); document.body.style.fontFamily = `'${f}',sans-serif`; }
+
+        function applyFont(f) {
+            document.documentElement.style.setProperty('--font-main', `'${f}',sans-serif`);
+            document.body.style.fontFamily = `'${f}',sans-serif`;
+        }
         function renderFontGrid() {
             const c = document.getElementById('font-grid'); c.innerHTML = '';
             THAI_FONTS.forEach(font => {
@@ -2280,15 +2204,29 @@
                 c.appendChild(d);
             });
         }
-        function saveFont() { localStorage.setItem(FONT_KEY, selectedFont); applyFont(selectedFont); showToast('✅ บันทึกฟอนต์แล้ว'); }
+
+        // ✅ บันทึก font + sync ไป Sheets
+        function saveFont() {
+            localStorage.setItem(FONT_KEY, selectedFont);
+            applyFont(selectedFont);
+            const d = loadData();
+            d._font = selectedFont;
+            localStorage.setItem(DATA_KEY, JSON.stringify(d));
+            saveToGoogleSheets(d);
+            showToast('✅ บันทึกฟอนต์แล้ว');
+        }
 
         // ===================== CONTACT STYLES =====================
         const CONTACT_STYLES = [
-            { id: 'fb', label: 'Facebook', icon: '📘', cssClass: 'btn-fb' }, { id: 'line', label: 'Line', icon: '💬', cssClass: 'btn-line' },
-            { id: 'ig', label: 'Instagram', icon: '📸', cssClass: 'btn-ig' }, { id: 'tw', label: 'Twitter/X', icon: '🐦', cssClass: 'btn-tw' },
-            { id: 'tt', label: 'TikTok', icon: '🎵', cssClass: 'btn-tt' }, { id: 'yt', label: 'YouTube', icon: '▶️', cssClass: 'btn-yt' },
-            { id: 'discord', label: 'Discord', icon: '🎮', cssClass: 'btn-discord' }, { id: 'email', label: 'Email', icon: '📧', cssClass: 'btn-email' },
-            { id: 'custom', label: 'Custom', icon: '⭐', cssClass: 'btn-custom' }
+            { id: 'fb', label: 'Facebook', icon: '<i class="fab fa-facebook-f"></i>', cssClass: 'btn-fb' },
+            { id: 'line', label: 'Line', icon: '<i class="fab fa-line"></i>', cssClass: 'btn-line' },
+            { id: 'ig', label: 'Instagram', icon: '<i class="fab fa-instagram"></i>', cssClass: 'btn-ig' },
+            { id: 'tw', label: 'Twitter/X', icon: '<i class="fab fa-x-twitter"></i>', cssClass: 'btn-tw' },
+            { id: 'tt', label: 'TikTok', icon: '<i class="fab fa-tiktok"></i>', cssClass: 'btn-tt' },
+            { id: 'yt', label: 'YouTube', icon: '<i class="fab fa-youtube"></i>', cssClass: 'btn-yt' },
+            { id: 'discord', label: 'Discord', icon: '<i class="fab fa-discord"></i>', cssClass: 'btn-discord' },
+            { id: 'email', label: 'Email', icon: '<i class="fas fa-envelope"></i>', cssClass: 'btn-email' },
+            { id: 'custom', label: 'Custom', icon: '<i class="fas fa-star"></i>', cssClass: 'btn-custom' }
         ];
         function getStyleById(id) { return CONTACT_STYLES.find(s => s.id === id) || CONTACT_STYLES[CONTACT_STYLES.length - 1]; }
 
@@ -2302,10 +2240,10 @@
                 const actions = document.getElementById('cmodal-actions'); actions.innerHTML = '';
                 const cb = document.createElement('button');
                 cb.className = 'cmodal-btn ' + (dangerConfirm ? 'cmodal-btn-danger' : 'cmodal-btn-confirm');
-                cb.textContent = confirmText; cb.onclick = () => { closeModal(); resolve({ isConfirmed: true }) }; actions.appendChild(cb);
-                if (cancelText) { const cab = document.createElement('button'); cab.className = 'cmodal-btn cmodal-btn-cancel'; cab.textContent = cancelText; cab.onclick = () => { closeModal(); resolve({ isConfirmed: false, dismiss: 'cancel' }) }; actions.appendChild(cab); }
+                cb.textContent = confirmText; cb.onclick = () => { closeModal(); resolve({ isConfirmed: true }); }; actions.appendChild(cb);
+                if (cancelText) { const cab = document.createElement('button'); cab.className = 'cmodal-btn cmodal-btn-cancel'; cab.textContent = cancelText; cab.onclick = () => { closeModal(); resolve({ isConfirmed: false, dismiss: 'cancel' }); }; actions.appendChild(cab); }
                 document.getElementById('cmodal').classList.add('show');
-                if (timer) setTimeout(() => { closeModal(); resolve({ isConfirmed: false, dismiss: 'timer' }) }, timer);
+                if (timer) setTimeout(() => { closeModal(); resolve({ isConfirmed: false, dismiss: 'timer' }); }, timer);
             });
         }
         function closeModal() { document.getElementById('cmodal').classList.remove('show'); }
@@ -2346,6 +2284,7 @@
                 document.body.appendChild(s);
             });
         }
+
         async function loadFromGoogleSheets(showUI) {
             const cfg = getGsConfig(), url = cfg.webAppUrl;
             if (!url) {
@@ -2357,6 +2296,22 @@
                 const r = await fetchViaJsonp(url.replace(/\/$/, '') + '?action=getData', 10000);
                 if (r && r.status === 'success' && r.data) {
                     localStorage.setItem(DATA_KEY, JSON.stringify(r.data));
+
+                    // ✅ โหลด settings จาก Sheets มา apply เลย
+                    if (r.data._colors) {
+                        localStorage.setItem(COLOR_KEY, JSON.stringify(r.data._colors));
+                        applyColors(r.data._colors);
+                    }
+                    if (r.data._font) {
+                        localStorage.setItem(FONT_KEY, r.data._font);
+                        selectedFont = r.data._font;
+                        applyFont(r.data._font);
+                    }
+                    if (r.data._bgImage) {
+                        localStorage.setItem(BG_IMAGE_KEY, JSON.stringify(r.data._bgImage));
+                        applyBgImage();
+                    }
+
                     if (showUI) {
                         showToast('✅ โหลดข้อมูลสำเร็จ');
                         renderSite();
@@ -2370,6 +2325,7 @@
                 return false;
             }
         }
+
         async function saveToGoogleSheets(data) {
             const cfg = getGsConfig();
             if (!cfg.webAppUrl) return false;
@@ -2382,6 +2338,7 @@
                 return true;
             } catch { return false; }
         }
+
         async function testGsConnection() {
             const s = document.getElementById('gs-status');
             s.style.display = 'inline-flex'; s.className = 'gs-loading';
@@ -2401,32 +2358,26 @@
             return {
                 header: {
                     logoImg: 'https://img2.pic.in.th/pic/NEXO-SHOP-2-Photoroom.png',
-                    shopName: 'NEXO BIO V2',
-                    shopDesc: '###',
-                    statusText: 'สถานะของร้าน',
-                    badges: ['###'],
-                    queueText: 'เช็คคิวงาน ✨',
-                    queueLink: '#',
-                    detailTitle: 'ตัวอย่าง',
-                    detailImg: 'https://img2.pic.in.th/a359dd21-5107-4d71-8353-eab0b7fd25d0.jpg'
+                    shopName: 'NEXO BIO V2', shopDesc: '###', statusText: 'สถานะของร้าน',
+                    badges: ['###'], queueText: 'เช็คคิวงาน ✨', queueLink: '#',
+                    detailTitle: 'ตัวอย่าง', detailImg: 'https://img2.pic.in.th/a359dd21-5107-4d71-8353-eab0b7fd25d0.jpg'
                 },
                 bgEmojis: [
                     { emoji: '✨', left: '10%', delay: 0 }, { emoji: '🪐', left: '30%', delay: 4 },
                     { emoji: '💫', left: '55%', delay: 8 }, { emoji: '🧸', left: '75%', delay: 2 }, { emoji: '🌸', left: '90%', delay: 6 }
                 ],
-                sections: [
-                    {
-                        type: 'portfolio', title: 'ผลงานของร้าน', headerIndex: -1,
-                        items: [
-                            { img: 'https://img2.pic.in.th/a359dd21-5107-4d71-8353-eab0b7fd25d0.jpg', label: 'test1', link: '#' },
-                            { img: 'https://img2.pic.in.th/fdfdba13-2628-432a-bc03-477b8d2f5e63.jpg', label: 'test2', link: '#' }
-                        ],
-                        mainBtnText: 'สั่งงานคลิกเลย', mainBtnLink: '#'
-                    }
-                ],
+                sections: [{
+                    type: 'portfolio', title: 'ผลงานของร้าน', headerIndex: -1,
+                    items: [
+                        { img: 'https://img2.pic.in.th/a359dd21-5107-4d71-8353-eab0b7fd25d0.jpg', label: 'test1', link: '#' },
+                        { img: 'https://img2.pic.in.th/fdfdba13-2628-432a-bc03-477b8d2f5e63.jpg', label: 'test2', link: '#' }
+                    ],
+                    mainBtnText: 'สั่งงานคลิกเลย', mainBtnLink: '#'
+                }],
                 groupsHeaders: [{ deco: '✦ ✦ ✦', title: 'หัวข้อใหม่', sub: 'คำอธิบาย', deco2: 'ข้อความท้าย' }],
                 groupSections: [{
-                    headerIndex: 0, title: 'หัวข้อใหม่', groups: [
+                    headerIndex: 0, title: 'หัวข้อใหม่',
+                    groups: [
                         { name: 'test1', price: '', tags: ['Collab'], note: '', links: [{ text: '🔗 ดูรายละเอียด', url: '#' }], img: 'https://img2.pic.in.th/a359dd21-5107-4d71-8353-eab0b7fd25d0.jpg' },
                         { name: 'test2', price: '', tags: ['Collab'], note: '', links: [{ text: '🔗 ดูรายละเอียด', url: '#' }], img: 'https://img2.pic.in.th/fdfdba13-2628-432a-bc03-477b8d2f5e63.jpg' }
                     ]
@@ -2434,38 +2385,38 @@
                 allGroupsSections: [],
                 contact: {
                     buttons: [
-                        { icon: '📘', text: 'Facebook', link: '#', style: 'fb' },
-                        { icon: '💬', text: 'Line', link: '#', style: 'line' }
+                        { icon: '<i class="fab fa-facebook-f"></i>', text: 'Facebook', link: '#', style: 'fb' },
+                        { icon: '<i class="fab fa-line"></i>', text: 'Line', link: '#', style: 'line' }
                     ],
                     note: 'รายละเอียดเพิ่มเติมถ้ามี'
                 },
                 footer: { name: 'NEXO ✦', text: '' }
             };
         }
+
         function loadData() {
             try {
                 const r = localStorage.getItem(DATA_KEY);
                 if (!r) return getInitialData();
                 const p = JSON.parse(r), d = getInitialData();
-                // compat: ตรวจสอบ headerIndex
-                if (p.sections) p.sections = p.sections.map(s => ({
-                    ...s, headerIndex: s.headerIndex !== undefined ? s.headerIndex : -1
-                }));
+                if (p.sections) p.sections = p.sections.map(s => ({ ...s, headerIndex: s.headerIndex !== undefined ? s.headerIndex : -1 }));
                 return { ...d, ...p };
             } catch { return getInitialData(); }
         }
+
         async function saveData(data, notify, addHist) {
             if (notify === undefined) notify = true;
             if (addHist === undefined) addHist = true;
             try {
                 localStorage.setItem(DATA_KEY, JSON.stringify(data));
                 if (addHist) addToHistory(data);
-                saveToGoogleSheets(data); // fire-and-forget
+                saveToGoogleSheets(data);
                 if (notify) showToast('✅ บันทึกเรียบร้อย');
                 renderSite();
                 return true;
             } catch { return false; }
         }
+
         function addToHistory(data) {
             try {
                 const h = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
@@ -2474,6 +2425,7 @@
                 localStorage.setItem(HISTORY_KEY, JSON.stringify(h));
             } catch { }
         }
+
         function showHistory() {
             const history = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
             if (!history.length) { showModal({ icon: 'info', title: 'ไม่มีประวัติ', html: 'ยังไม่มีประวัติการบันทึก', confirmText: 'ตกลง' }); return; }
@@ -2485,9 +2437,107 @@
             html += '</div>';
             showModal({ icon: '', title: '📜 ประวัติการบันทึก', html, confirmText: 'ปิด' });
         }
+
         function restoreHistory(i) {
             const h = JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]');
             if (h[i]) { saveData(h[i].data, true, false); showToast('✅ กู้คืนสำเร็จ'); }
+        }
+
+        // ===================== BACKGROUND IMAGE =====================
+        function getBgImageConfig() {
+            try {
+                return JSON.parse(localStorage.getItem(BG_IMAGE_KEY)) || { type: 'color', url: '', size: 'cover', repeat: 'no-repeat', position: 'center' };
+            } catch {
+                return { type: 'color', url: '', size: 'cover', repeat: 'no-repeat', position: 'center' };
+            }
+        }
+
+        function applyBgImage() {
+            const config = getBgImageConfig();
+            const body = document.body;
+            if (config.type === 'image' && config.url) {
+                body.style.backgroundImage = `url('${config.url}')`;
+                body.style.backgroundSize = config.size;
+                body.style.backgroundRepeat = config.repeat;
+                body.style.backgroundPosition = config.position;
+                body.style.backgroundAttachment = 'fixed';
+                if (!document.getElementById('bg-overlay')) {
+                    const overlay = document.createElement('div');
+                    overlay.id = 'bg-overlay';
+                    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);pointer-events:none;z-index:0;';
+                    body.appendChild(overlay);
+                }
+            } else {
+                body.style.backgroundImage = '';
+                body.style.backgroundSize = '';
+                body.style.backgroundRepeat = '';
+                body.style.backgroundPosition = '';
+                const overlay = document.getElementById('bg-overlay');
+                if (overlay) overlay.remove();
+                const colors = loadColors();
+                body.style.background = colors.bg;
+            }
+        }
+
+        function toggleBgType() {
+            const typeImage = document.getElementById('bg-type-image');
+            const imageSettings = document.getElementById('bg-image-settings');
+            imageSettings.style.display = typeImage.checked ? 'block' : 'none';
+            const config = getBgImageConfig();
+            config.type = typeImage.checked ? 'image' : 'color';
+            localStorage.setItem(BG_IMAGE_KEY, JSON.stringify(config));
+            applyBgImage();
+
+            // ✅ Sync bg type ไป Sheets
+            const d = loadData();
+            d._bgImage = config;
+            localStorage.setItem(DATA_KEY, JSON.stringify(d));
+            saveToGoogleSheets(d);
+        }
+
+        function updateBgImage() {
+            const url = document.getElementById('bg-image-url').value.trim();
+            const size = document.getElementById('bg-image-size').value;
+            const repeat = document.getElementById('bg-image-repeat').value;
+            const position = document.getElementById('bg-image-position').value;
+            const config = { type: 'image', url, size, repeat, position };
+            localStorage.setItem(BG_IMAGE_KEY, JSON.stringify(config));
+            const preview = document.getElementById('bg-image-preview');
+            if (preview && url) {
+                preview.style.backgroundImage = `url('${url}')`;
+                preview.style.backgroundSize = size;
+                preview.style.backgroundRepeat = repeat;
+                preview.style.backgroundPosition = position;
+            }
+            applyBgImage();
+
+            // ✅ Sync bg image ไป Sheets
+            const d = loadData();
+            d._bgImage = config;
+            localStorage.setItem(DATA_KEY, JSON.stringify(d));
+            saveToGoogleSheets(d);
+        }
+
+        function loadBgImageSettings() {
+            const config = getBgImageConfig();
+            if (config.type === 'image') {
+                document.getElementById('bg-type-image').checked = true;
+                document.getElementById('bg-image-settings').style.display = 'block';
+            } else {
+                document.getElementById('bg-type-color').checked = true;
+                document.getElementById('bg-image-settings').style.display = 'none';
+            }
+            document.getElementById('bg-image-url').value = config.url || '';
+            document.getElementById('bg-image-size').value = config.size || 'cover';
+            document.getElementById('bg-image-repeat').value = config.repeat || 'no-repeat';
+            document.getElementById('bg-image-position').value = config.position || 'center';
+            const preview = document.getElementById('bg-image-preview');
+            if (preview && config.url) {
+                preview.style.backgroundImage = `url('${config.url}')`;
+                preview.style.backgroundSize = config.size;
+                preview.style.backgroundRepeat = config.repeat;
+                preview.style.backgroundPosition = config.position;
+            }
         }
 
         // ===================== RENDER SITE =====================
@@ -2503,31 +2553,47 @@
 
         function renderSite() {
             const data = loadData();
+
+            // ✅ โหลด _colors / _font / _bgImage จาก data (ที่ sync มาจาก Sheets)
+            if (data._colors) {
+                localStorage.setItem(COLOR_KEY, JSON.stringify(data._colors));
+                applyColors(data._colors);
+            }
+            if (data._font) {
+                localStorage.setItem(FONT_KEY, data._font);
+                selectedFont = data._font;
+                applyFont(data._font);
+            }
+            if (data._bgImage) {
+                localStorage.setItem(BG_IMAGE_KEY, JSON.stringify(data._bgImage));
+                applyBgImage();
+            }
+
             renderBgEmojis(data.bgEmojis);
             const c = document.getElementById('main-content');
             let html = '';
+
             // Header
             html += `<div class="header-box">
-      <div class="logo-wrapper"><div class="logo-glow"></div><div class="logo"><img src="${data.header.logoImg}" alt="${data.header.shopName}"></div></div>
-      <h1>${data.header.shopName}</h1>
-      <p style="white-space:pre-line;margin-top:10px;font-size:13px;color:var(--dark);opacity:0.9;">${data.header.shopDesc || ''}</p>
-      <span class="status-badge"><span class="status-dot"></span>${data.header.statusText}</span>
-      <div class="badge-group">${(data.header.badges || []).map(b => `<span class="badge">${b}</span>`).join('')}</div>
-      ${data.header.queueText ? `<a href="${data.header.queueLink || '#'}" target="_blank" class="btn btn-outline">${data.header.queueText}</a>` : ''}
-    </div>`;
-            // Detail section
+              <div class="logo-wrapper"><div class="logo-glow"></div><div class="logo"><img src="${data.header.logoImg}" alt="${data.header.shopName}"></div></div>
+              <h1>${data.header.shopName}</h1>
+              <p style="white-space:pre-line;margin-top:10px;font-size:13px;color:var(--dark);opacity:0.9;">${data.header.shopDesc || ''}</p>
+              <span class="status-badge"><span class="status-dot"></span>${data.header.statusText}</span>
+              <div class="badge-group">${(data.header.badges || []).map(b => `<span class="badge">${b}</span>`).join('')}</div>
+              ${data.header.queueText ? `<a href="${data.header.queueLink || '#'}" target="_blank" class="btn btn-outline">${data.header.queueText}</a>` : ''}
+            </div>`;
+
             if (data.header.detailImg) {
                 html += `<div class="section"><h2>${data.header.detailTitle || 'Detail'}</h2><div class="section-divider"></div><img src="${data.header.detailImg}" alt="Detail" style="width:100%;border-radius:15px;border:1px solid var(--main);"></div>`;
             }
-            // Sections (headerIndex === -1)
+
             data.sections.forEach(s => { if ((s.headerIndex || 0) === -1 || s.headerIndex === undefined) html += renderSection(s); });
-            // Groups Headers
+
             data.groupsHeaders.forEach((header, hi) => {
                 html += `<div class="groups-header-section"><div class="groups-header-deco">${header.deco}</div><div class="groups-header-title">${header.title}</div><div class="groups-header-sub">${header.sub}</div><div class="groups-header-deco2">${header.deco2}</div></div>`;
                 data.sections.forEach(s => { if (s.headerIndex === hi) html += renderSection(s); });
                 data.groupSections.filter(gs => gs.headerIndex === hi).forEach(gs => {
                     html += `<div class="section"><h2>${gs.title}</h2><div class="section-divider"></div>`;
-                    // Check if groups have images → use grid
                     const hasImg = (gs.groups || []).some(g => g.img);
                     if (hasImg) {
                         html += `<div class="grid">`;
@@ -2541,18 +2607,18 @@
                     html += `</div>`;
                 });
             });
-            // All Groups Sections
+
             data.allGroupsSections.forEach(s => {
                 html += `<div class="section"><h2>${s.title}</h2><div class="section-divider"></div><a href="${s.buttonLink}" target="_blank" class="see-all-btn">${s.buttonText}</a></div>`;
             });
-            // Contact
+
             const btns = data.contact.buttons || [];
             const colsClass = btns.length === 1 ? 'cols-1' : btns.length >= 3 ? 'cols-3' : 'cols-2';
             html += `<div class="section"><h2>💌 ติดต่อสั่งงาน</h2><div class="section-divider"></div>
-      <div class="contact-btns ${colsClass}">${btns.map(btn => { const st = getStyleById(btn.style); return `<a href="${btn.link}" target="_blank" class="contact-btn ${st.cssClass}">${btn.icon} ${btn.text}</a>`; }).join('')}</div>
-      ${data.contact.note ? `<div class="contact-note">${data.contact.note}</div>` : ''}
-    </div>`;
-            // Footer
+              <div class="contact-btns ${colsClass}">${btns.map(btn => { const st = getStyleById(btn.style); return `<a href="${btn.link}" target="_blank" class="contact-btn ${st.cssClass}">${btn.icon} ${btn.text}</a>`; }).join('')}</div>
+              ${data.contact.note ? `<div class="contact-note">${data.contact.note}</div>` : ''}
+            </div>`;
+
             html += `<div class="footer"><div class="shop-name">${data.footer.name}</div>${data.footer.text ? `<div class="footer-text">${data.footer.text}</div>` : ''}</div>`;
             c.innerHTML = html;
         }
@@ -2569,6 +2635,7 @@
                 default: return '';
             }
         }
+
         function renderGroupItem(g) {
             return `<div class="group-item"><div class="group-header"><div class="group-name">${g.name}</div>${g.price ? `<div class="group-price">${g.price} ฿</div>` : ''}</div><div class="group-tags">${(g.tags || []).map(t => `<span class="group-tag">${t}</span>`).join('')}</div>${g.note ? `<div class="group-note">${g.note}</div>` : ''}<div class="group-links">${(g.links || []).map(l => `<a href="${l.url}" target="_blank" class="group-link">${l.text}</a>`).join('')}</div></div>`;
         }
@@ -2580,88 +2647,87 @@
             d.groupsHeaders.forEach((h, i) => { o += `<option value="${i}"${hi === i ? ' selected' : ''}>🔰 ${h.title || 'กลุ่มที่' + (i + 1)}</option>`; });
             return o;
         }
+
         function renderAdminSections() {
             const data = loadData();
-            // Sections
             const sl = document.getElementById('sections-list'); sl.innerHTML = '';
             data.sections.forEach((s, i) => {
                 const hi = s.headerIndex != null ? s.headerIndex : -1;
                 const div = document.createElement('div'); div.className = 'admin-section';
                 div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
-          <div class="admin-section-title" style="margin:0;"><i class="fas fa-layer-group" style="color:var(--main);"></i> ${s.title || s.type}</div>
-          <button class="admin-btn-del" onclick="deleteSection(${i})"><i class="fas fa-trash"></i> ลบ</button>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;background:rgba(187,134,252,0.06);border:1px solid rgba(187,134,252,0.2);border-radius:10px;padding:10px 12px;margin-bottom:12px;">
-          <label style="font-size:0.82rem;color:var(--dark);white-space:nowrap;">แสดงใน:</label>
-          <select onchange="updateSectionHeader(${i},parseInt(this.value))" style="flex:1;padding:7px;border:1px solid rgba(187,134,252,0.3);border-radius:8px;font-family:var(--font-main);font-size:0.85rem;background:#1a1a3e;color:white;">${buildHeaderOptions(hi)}</select>
-        </div>
-        ${renderSectionEditForm(s, i)}`;
+                    <div class="admin-section-title" style="margin:0;"><i class="fas fa-layer-group" style="color:var(--main);"></i> ${s.title || s.type}</div>
+                    <button class="admin-btn-del" onclick="deleteSection(${i})"><i class="fas fa-trash"></i> ลบ</button>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;background:rgba(187,134,252,0.06);border:1px solid rgba(187,134,252,0.2);border-radius:10px;padding:10px 12px;margin-bottom:12px;">
+                    <label style="font-size:0.82rem;color:var(--dark);white-space:nowrap;">แสดงใน:</label>
+                    <select onchange="updateSectionHeader(${i},parseInt(this.value))" style="flex:1;padding:7px;border:1px solid rgba(187,134,252,0.3);border-radius:8px;font-family:var(--font-main);font-size:0.85rem;background:#1a1a3e;color:white;">${buildHeaderOptions(hi)}</select>
+                </div>
+                ${renderSectionEditForm(s, i)}`;
                 sl.appendChild(div);
             });
-            // Groups Headers
+
             const ghl = document.getElementById('groups-headers-list'); ghl.innerHTML = '';
             data.groupsHeaders.forEach((h, i) => {
                 const div = document.createElement('div'); div.className = 'admin-section';
                 div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-          <div class="admin-section-title" style="margin:0;">หัวข้อกลุ่มที่ ${i + 1}</div>
-          <button class="admin-btn-del" onclick="deleteGroupsHeader(${i})"><i class="fas fa-trash"></i> ลบ</button>
-        </div>
-        <input type="text" class="admin-input" placeholder="เครื่องหมาย deco" value="${h.deco}" onchange="updateGroupsHeader(${i},'deco',this.value)">
-        <input type="text" class="admin-input" placeholder="หัวข้อ" value="${h.title}" onchange="updateGroupsHeader(${i},'title',this.value)">
-        <input type="text" class="admin-input" placeholder="คำอธิบาย" value="${h.sub}" onchange="updateGroupsHeader(${i},'sub',this.value)">
-        <input type="text" class="admin-input" placeholder="ข้อความท้าย" value="${h.deco2}" onchange="updateGroupsHeader(${i},'deco2',this.value)">`;
+                    <div class="admin-section-title" style="margin:0;">หัวข้อกลุ่มที่ ${i + 1}</div>
+                    <button class="admin-btn-del" onclick="deleteGroupsHeader(${i})"><i class="fas fa-trash"></i> ลบ</button>
+                </div>
+                <input type="text" class="admin-input" placeholder="เครื่องหมาย deco" value="${h.deco}" onchange="updateGroupsHeader(${i},'deco',this.value)">
+                <input type="text" class="admin-input" placeholder="หัวข้อ" value="${h.title}" onchange="updateGroupsHeader(${i},'title',this.value)">
+                <input type="text" class="admin-input" placeholder="คำอธิบาย" value="${h.sub}" onchange="updateGroupsHeader(${i},'sub',this.value)">
+                <input type="text" class="admin-input" placeholder="ข้อความท้าย" value="${h.deco2}" onchange="updateGroupsHeader(${i},'deco2',this.value)">`;
                 ghl.appendChild(div);
             });
-            // Group Sections
+
             const gsl = document.getElementById('group-sections-list'); gsl.innerHTML = '';
             data.groupSections.forEach((gs, i) => {
                 const div = document.createElement('div'); div.className = 'admin-section';
                 let hOpts = '<option value="-1">ไม่มีหัวข้อ</option>';
                 data.groupsHeaders.forEach((h, hi) => { hOpts += `<option value="${hi}"${gs.headerIndex === hi ? ' selected' : ''}>${h.title}</option>`; });
                 div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-          <div class="admin-section-title" style="margin:0;">${gs.title}</div>
-          <button class="admin-btn-del" onclick="deleteGroupSection(${i})"><i class="fas fa-trash"></i> ลบ</button>
-        </div>
-        <select style="width:100%;padding:10px;border:1px solid rgba(187,134,252,0.3);border-radius:10px;margin-bottom:10px;font-family:var(--font-main);background:#1a1a3e;color:white;" onchange="updateGroupSectionHeader(${i},this.value)">${hOpts}</select>
-        <input type="text" class="admin-input" placeholder="ชื่อกลุ่มย่อย" value="${gs.title}" onchange="updateGroupSection(${i},'title',this.value)">
-        ${(gs.groups || []).map((g, gi) => renderGroupEditForm(g, i, gi)).join('')}
-        <button class="admin-btn-add" onclick="addGroup(${i})"><i class="fas fa-plus"></i> เพิ่มกลุ่ม</button>`;
+                    <div class="admin-section-title" style="margin:0;">${gs.title}</div>
+                    <button class="admin-btn-del" onclick="deleteGroupSection(${i})"><i class="fas fa-trash"></i> ลบ</button>
+                </div>
+                <select style="width:100%;padding:10px;border:1px solid rgba(187,134,252,0.3);border-radius:10px;margin-bottom:10px;font-family:var(--font-main);background:#1a1a3e;color:white;" onchange="updateGroupSectionHeader(${i},this.value)">${hOpts}</select>
+                <input type="text" class="admin-input" placeholder="ชื่อกลุ่มย่อย" value="${gs.title}" onchange="updateGroupSection(${i},'title',this.value)">
+                ${(gs.groups || []).map((g, gi) => renderGroupEditForm(g, i, gi)).join('')}
+                <button class="admin-btn-add" onclick="addGroup(${i})"><i class="fas fa-plus"></i> เพิ่มกลุ่ม</button>`;
                 gsl.appendChild(div);
             });
-            // All Groups
+
             const agl = document.getElementById('all-groups-list'); agl.innerHTML = '';
             data.allGroupsSections.forEach((s, i) => {
                 const div = document.createElement('div'); div.className = 'admin-section';
                 div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-          <div class="admin-section-title" style="margin:0;">ปุ่มดูทั้งหมด ${i + 1}</div>
-          <button class="admin-btn-del" onclick="deleteAllGroupsSection(${i})"><i class="fas fa-trash"></i> ลบ</button>
-        </div>
-        <input type="text" class="admin-input" placeholder="หัวข้อ" value="${s.title}" onchange="updateAllGroupsSection(${i},'title',this.value)">
-        <input type="text" class="admin-input" placeholder="ข้อความปุ่ม" value="${s.buttonText}" onchange="updateAllGroupsSection(${i},'buttonText',this.value)">
-        <input type="text" class="admin-input" placeholder="ลิงก์" value="${s.buttonLink}" onchange="updateAllGroupsSection(${i},'buttonLink',this.value)">`;
+                    <div class="admin-section-title" style="margin:0;">ปุ่มดูทั้งหมด ${i + 1}</div>
+                    <button class="admin-btn-del" onclick="deleteAllGroupsSection(${i})"><i class="fas fa-trash"></i> ลบ</button>
+                </div>
+                <input type="text" class="admin-input" placeholder="หัวข้อ" value="${s.title}" onchange="updateAllGroupsSection(${i},'title',this.value)">
+                <input type="text" class="admin-input" placeholder="ข้อความปุ่ม" value="${s.buttonText}" onchange="updateAllGroupsSection(${i},'buttonText',this.value)">
+                <input type="text" class="admin-input" placeholder="ลิงก์" value="${s.buttonLink}" onchange="updateAllGroupsSection(${i},'buttonLink',this.value)">`;
                 agl.appendChild(div);
             });
-            // Render badges admin
+
             renderBadgesAdmin();
-            // Render bg emoji admin
             renderBgEmojiAdmin();
         }
 
         function renderGroupEditForm(g, si, gi) {
             return `<div style="border:1px solid rgba(187,134,252,0.2);border-radius:12px;padding:14px;margin-bottom:10px;background:rgba(255,255,255,0.02);">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <span style="font-size:0.85rem;color:var(--dark);">กลุ่มที่ ${gi + 1}</span>
-        <button class="admin-btn-del" onclick="deleteGroup(${si},${gi})"><i class="fas fa-trash"></i> ลบ</button>
-      </div>
-      <input type="text" class="admin-input" placeholder="รูปภาพ URL (ถ้ามี)" value="${g.img || ''}" onchange="updateGroup(${si},${gi},'img',this.value)">
-      <input type="text" class="admin-input" placeholder="ชื่อกลุ่ม" value="${g.name || ''}" onchange="updateGroup(${si},${gi},'name',this.value)">
-      <input type="text" class="admin-input" placeholder="ราคา" value="${g.price || ''}" onchange="updateGroup(${si},${gi},'price',this.value)">
-      <div id="gtags-${si}-${gi}">${(g.tags || []).map((t, ti) => `<div class="item-row"><input type="text" class="admin-input" value="${t}" onchange="updateGroupTag(${si},${gi},${ti},this.value)"><button class="admin-btn-del" onclick="deleteGroupTag(${si},${gi},${ti})"><i class="fas fa-trash"></i></button></div>`).join('')}</div>
-      <button class="admin-btn-add" onclick="addGroupTag(${si},${gi})" style="margin-bottom:8px;"><i class="fas fa-plus"></i> เพิ่มแท็ก</button>
-      <input type="text" class="admin-input" placeholder="หมายเหตุ" value="${g.note || ''}" onchange="updateGroup(${si},${gi},'note',this.value)">
-      <div id="glinks-${si}-${gi}">${(g.links || []).map((l, li) => `<div class="item-row"><input type="text" class="admin-input" placeholder="ข้อความ" value="${l.text}" onchange="updateGroupLink(${si},${gi},${li},'text',this.value)"><input type="text" class="admin-input" placeholder="URL" value="${l.url}" onchange="updateGroupLink(${si},${gi},${li},'url',this.value)"><button class="admin-btn-del" onclick="deleteGroupLink(${si},${gi},${li})"><i class="fas fa-trash"></i></button></div>`).join('')}</div>
-      <button class="admin-btn-add" onclick="addGroupLink(${si},${gi})"><i class="fas fa-plus"></i> เพิ่มลิงก์</button>
-    </div>`;
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                <span style="font-size:0.85rem;color:var(--dark);">กลุ่มที่ ${gi + 1}</span>
+                <button class="admin-btn-del" onclick="deleteGroup(${si},${gi})"><i class="fas fa-trash"></i> ลบ</button>
+              </div>
+              <input type="text" class="admin-input" placeholder="รูปภาพ URL (ถ้ามี)" value="${g.img || ''}" onchange="updateGroup(${si},${gi},'img',this.value)">
+              <input type="text" class="admin-input" placeholder="ชื่อกลุ่ม" value="${g.name || ''}" onchange="updateGroup(${si},${gi},'name',this.value)">
+              <input type="text" class="admin-input" placeholder="ราคา" value="${g.price || ''}" onchange="updateGroup(${si},${gi},'price',this.value)">
+              <div id="gtags-${si}-${gi}">${(g.tags || []).map((t, ti) => `<div class="item-row"><input type="text" class="admin-input" value="${t}" onchange="updateGroupTag(${si},${gi},${ti},this.value)"><button class="admin-btn-del" onclick="deleteGroupTag(${si},${gi},${ti})"><i class="fas fa-trash"></i></button></div>`).join('')}</div>
+              <button class="admin-btn-add" onclick="addGroupTag(${si},${gi})" style="margin-bottom:8px;"><i class="fas fa-plus"></i> เพิ่มแท็ก</button>
+              <input type="text" class="admin-input" placeholder="หมายเหตุ" value="${g.note || ''}" onchange="updateGroup(${si},${gi},'note',this.value)">
+              <div id="glinks-${si}-${gi}">${(g.links || []).map((l, li) => `<div class="item-row"><input type="text" class="admin-input" placeholder="ข้อความ" value="${l.text}" onchange="updateGroupLink(${si},${gi},${li},'text',this.value)"><input type="text" class="admin-input" placeholder="URL" value="${l.url}" onchange="updateGroupLink(${si},${gi},${li},'url',this.value)"><button class="admin-btn-del" onclick="deleteGroupLink(${si},${gi},${li})"><i class="fas fa-trash"></i></button></div>`).join('')}</div>
+              <button class="admin-btn-add" onclick="addGroupLink(${si},${gi})"><i class="fas fa-plus"></i> เพิ่มลิงก์</button>
+            </div>`;
         }
 
         function renderSectionEditForm(s, i) {
@@ -2699,11 +2765,11 @@
                 const div = document.createElement('div'); div.className = 'admin-section';
                 div.style.padding = '12px'; div.style.marginBottom = '8px';
                 div.innerHTML = `<div class="item-row">
-          <input type="text" class="admin-input" placeholder="อิโมจิ" value="${e.emoji}" oninput="updateBgEmoji(${i},'emoji',this.value)" style="max-width:80px;">
-          <input type="text" class="admin-input" placeholder="left (เช่น 20%)" value="${e.left}" oninput="updateBgEmoji(${i},'left',this.value)" style="max-width:100px;">
-          <input type="number" class="admin-input" placeholder="delay (วินาที)" value="${e.delay}" oninput="updateBgEmoji(${i},'delay',parseFloat(this.value))" style="max-width:100px;">
-          <button class="admin-btn-del" onclick="deleteBgEmoji(${i})"><i class="fas fa-trash"></i></button>
-        </div>`;
+                    <input type="text" class="admin-input" placeholder="อิโมจิ" value="${e.emoji}" oninput="updateBgEmoji(${i},'emoji',this.value)" style="max-width:80px;">
+                    <input type="text" class="admin-input" placeholder="left (เช่น 20%)" value="${e.left}" oninput="updateBgEmoji(${i},'left',this.value)" style="max-width:100px;">
+                    <input type="number" class="admin-input" placeholder="delay" value="${e.delay}" oninput="updateBgEmoji(${i},'delay',parseFloat(this.value))" style="max-width:100px;">
+                    <button class="admin-btn-del" onclick="deleteBgEmoji(${i})"><i class="fas fa-trash"></i></button>
+                </div>`;
                 bl.appendChild(div);
             });
         }
@@ -2721,22 +2787,22 @@
                 const div = document.createElement('div'); div.className = 'contact-btn-card';
                 const chips = CONTACT_STYLES.map(s => `<span class="style-chip chip-${s.id} ${btn.style === s.id ? 'selected' : ''}" onclick="updateContactBtnStyle(${i},'${s.id}')">${s.label}</span>`).join('');
                 div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-          <span style="font-size:0.9rem;color:var(--dark);">ปุ่มที่ ${i + 1}</span>
-          <button class="admin-btn-del" onclick="deleteContactBtn(${i})"><i class="fas fa-trash"></i> ลบ</button>
-        </div>
-        <div class="contact-btn-preview ${st.cssClass}" id="cp-${i}">${btn.icon} ${btn.text}</div>
-        <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-bottom:8px;">สีปุ่ม:</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">${chips}</div>
-        <div class="item-row"><input type="text" class="admin-input" placeholder="ไอคอน" value="${btn.icon}" style="max-width:70px;" oninput="updateContactBtn(${i},'icon',this.value)"><input type="text" class="admin-input" placeholder="ข้อความ" value="${btn.text}" oninput="updateContactBtn(${i},'text',this.value)"></div>
-        <input type="text" class="admin-input" placeholder="ลิงก์ URL" value="${btn.link}" oninput="updateContactBtn(${i},'link',this.value)">`;
+                    <span style="font-size:0.9rem;color:var(--dark);">ปุ่มที่ ${i + 1}</span>
+                    <button class="admin-btn-del" onclick="deleteContactBtn(${i})"><i class="fas fa-trash"></i> ลบ</button>
+                </div>
+                <div class="contact-btn-preview ${st.cssClass}" id="cp-${i}">${btn.icon} ${btn.text}</div>
+                <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-bottom:8px;">สีปุ่ม:</p>
+                <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">${chips}</div>
+                <div class="item-row"><input type="text" class="admin-input" placeholder="ไอคอน HTML" value='${btn.icon}' style="max-width:70px;" oninput="updateContactBtn(${i},'icon',this.value)"><input type="text" class="admin-input" placeholder="ข้อความ" value="${btn.text}" oninput="updateContactBtn(${i},'text',this.value)"></div>
+                <input type="text" class="admin-input" placeholder="ลิงก์ URL" value="${btn.link}" oninput="updateContactBtn(${i},'link',this.value)">`;
                 list.appendChild(div);
             });
             const note = document.getElementById('a-contact-note'); if (note) note.value = d.contact.note || '';
         }
-        function updateContactBtn(i, f, v) { const d = loadData(); d.contact.buttons[i][f] = v; const st = getStyleById(d.contact.buttons[i].style); const p = document.getElementById('cp-' + i); if (p) { p.className = 'contact-btn-preview ' + st.cssClass; p.textContent = d.contact.buttons[i].icon + ' ' + d.contact.buttons[i].text; } saveData(d, false, false); }
+        function updateContactBtn(i, f, v) { const d = loadData(); d.contact.buttons[i][f] = v; const st = getStyleById(d.contact.buttons[i].style); const p = document.getElementById('cp-' + i); if (p) { p.className = 'contact-btn-preview ' + st.cssClass; p.innerHTML = d.contact.buttons[i].icon + ' ' + d.contact.buttons[i].text; } saveData(d, false, false); }
         function updateContactBtnStyle(i, sid) { const d = loadData(); d.contact.buttons[i].style = sid; saveData(d, false, false); renderContactAdmin(); }
         function deleteContactBtn(i) { showModal({ icon: 'warning', title: 'ยืนยันลบ', html: 'ลบปุ่มนี้?', confirmText: 'ใช่', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => { if (r.isConfirmed) { const d = loadData(); d.contact.buttons.splice(i, 1); saveData(d, true, true); renderContactAdmin(); } }); }
-        function addContactBtn() { const d = loadData(); if (!d.contact.buttons) d.contact.buttons = []; d.contact.buttons.push({ icon: '📌', text: 'ปุ่มใหม่', link: '#', style: 'custom' }); saveData(d, true, true); renderContactAdmin(); }
+        function addContactBtn() { const d = loadData(); if (!d.contact.buttons) d.contact.buttons = []; d.contact.buttons.push({ icon: '<i class="fas fa-star"></i>', text: 'ปุ่มใหม่', link: '#', style: 'custom' }); saveData(d, true, true); renderContactAdmin(); }
         function saveContact() { const d = loadData(); d.contact.note = document.getElementById('a-contact-note').value; saveData(d, true, true); }
 
         // ===================== UPDATE FUNCTIONS =====================
@@ -2814,9 +2880,14 @@
         function saveFooter() { const d = loadData(); d.footer.name = document.getElementById('a-footer-name').value; d.footer.text = document.getElementById('a-footer-text').value; saveData(d, true, true); showToast('✅ บันทึกส่วนท้ายแล้ว'); }
 
         // ===================== ADMIN OPEN/CLOSE =====================
-        function getCreds() { try { return JSON.parse(localStorage.getItem(ADMIN_CREDS_KEY)) || { user: 'admin', pass: 'admin' }; } catch { return { user: 'admin', pass: 'admin' }; } }
+        function getCreds() { try { return JSON.parse(localStorage.getItem(ADMIN_CREDS_KEY)) || { user: 'admin', pass: 'admin2026' }; } catch { return { user: 'admin', pass: 'admin2026' }; } }
+
         function openAdmin() {
-            if (!isAdminLoggedIn) { document.getElementById('login-overlay').classList.add('show'); setTimeout(() => document.getElementById('login-user').focus(), 100); return; }
+            if (!isAdminLoggedIn) {
+                document.getElementById('login-overlay').classList.add('show');
+                setTimeout(() => document.getElementById('login-user').focus(), 100);
+                return;
+            }
             const d = loadData();
             document.getElementById('a-logo-img').value = d.header.logoImg || '';
             document.getElementById('a-shop-name').value = d.header.shopName || '';
@@ -2833,13 +2904,16 @@
             document.getElementById('gs-sheet-id').value = gs.sheetId || '';
             document.getElementById('gs-api-key').value = gs.apiKey || '';
             fillColorAdmin(loadColors());
+            loadBgImageSettings();
             renderAdminSections();
             renderContactAdmin();
             renderFontGrid();
             document.getElementById('admin-overlay').classList.add('show');
         }
+
         function closeAdmin() { document.getElementById('admin-overlay').classList.remove('show'); }
         function closeLogin() { document.getElementById('login-overlay').classList.remove('show'); document.getElementById('login-user').value = ''; document.getElementById('login-pass').value = ''; }
+
         function doLogin() {
             const u = document.getElementById('login-user').value.trim(), p = document.getElementById('login-pass').value.trim(), creds = getCreds();
             if (u === creds.user && p === creds.pass) { closeLogin(); isAdminLoggedIn = true; openAdmin(); }
@@ -2858,127 +2932,63 @@
             if (tabId === 'tab-security') refreshSecurityTab();
         }
 
-        // ===================== SECURITY — USERNAME / PASSWORD =====================
+        // ===================== SECURITY =====================
         function refreshSecurityTab() {
             const creds = getCreds();
             const el = document.getElementById('current-username-display');
             if (el) el.textContent = creds.user;
-            // clear all fields
-            ['new-username', 'confirm-pass-for-user', 'old-password', 'new-password', 'confirm-new-password'].forEach(id => {
-                const el = document.getElementById(id); if (el) el.value = '';
-            });
-            // reset strength bar
-            const bar = document.getElementById('pass-strength-bar');
-            const label = document.getElementById('pass-strength-label');
-            if (bar) { bar.style.width = '0%'; bar.style.background = ''; }
-            if (label) label.textContent = '';
+            ['new-username', 'confirm-pass-for-user', 'old-password', 'new-password', 'confirm-new-password'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+            const bar = document.getElementById('pass-strength-bar'); const label = document.getElementById('pass-strength-label');
+            if (bar) { bar.style.width = '0%'; bar.style.background = ''; } if (label) label.textContent = '';
         }
-
         function togglePassVis(inputId, iconId) {
-            const inp = document.getElementById(inputId);
-            const ico = document.getElementById(iconId);
-            if (!inp) return;
+            const inp = document.getElementById(inputId); const ico = document.getElementById(iconId); if (!inp) return;
             if (inp.type === 'password') { inp.type = 'text'; if (ico) { ico.classList.remove('fa-eye'); ico.classList.add('fa-eye-slash'); } }
             else { inp.type = 'password'; if (ico) { ico.classList.remove('fa-eye-slash'); ico.classList.add('fa-eye'); } }
         }
-
         function checkPassStrength(val) {
-            const bar = document.getElementById('pass-strength-bar');
-            const label = document.getElementById('pass-strength-label');
-            if (!bar || !label) return;
-            if (!val) { bar.style.width = '0%'; label.textContent = ''; return; }
-            let score = 0;
-            if (val.length >= 6) score++;
-            if (val.length >= 10) score++;
-            if (/[A-Z]/.test(val)) score++;
-            if (/[0-9]/.test(val)) score++;
-            if (/[^A-Za-z0-9]/.test(val)) score++;
-            const levels = [
-                { pct: '20%', color: '#ff4444', text: 'อ่อนมาก' },
-                { pct: '40%', color: '#ff8800', text: 'อ่อน' },
-                { pct: '60%', color: '#ffcc00', text: 'ปานกลาง' },
-                { pct: '80%', color: '#88cc00', text: 'แข็งแรง' },
-                { pct: '100%', color: '#4cde80', text: 'แข็งแรงมาก' }
-            ];
-            const lv = levels[Math.min(score - 1, 4)] || levels[0];
-            bar.style.width = lv.pct;
-            bar.style.background = lv.color;
-            label.style.color = lv.color;
-            label.textContent = 'ความแข็งแรง: ' + lv.text;
+            const bar = document.getElementById('pass-strength-bar'); const label = document.getElementById('pass-strength-label');
+            if (!bar || !label) return; if (!val) { bar.style.width = '0%'; label.textContent = ''; return; }
+            let score = 0; if (val.length >= 6) score++; if (val.length >= 10) score++; if (/[A-Z]/.test(val)) score++; if (/[0-9]/.test(val)) score++; if (/[^A-Za-z0-9]/.test(val)) score++;
+            const levels = [{ pct: '20%', color: '#ff4444', text: 'อ่อนมาก' }, { pct: '40%', color: '#ff8800', text: 'อ่อน' }, { pct: '60%', color: '#ffcc00', text: 'ปานกลาง' }, { pct: '80%', color: '#88cc00', text: 'แข็งแรง' }, { pct: '100%', color: '#4cde80', text: 'แข็งแรงมาก' }];
+            const lv = levels[Math.min(score - 1, 4)] || levels[0]; bar.style.width = lv.pct; bar.style.background = lv.color; label.style.color = lv.color; label.textContent = 'ความแข็งแรง: ' + lv.text;
         }
-
         function changeUsername() {
             if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
             const newUser = document.getElementById('new-username').value.trim();
             const confirmPass = document.getElementById('confirm-pass-for-user').value.trim();
             const creds = getCreds();
-
             if (!newUser) { showToast('⚠️ กรุณากรอก Username ใหม่', 'warning'); return; }
             if (newUser.length < 3) { showToast('⚠️ Username ต้องมีอย่างน้อย 3 ตัวอักษร', 'warning'); return; }
             if (!confirmPass) { showToast('⚠️ กรุณายืนยัน Password ปัจจุบัน', 'warning'); return; }
-            if (confirmPass !== creds.pass) {
-                showModal({ icon: 'error', title: 'Password ไม่ถูกต้อง', html: 'Password ปัจจุบันที่กรอกไม่ถูกต้อง กรุณาลองใหม่', confirmText: 'ตกลง' });
-                document.getElementById('confirm-pass-for-user').value = ''; return;
-            }
+            if (confirmPass !== creds.pass) { showModal({ icon: 'error', title: 'Password ไม่ถูกต้อง', html: 'Password ปัจจุบันที่กรอกไม่ถูกต้อง', confirmText: 'ตกลง' }); document.getElementById('confirm-pass-for-user').value = ''; return; }
             if (newUser === creds.user) { showToast('⚠️ Username ใหม่ต้องไม่ซ้ำกับของเดิม', 'warning'); return; }
-
-            showModal({ icon: 'question', title: 'ยืนยันเปลี่ยน Username', html: `เปลี่ยนจาก <b style="color:var(--main);">${creds.user}</b> เป็น <b style="color:var(--accent);">${newUser}</b>?`, confirmText: 'ยืนยัน', cancelText: 'ยกเลิก' }).then(r => {
-                if (!r.isConfirmed) return;
-                localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({ user: newUser, pass: creds.pass }));
-                refreshSecurityTab();
-                showToast('✅ เปลี่ยน Username เรียบร้อย — กรุณา Login ใหม่อีกครั้ง', 'success', 3500);
-                setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000);
-            });
+            showModal({ icon: 'question', title: 'ยืนยันเปลี่ยน Username', html: `เปลี่ยนจาก <b style="color:var(--main);">${creds.user}</b> เป็น <b style="color:var(--accent);">${newUser}</b>?`, confirmText: 'ยืนยัน', cancelText: 'ยกเลิก' }).then(r => { if (!r.isConfirmed) return; localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({ user: newUser, pass: creds.pass })); refreshSecurityTab(); showToast('✅ เปลี่ยน Username เรียบร้อย — กรุณา Login ใหม่', 'success', 3500); setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000); });
         }
-
         function changePassword() {
             if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
             const oldPass = document.getElementById('old-password').value;
             const newPass = document.getElementById('new-password').value;
             const confirmPass = document.getElementById('confirm-new-password').value;
             const creds = getCreds();
-
             if (!oldPass) { showToast('⚠️ กรุณากรอก Password ปัจจุบัน', 'warning'); return; }
-            if (oldPass !== creds.pass) {
-                showModal({ icon: 'error', title: 'Password ปัจจุบันไม่ถูกต้อง', html: 'กรุณาตรวจสอบ Password เดิมของคุณ', confirmText: 'ตกลง' });
-                document.getElementById('old-password').value = ''; return;
-            }
+            if (oldPass !== creds.pass) { showModal({ icon: 'error', title: 'Password ปัจจุบันไม่ถูกต้อง', html: 'กรุณาตรวจสอบ Password เดิมของคุณ', confirmText: 'ตกลง' }); document.getElementById('old-password').value = ''; return; }
             if (!newPass || newPass.length < 6) { showToast('⚠️ Password ใหม่ต้องมีอย่างน้อย 6 ตัวอักษร', 'warning'); return; }
-            if (newPass !== confirmPass) {
-                showModal({ icon: 'error', title: 'Password ไม่ตรงกัน', html: 'Password ใหม่และการยืนยัน Password ไม่ตรงกัน', confirmText: 'ตกลง' });
-                document.getElementById('confirm-new-password').value = ''; return;
-            }
+            if (newPass !== confirmPass) { showModal({ icon: 'error', title: 'Password ไม่ตรงกัน', html: 'Password ใหม่และการยืนยันไม่ตรงกัน', confirmText: 'ตกลง' }); document.getElementById('confirm-new-password').value = ''; return; }
             if (newPass === oldPass) { showToast('⚠️ Password ใหม่ต้องไม่ซ้ำกับรหัสเดิม', 'warning'); return; }
-
-            showModal({ icon: 'question', title: 'ยืนยันเปลี่ยน Password', html: 'คุณต้องการเปลี่ยน Password ใหม่ใช่ไหม?<br><small style="color:rgba(255,255,255,0.5);">ระบบจะ Logout อัตโนมัติ เพื่อความปลอดภัย</small>', confirmText: 'ยืนยัน', cancelText: 'ยกเลิก' }).then(r => {
-                if (!r.isConfirmed) return;
-                localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({ user: creds.user, pass: newPass }));
-                showToast('🔐 เปลี่ยน Password เรียบร้อย — กรุณา Login ใหม่', 'success', 3500);
-                setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000);
-            });
+            showModal({ icon: 'question', title: 'ยืนยันเปลี่ยน Password', html: 'คุณต้องการเปลี่ยน Password ใหม่ใช่ไหม?<br><small style="color:rgba(255,255,255,0.5);">ระบบจะ Logout อัตโนมัติ</small>', confirmText: 'ยืนยัน', cancelText: 'ยกเลิก' }).then(r => { if (!r.isConfirmed) return; localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({ user: creds.user, pass: newPass })); showToast('🔐 เปลี่ยน Password เรียบร้อย — กรุณา Login ใหม่', 'success', 3500); setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000); });
         }
-
         function resetCreds() {
             if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
-            showModal({ icon: 'warning', title: 'รีเซ็ตข้อมูล Admin?', html: 'จะรีเซ็ต Username และ Password กลับเป็น<br><b style="color:var(--main);">admin / fumiko2026</b><br><small style="color:rgba(255,255,255,0.4);">ระบบจะ Logout อัตโนมัติ</small>', confirmText: 'รีเซ็ต', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => {
-                if (!r.isConfirmed) return;
-                localStorage.removeItem(ADMIN_CREDS_KEY);
-                showToast('↩️ รีเซ็ตเรียบร้อย — กรุณา Login ใหม่', 'info', 3500);
-                setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000);
-            });
+            showModal({ icon: 'warning', title: 'รีเซ็ตข้อมูล Admin?', html: 'จะรีเซ็ต Username และ Password กลับเป็น<br><b style="color:var(--main);">admin / fumiko2026</b>', confirmText: 'รีเซ็ต', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => { if (!r.isConfirmed) return; localStorage.removeItem(ADMIN_CREDS_KEY); showToast('↩️ รีเซ็ตเรียบร้อย — กรุณา Login ใหม่', 'info', 3500); setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000); });
         }
 
         // ===================== EXPORT / IMPORT =====================
         function exportData() { const d = loadData(); const blob = new Blob([JSON.stringify(d, null, 2)], { type: 'application/json' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = `fumiko-backup-${new Date().toISOString().slice(0, 10)}.json`; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); }
         function importData(e) { const f = e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = ev => { try { const d = JSON.parse(ev.target.result); saveData(d, true, true); showToast('✅ นำเข้าข้อมูลสำเร็จ'); openAdmin(); } catch { showModal({ icon: 'error', title: 'ไฟล์ไม่ถูกต้อง', html: 'กรุณาเลือกไฟล์ JSON', confirmText: 'ตกลง' }); } }; r.readAsText(f); e.target.value = ''; }
-        function syncWithGoogleSheets() { showModal({ icon: 'question', title: 'Sync Google Sheets', html: 'เลือกทิศทาง', confirmText: '📤 อัปโหลด', cancelText: '📥 ดาวน์โหลด' }).then(r => { if (r.isConfirmed) saveToGoogleSheets(loadData()).then(() => showToast('✅ อัปโหลดแล้ว')); else if (r.dismiss === 'cancel') loadFromGoogleSheets(true); }); }
 
-        // ===================== SYNC HELPER =====================
         function syncWithGoogleSheets() {
-            showModal({
-                icon: 'question', title: 'Sync Google Sheets', html: 'เลือกทิศทาง',
-                confirmText: '📤 อัปโหลด', cancelText: '📥 ดาวน์โหลด'
-            }).then(r => {
+            showModal({ icon: 'question', title: 'Sync Google Sheets', html: 'เลือกทิศทาง', confirmText: '📤 อัปโหลด', cancelText: '📥 ดาวน์โหลด' }).then(r => {
                 if (r.isConfirmed) saveToGoogleSheets(loadData()).then(() => showToast('✅ อัปโหลดแล้ว'));
                 else if (r.dismiss === 'cancel') loadFromGoogleSheets(true);
             });
@@ -2988,6 +2998,7 @@
         async function initApp() {
             applyFont(selectedFont);
             applyColors(loadColors());
+            applyBgImage();
 
             const gsUrl = GS_WEBAPP_URL || (() => {
                 try { return JSON.parse(localStorage.getItem(GS_CONFIG_KEY) || '{}').webAppUrl || ''; } catch { return ''; }
@@ -3003,7 +3014,6 @@
             document.getElementById('loading-overlay').classList.add('hidden');
         }
 
-        // Event Listeners
         document.getElementById('admin-fab').addEventListener('click', openAdmin);
         document.getElementById('admin-fab').addEventListener('mouseenter', e => { e.currentTarget.style.transform = 'scale(1.1) rotate(90deg)'; });
         document.getElementById('admin-fab').addEventListener('mouseleave', e => { e.currentTarget.style.transform = 'scale(1) rotate(0deg)'; });
@@ -3014,6 +3024,5 @@
         initApp();
     </script>
 </body>
-
 
 </html>
