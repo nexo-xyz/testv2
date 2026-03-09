@@ -2814,7 +2814,7 @@
         function saveFooter() { const d = loadData(); d.footer.name = document.getElementById('a-footer-name').value; d.footer.text = document.getElementById('a-footer-text').value; saveData(d, true, true); showToast('✅ บันทึกส่วนท้ายแล้ว'); }
 
         // ===================== ADMIN OPEN/CLOSE =====================
-        function getCreds() { try { return JSON.parse(localStorage.getItem(ADMIN_CREDS_KEY)) || { user: 'admin', pass: 'admin2026' }; } catch { return { user: 'admin', pass: 'admin2026' }; } }
+        function getCreds() { try { return JSON.parse(localStorage.getItem(ADMIN_CREDS_KEY)) || { user: 'admin', pass: 'admin' }; } catch { return { user: 'admin', pass: 'admin' }; } }
         function openAdmin() {
             if (!isAdminLoggedIn) { document.getElementById('login-overlay').classList.add('show'); setTimeout(() => document.getElementById('login-user').focus(), 100); return; }
             const d = loadData();
@@ -3014,5 +3014,6 @@
         initApp();
     </script>
 </body>
+
 
 </html>
