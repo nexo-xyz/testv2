@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
+        /* CSS เดิมทั้งหมด保持不变 */
         :root {
             --bg: #0B0B2A;
             --main: #BB86FC;
@@ -78,6 +79,7 @@
             --footer-text-color: rgba(255, 255, 255, 0.4);
         }
 
+        /* CSS ที่เหลือทั้งหมดเหมือนเดิม */
         * {
             margin: 0;
             padding: 0;
@@ -2059,7 +2061,7 @@
 
     <script>
         // ===================== CONFIG =====================
-        const GS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbw_0epr0wJS-v2Jil00sYhHq6TMo7g556iUW3tNZA63LZXvnVe6DqCqWv0YYPNAWR5J/exec';
+        const GS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzPGacFDx8BxKVgvJgjqYARILKaIzR5bqhr7AJy4M1jlDtXhHrmvSNzHrKSeR9SqJg/exec'; // ใส่ URL จาก Google Apps Script ที่นี่
         const DATA_KEY = 'fumiko_data';
         const COLOR_KEY = 'fumiko_colors';
         const FONT_KEY = 'fumiko_font';
@@ -2087,10 +2089,12 @@
             'tl-fast-num', 'tl-mid-num', 'tl-slow-num', 'group-link-text', 'group-note-text',
             'gh-deco-color', 'gh-title-color', 'footer-name-color'];
 
+        // ===================== โหลด Colors =====================
         function loadColors() {
             try { return { ...DEFAULT_COLORS, ...JSON.parse(localStorage.getItem(COLOR_KEY) || '{}') }; }
             catch { return { ...DEFAULT_COLORS }; }
         }
+
         function applyColors(c) {
             const R = document.documentElement.style;
             Object.keys(DEFAULT_COLORS).forEach(k => {
@@ -2101,13 +2105,14 @@
             R.setProperty('--glow', hexToRgba(m.startsWith('#') ? m : DEFAULT_COLORS.main, 0.5));
             document.body.style.background = c.bg || DEFAULT_COLORS.bg;
         }
+
         function hexToRgba(hex, a) {
             if (!hex || !hex.startsWith('#') || hex.length < 7) return `rgba(187,134,252,${a})`;
             const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
             return `rgba(${r},${g},${b},${a})`;
         }
 
-        // ✅ บันทึกสี + sync ไป Sheets
+        // ===================== บันทึก Colors =====================
         function saveColors() {
             const c = {};
             HEX_VARS.forEach(k => {
@@ -2121,7 +2126,7 @@
             localStorage.setItem(COLOR_KEY, JSON.stringify(c));
             applyColors(c);
 
-            // ✅ Sync สีไป Google Sheets
+            // Sync ไป Sheets
             const d = loadData();
             d._colors = c;
             localStorage.setItem(DATA_KEY, JSON.stringify(d));
@@ -2136,7 +2141,6 @@
             localStorage.removeItem(COLOR_KEY);
             applyColors(DEFAULT_COLORS);
             fillColorAdmin(DEFAULT_COLORS);
-            // ✅ Sync reset ไป Sheets ด้วย
             const d = loadData();
             delete d._colors;
             localStorage.setItem(DATA_KEY, JSON.stringify(d));
@@ -2165,6 +2169,7 @@
             if (k === 'main') document.documentElement.style.setProperty('--glow', hexToRgba(v, 0.5));
             if (k === 'bg') document.body.style.background = v;
         }
+
         function syncColorPicker(k, v) {
             if (/^#[0-9A-Fa-f]{6}$/.test(v)) {
                 const el = document.getElementById('color-' + k);
@@ -2174,11 +2179,13 @@
                 if (k === 'bg') document.body.style.background = v;
             }
         }
+
         function syncColorTextRaw(k, v) {
             const el = document.getElementById('color-' + k + '-text');
             if (el) el.value = v;
             document.documentElement.style.setProperty('--' + k, v);
         }
+
         function syncVarDirect(k, v) { document.documentElement.style.setProperty('--' + k, v); }
 
         // ===================== FONTS =====================
@@ -2194,6 +2201,7 @@
             document.documentElement.style.setProperty('--font-main', `'${f}',sans-serif`);
             document.body.style.fontFamily = `'${f}',sans-serif`;
         }
+
         function renderFontGrid() {
             const c = document.getElementById('font-grid'); c.innerHTML = '';
             THAI_FONTS.forEach(font => {
@@ -2205,7 +2213,6 @@
             });
         }
 
-        // ✅ บันทึก font + sync ไป Sheets
         function saveFont() {
             localStorage.setItem(FONT_KEY, selectedFont);
             applyFont(selectedFont);
@@ -2216,51 +2223,14 @@
             showToast('✅ บันทึกฟอนต์แล้ว');
         }
 
-        // ===================== CONTACT STYLES =====================
-        const CONTACT_STYLES = [
-            { id: 'fb', label: 'Facebook', icon: '<i class="fab fa-facebook-f"></i>', cssClass: 'btn-fb' },
-            { id: 'line', label: 'Line', icon: '<i class="fab fa-line"></i>', cssClass: 'btn-line' },
-            { id: 'ig', label: 'Instagram', icon: '<i class="fab fa-instagram"></i>', cssClass: 'btn-ig' },
-            { id: 'tw', label: 'Twitter/X', icon: '<i class="fab fa-x-twitter"></i>', cssClass: 'btn-tw' },
-            { id: 'tt', label: 'TikTok', icon: '<i class="fab fa-tiktok"></i>', cssClass: 'btn-tt' },
-            { id: 'yt', label: 'YouTube', icon: '<i class="fab fa-youtube"></i>', cssClass: 'btn-yt' },
-            { id: 'discord', label: 'Discord', icon: '<i class="fab fa-discord"></i>', cssClass: 'btn-discord' },
-            { id: 'email', label: 'Email', icon: '<i class="fas fa-envelope"></i>', cssClass: 'btn-email' },
-            { id: 'custom', label: 'Custom', icon: '<i class="fas fa-star"></i>', cssClass: 'btn-custom' }
-        ];
-        function getStyleById(id) { return CONTACT_STYLES.find(s => s.id === id) || CONTACT_STYLES[CONTACT_STYLES.length - 1]; }
-
-        // ===================== MODAL / TOAST =====================
-        function showModal({ icon = '', title = '', html = '', confirmText = 'ตกลง', cancelText = null, dangerConfirm = false, timer }) {
-            return new Promise(resolve => {
-                const iconMap = { success: '✅', error: '❌', warning: '⚠️', info: 'ℹ️', question: '❓' };
-                document.getElementById('cmodal-icon').textContent = iconMap[icon] || icon;
-                document.getElementById('cmodal-title').textContent = title;
-                document.getElementById('cmodal-text').innerHTML = html;
-                const actions = document.getElementById('cmodal-actions'); actions.innerHTML = '';
-                const cb = document.createElement('button');
-                cb.className = 'cmodal-btn ' + (dangerConfirm ? 'cmodal-btn-danger' : 'cmodal-btn-confirm');
-                cb.textContent = confirmText; cb.onclick = () => { closeModal(); resolve({ isConfirmed: true }); }; actions.appendChild(cb);
-                if (cancelText) { const cab = document.createElement('button'); cab.className = 'cmodal-btn cmodal-btn-cancel'; cab.textContent = cancelText; cab.onclick = () => { closeModal(); resolve({ isConfirmed: false, dismiss: 'cancel' }); }; actions.appendChild(cab); }
-                document.getElementById('cmodal').classList.add('show');
-                if (timer) setTimeout(() => { closeModal(); resolve({ isConfirmed: false, dismiss: 'timer' }); }, timer);
-            });
-        }
-        function closeModal() { document.getElementById('cmodal').classList.remove('show'); }
-        document.getElementById('cmodal').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
-
-        function showToast(msg, type = 'success', dur = 2200) {
-            const t = document.getElementById('toast'); t.className = 'show ' + type; t.innerHTML = msg;
-            clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), dur);
-        }
-
-        // ===================== GOOGLE SHEETS =====================
+        // ===================== GOOGLE SHEETS FUNCTIONS (ปรับปรุง) =====================
         function getGsConfig() {
             try {
                 const s = JSON.parse(localStorage.getItem(GS_CONFIG_KEY) || '{}');
                 return { webAppUrl: GS_WEBAPP_URL || s.webAppUrl || '', sheetId: s.sheetId || '', apiKey: s.apiKey || '' };
             } catch { return { webAppUrl: GS_WEBAPP_URL || '', sheetId: '', apiKey: '' }; }
         }
+
         function saveGsConfig() {
             const c = {
                 webAppUrl: document.getElementById('gs-webapp-url').value.trim(),
@@ -2270,6 +2240,7 @@
             localStorage.setItem(GS_CONFIG_KEY, JSON.stringify(c));
             showToast('✅ บันทึกการตั้งค่า Sheets');
         }
+
         function fetchViaJsonp(url, ms) {
             ms = ms || 10000;
             return new Promise((res, rej) => {
@@ -2285,6 +2256,274 @@
             });
         }
 
+        // ===================== ฟังก์ชันดึง Admin Creds จาก Sheets (ใหม่) =====================
+        async function getAdminCredsFromSheets() {
+            const cfg = getGsConfig();
+            if (!cfg.webAppUrl) return null;
+
+            try {
+                const r = await fetchViaJsonp(cfg.webAppUrl + '?action=getConfig&type=admin', 5000);
+                if (r && r.status === 'success' && r.data) {
+                    return {
+                        user: r.data.username || 'admin',
+                        pass: r.data.password || 'admin2026'
+                    };
+                }
+            } catch (e) {
+                console.log('Cannot load admin creds from sheets:', e);
+            }
+            return null;
+        }
+
+        // ===================== ฟังก์ชันดึง Admin Creds (รวม Sheets + Local) =====================
+        async function getCreds() {
+            // ลองโหลดจาก Sheets ก่อน
+            const sheetsCreds = await getAdminCredsFromSheets();
+            if (sheetsCreds) {
+                // อัปเดต localStorage ให้ตรงกับ Sheets
+                localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify(sheetsCreds));
+                return sheetsCreds;
+            }
+
+            // ถ้าไม่ได้ ให้ใช้ค่าใน localStorage หรือค่าเริ่มต้น
+            try {
+                const local = JSON.parse(localStorage.getItem(ADMIN_CREDS_KEY));
+                if (local && local.user && local.pass) return local;
+            } catch { }
+
+            // ค่าเริ่มต้น
+            const defaultCreds = { user: 'admin', pass: 'admin2026' };
+            localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify(defaultCreds));
+            return defaultCreds;
+        }
+
+        // ===================== ฟังก์ชันอัปเดต Admin Creds ไป Sheets =====================
+        async function updateAdminCredsInSheets(username, password) {
+            const cfg = getGsConfig();
+            if (!cfg.webAppUrl) return false;
+
+            try {
+                await fetch(cfg.webAppUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        action: 'updateAdminCreds',
+                        data: { username, password }
+                    })
+                });
+                return true;
+            } catch (e) {
+                console.log('Failed to update admin creds in sheets:', e);
+                return false;
+            }
+        }
+
+        // ===================== ฟังก์ชัน Login (ปรับปรุง) =====================
+        async function doLogin() {
+            const u = document.getElementById('login-user').value.trim();
+            const p = document.getElementById('login-pass').value.trim();
+
+            // โหลด creds จาก Sheets (ผ่าน getCreds ที่ดึงจาก Sheets ก่อน)
+            const creds = await getCreds();
+
+            if (u === creds.user && p === creds.pass) {
+                closeLogin();
+                isAdminLoggedIn = true;
+                openAdmin();
+            } else {
+                showModal({
+                    icon: 'error',
+                    title: 'เข้าสู่ระบบล้มเหลว',
+                    html: 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง',
+                    confirmText: 'ตกลง'
+                });
+                document.getElementById('login-pass').value = '';
+            }
+        }
+
+        // ===================== ฟังก์ชันเปลี่ยน Username (ปรับปรุง) =====================
+        async function changeUsername() {
+            if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
+
+            const newUser = document.getElementById('new-username').value.trim();
+            const confirmPass = document.getElementById('confirm-pass-for-user').value.trim();
+            const creds = await getCreds();
+
+            if (!newUser) { showToast('⚠️ กรุณากรอก Username ใหม่', 'warning'); return; }
+            if (newUser.length < 3) { showToast('⚠️ Username ต้องมีอย่างน้อย 3 ตัวอักษร', 'warning'); return; }
+            if (!confirmPass) { showToast('⚠️ กรุณายืนยัน Password ปัจจุบัน', 'warning'); return; }
+            if (confirmPass !== creds.pass) {
+                showModal({ icon: 'error', title: 'Password ไม่ถูกต้อง', html: 'Password ปัจจุบันที่กรอกไม่ถูกต้อง', confirmText: 'ตกลง' });
+                document.getElementById('confirm-pass-for-user').value = '';
+                return;
+            }
+            if (newUser === creds.user) { showToast('⚠️ Username ใหม่ต้องไม่ซ้ำกับของเดิม', 'warning'); return; }
+
+            showModal({
+                icon: 'question',
+                title: 'ยืนยันเปลี่ยน Username',
+                html: `เปลี่ยนจาก <b style="color:var(--main);">${creds.user}</b> เป็น <b style="color:var(--accent);">${newUser}</b>?`,
+                confirmText: 'ยืนยัน',
+                cancelText: 'ยกเลิก'
+            }).then(async r => {
+                if (!r.isConfirmed) return;
+
+                // บันทึกลง Sheets
+                await updateAdminCredsInSheets(newUser, creds.pass);
+
+                // บันทึกลง localStorage
+                localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({ user: newUser, pass: creds.pass }));
+
+                refreshSecurityTab();
+                showToast('✅ เปลี่ยน Username เรียบร้อย — กรุณา Login ใหม่', 'success', 3500);
+                setTimeout(() => {
+                    isAdminLoggedIn = false;
+                    closeAdmin();
+                }, 2000);
+            });
+        }
+
+        // ===================== ฟังก์ชันเปลี่ยน Password (ปรับปรุง) =====================
+        async function changePassword() {
+            if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
+
+            const oldPass = document.getElementById('old-password').value;
+            const newPass = document.getElementById('new-password').value;
+            const confirmPass = document.getElementById('confirm-new-password').value;
+            const creds = await getCreds();
+
+            if (!oldPass) { showToast('⚠️ กรุณากรอก Password ปัจจุบัน', 'warning'); return; }
+            if (oldPass !== creds.pass) {
+                showModal({ icon: 'error', title: 'Password ปัจจุบันไม่ถูกต้อง', html: 'กรุณาตรวจสอบ Password เดิมของคุณ', confirmText: 'ตกลง' });
+                document.getElementById('old-password').value = '';
+                return;
+            }
+            if (!newPass || newPass.length < 6) { showToast('⚠️ Password ใหม่ต้องมีอย่างน้อย 6 ตัวอักษร', 'warning'); return; }
+            if (newPass !== confirmPass) {
+                showModal({ icon: 'error', title: 'Password ไม่ตรงกัน', html: 'Password ใหม่และการยืนยันไม่ตรงกัน', confirmText: 'ตกลง' });
+                document.getElementById('confirm-new-password').value = '';
+                return;
+            }
+            if (newPass === oldPass) { showToast('⚠️ Password ใหม่ต้องไม่ซ้ำกับรหัสเดิม', 'warning'); return; }
+
+            showModal({
+                icon: 'question',
+                title: 'ยืนยันเปลี่ยน Password',
+                html: 'คุณต้องการเปลี่ยน Password ใหม่ใช่ไหม?<br><small style="color:rgba(255,255,255,0.5);">ระบบจะ Logout อัตโนมัติ</small>',
+                confirmText: 'ยืนยัน',
+                cancelText: 'ยกเลิก'
+            }).then(async r => {
+                if (!r.isConfirmed) return;
+
+                // บันทึกลง Sheets
+                await updateAdminCredsInSheets(creds.user, newPass);
+
+                // บันทึกลง localStorage
+                localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({ user: creds.user, pass: newPass }));
+
+                showToast('🔐 เปลี่ยน Password เรียบร้อย — กรุณา Login ใหม่', 'success', 3500);
+                setTimeout(() => {
+                    isAdminLoggedIn = false;
+                    closeAdmin();
+                }, 2000);
+            });
+        }
+
+        // ===================== ฟังก์ชันรีเซ็ต Creds (ปรับปรุง) =====================
+        async function resetCreds() {
+            if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
+
+            showModal({
+                icon: 'warning',
+                title: 'รีเซ็ตข้อมูล Admin?',
+                html: 'จะรีเซ็ต Username และ Password กลับเป็น<br><b style="color:var(--main);">admin / admin123</b>',
+                confirmText: 'รีเซ็ต',
+                cancelText: 'ยกเลิก',
+                dangerConfirm: true
+            }).then(async r => {
+                if (!r.isConfirmed) return;
+
+                // อัปเดต Sheets
+                await updateAdminCredsInSheets('admin', 'admin123');
+
+                // อัปเดต localStorage
+                localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({ user: 'admin', pass: 'admin123' }));
+
+                showToast('↩️ รีเซ็ตเรียบร้อย — กรุณา Login ใหม่', 'info', 3500);
+                setTimeout(() => {
+                    isAdminLoggedIn = false;
+                    closeAdmin();
+                }, 2000);
+            });
+        }
+
+        // ===================== ฟังก์ชัน refresh Security Tab =====================
+        async function refreshSecurityTab() {
+            const creds = await getCreds();
+            const el = document.getElementById('current-username-display');
+            if (el) el.textContent = creds.user;
+            ['new-username', 'confirm-pass-for-user', 'old-password', 'new-password', 'confirm-new-password'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.value = '';
+            });
+            const bar = document.getElementById('pass-strength-bar');
+            const label = document.getElementById('pass-strength-label');
+            if (bar) { bar.style.width = '0%'; bar.style.background = ''; }
+            if (label) label.textContent = '';
+        }
+
+        // ===================== ฟังก์ชัน toggle แสดงรหัสผ่าน =====================
+        function togglePassVis(inputId, iconId) {
+            const inp = document.getElementById(inputId);
+            const ico = document.getElementById(iconId);
+            if (!inp) return;
+            if (inp.type === 'password') {
+                inp.type = 'text';
+                if (ico) {
+                    ico.classList.remove('fa-eye');
+                    ico.classList.add('fa-eye-slash');
+                }
+            } else {
+                inp.type = 'password';
+                if (ico) {
+                    ico.classList.remove('fa-eye-slash');
+                    ico.classList.add('fa-eye');
+                }
+            }
+        }
+
+        // ===================== ฟังก์ชันตรวจสอบความแข็งแรงของรหัสผ่าน =====================
+        function checkPassStrength(val) {
+            const bar = document.getElementById('pass-strength-bar');
+            const label = document.getElementById('pass-strength-label');
+            if (!bar || !label) return;
+            if (!val) {
+                bar.style.width = '0%';
+                label.textContent = '';
+                return;
+            }
+            let score = 0;
+            if (val.length >= 6) score++;
+            if (val.length >= 10) score++;
+            if (/[A-Z]/.test(val)) score++;
+            if (/[0-9]/.test(val)) score++;
+            if (/[^A-Za-z0-9]/.test(val)) score++;
+            const levels = [
+                { pct: '20%', color: '#ff4444', text: 'อ่อนมาก' },
+                { pct: '40%', color: '#ff8800', text: 'อ่อน' },
+                { pct: '60%', color: '#ffcc00', text: 'ปานกลาง' },
+                { pct: '80%', color: '#88cc00', text: 'แข็งแรง' },
+                { pct: '100%', color: '#4cde80', text: 'แข็งแรงมาก' }
+            ];
+            const lv = levels[Math.min(score - 1, 4)] || levels[0];
+            bar.style.width = lv.pct;
+            bar.style.background = lv.color;
+            label.style.color = lv.color;
+            label.textContent = 'ความแข็งแรง: ' + lv.text;
+        }
+
+        // ===================== ฟังก์ชันอื่นๆ (เหมือนเดิม) =====================
         async function loadFromGoogleSheets(showUI) {
             const cfg = getGsConfig(), url = cfg.webAppUrl;
             if (!url) {
@@ -2297,7 +2536,6 @@
                 if (r && r.status === 'success' && r.data) {
                     localStorage.setItem(DATA_KEY, JSON.stringify(r.data));
 
-                    // ✅ โหลด settings จาก Sheets มา apply เลย
                     if (r.data._colors) {
                         localStorage.setItem(COLOR_KEY, JSON.stringify(r.data._colors));
                         applyColors(r.data._colors);
@@ -2353,7 +2591,33 @@
             }
         }
 
-        // ===================== INITIAL DATA =====================
+        // ===================== ฟังก์ชัน Modal / Toast =====================
+        function showModal({ icon = '', title = '', html = '', confirmText = 'ตกลง', cancelText = null, dangerConfirm = false, timer }) {
+            return new Promise(resolve => {
+                const iconMap = { success: '✅', error: '❌', warning: '⚠️', info: 'ℹ️', question: '❓' };
+                document.getElementById('cmodal-icon').textContent = iconMap[icon] || icon;
+                document.getElementById('cmodal-title').textContent = title;
+                document.getElementById('cmodal-text').innerHTML = html;
+                const actions = document.getElementById('cmodal-actions'); actions.innerHTML = '';
+                const cb = document.createElement('button');
+                cb.className = 'cmodal-btn ' + (dangerConfirm ? 'cmodal-btn-danger' : 'cmodal-btn-confirm');
+                cb.textContent = confirmText; cb.onclick = () => { closeModal(); resolve({ isConfirmed: true }); }; actions.appendChild(cb);
+                if (cancelText) { const cab = document.createElement('button'); cab.className = 'cmodal-btn cmodal-btn-cancel'; cab.textContent = cancelText; cab.onclick = () => { closeModal(); resolve({ isConfirmed: false, dismiss: 'cancel' }); }; actions.appendChild(cab); }
+                document.getElementById('cmodal').classList.add('show');
+                if (timer) setTimeout(() => { closeModal(); resolve({ isConfirmed: false, dismiss: 'timer' }); }, timer);
+            });
+        }
+
+        function closeModal() { document.getElementById('cmodal').classList.remove('show'); }
+
+        document.getElementById('cmodal').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+
+        function showToast(msg, type = 'success', dur = 2200) {
+            const t = document.getElementById('toast'); t.className = 'show ' + type; t.innerHTML = msg;
+            clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), dur);
+        }
+
+        // ===================== ฟังก์ชันข้อมูลเริ่มต้น =====================
         function getInitialData() {
             return {
                 header: {
@@ -2443,7 +2707,7 @@
             if (h[i]) { saveData(h[i].data, true, false); showToast('✅ กู้คืนสำเร็จ'); }
         }
 
-        // ===================== BACKGROUND IMAGE =====================
+        // ===================== ฟังก์ชันพื้นหลังรูปภาพ =====================
         function getBgImageConfig() {
             try {
                 return JSON.parse(localStorage.getItem(BG_IMAGE_KEY)) || { type: 'color', url: '', size: 'cover', repeat: 'no-repeat', position: 'center' };
@@ -2488,7 +2752,6 @@
             localStorage.setItem(BG_IMAGE_KEY, JSON.stringify(config));
             applyBgImage();
 
-            // ✅ Sync bg type ไป Sheets
             const d = loadData();
             d._bgImage = config;
             localStorage.setItem(DATA_KEY, JSON.stringify(d));
@@ -2511,7 +2774,6 @@
             }
             applyBgImage();
 
-            // ✅ Sync bg image ไป Sheets
             const d = loadData();
             d._bgImage = config;
             localStorage.setItem(DATA_KEY, JSON.stringify(d));
@@ -2554,7 +2816,6 @@
         function renderSite() {
             const data = loadData();
 
-            // ✅ โหลด _colors / _font / _bgImage จาก data (ที่ sync มาจาก Sheets)
             if (data._colors) {
                 localStorage.setItem(COLOR_KEY, JSON.stringify(data._colors));
                 applyColors(data._colors);
@@ -2640,7 +2901,66 @@
             return `<div class="group-item"><div class="group-header"><div class="group-name">${g.name}</div>${g.price ? `<div class="group-price">${g.price} ฿</div>` : ''}</div><div class="group-tags">${(g.tags || []).map(t => `<span class="group-tag">${t}</span>`).join('')}</div>${g.note ? `<div class="group-note">${g.note}</div>` : ''}<div class="group-links">${(g.links || []).map(l => `<a href="${l.url}" target="_blank" class="group-link">${l.text}</a>`).join('')}</div></div>`;
         }
 
-        // ===================== ADMIN RENDER =====================
+        // ===================== ADMIN FUNCTIONS (คงเดิม) =====================
+        const CONTACT_STYLES = [
+            { id: 'fb', label: 'Facebook', icon: '<i class="fab fa-facebook-f"></i>', cssClass: 'btn-fb' },
+            { id: 'line', label: 'Line', icon: '<i class="fab fa-line"></i>', cssClass: 'btn-line' },
+            { id: 'ig', label: 'Instagram', icon: '<i class="fab fa-instagram"></i>', cssClass: 'btn-ig' },
+            { id: 'tw', label: 'Twitter/X', icon: '<i class="fab fa-x-twitter"></i>', cssClass: 'btn-tw' },
+            { id: 'tt', label: 'TikTok', icon: '<i class="fab fa-tiktok"></i>', cssClass: 'btn-tt' },
+            { id: 'yt', label: 'YouTube', icon: '<i class="fab fa-youtube"></i>', cssClass: 'btn-yt' },
+            { id: 'discord', label: 'Discord', icon: '<i class="fab fa-discord"></i>', cssClass: 'btn-discord' },
+            { id: 'email', label: 'Email', icon: '<i class="fas fa-envelope"></i>', cssClass: 'btn-email' },
+            { id: 'custom', label: 'Custom', icon: '<i class="fas fa-star"></i>', cssClass: 'btn-custom' }
+        ];
+
+        function getStyleById(id) { return CONTACT_STYLES.find(s => s.id === id) || CONTACT_STYLES[CONTACT_STYLES.length - 1]; }
+
+        function openAdmin() {
+            if (!isAdminLoggedIn) {
+                document.getElementById('login-overlay').classList.add('show');
+                setTimeout(() => document.getElementById('login-user').focus(), 100);
+                return;
+            }
+            const d = loadData();
+            document.getElementById('a-logo-img').value = d.header.logoImg || '';
+            document.getElementById('a-shop-name').value = d.header.shopName || '';
+            document.getElementById('a-shop-desc').value = d.header.shopDesc || '';
+            document.getElementById('a-status-text').value = d.header.statusText || '';
+            document.getElementById('a-queue-text').value = d.header.queueText || '';
+            document.getElementById('a-queue-link').value = d.header.queueLink || '';
+            document.getElementById('a-detail-title').value = d.header.detailTitle || '';
+            document.getElementById('a-detail-img').value = d.header.detailImg || '';
+            document.getElementById('a-footer-name').value = d.footer.name || '';
+            document.getElementById('a-footer-text').value = d.footer.text || '';
+            const gs = getGsConfig();
+            document.getElementById('gs-webapp-url').value = gs.webAppUrl || '';
+            document.getElementById('gs-sheet-id').value = gs.sheetId || '';
+            document.getElementById('gs-api-key').value = gs.apiKey || '';
+            fillColorAdmin(loadColors());
+            loadBgImageSettings();
+            renderAdminSections();
+            renderContactAdmin();
+            renderFontGrid();
+            document.getElementById('admin-overlay').classList.add('show');
+        }
+
+        function closeAdmin() { document.getElementById('admin-overlay').classList.remove('show'); }
+        function closeLogin() { document.getElementById('login-overlay').classList.remove('show'); document.getElementById('login-user').value = ''; document.getElementById('login-pass').value = ''; }
+
+        function adminLogout() { isAdminLoggedIn = false; closeAdmin(); showToast('👋 ออกจากระบบแล้ว'); }
+
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            if (btn) btn.classList.add('active');
+            if (tabId === 'tab-font') renderFontGrid();
+            if (tabId === 'tab-contact') renderContactAdmin();
+            if (tabId === 'tab-colors') fillColorAdmin(loadColors());
+            if (tabId === 'tab-security') refreshSecurityTab();
+        }
+
         function buildHeaderOptions(hi) {
             const d = loadData();
             let o = `<option value="-1"${hi === -1 ? ' selected' : ''}>📌 แสดงทั่วไป (ก่อนกลุ่ม)</option>`;
@@ -2725,7 +3045,7 @@
               <div id="gtags-${si}-${gi}">${(g.tags || []).map((t, ti) => `<div class="item-row"><input type="text" class="admin-input" value="${t}" onchange="updateGroupTag(${si},${gi},${ti},this.value)"><button class="admin-btn-del" onclick="deleteGroupTag(${si},${gi},${ti})"><i class="fas fa-trash"></i></button></div>`).join('')}</div>
               <button class="admin-btn-add" onclick="addGroupTag(${si},${gi})" style="margin-bottom:8px;"><i class="fas fa-plus"></i> เพิ่มแท็ก</button>
               <input type="text" class="admin-input" placeholder="หมายเหตุ" value="${g.note || ''}" onchange="updateGroup(${si},${gi},'note',this.value)">
-              <div id="glinks-${si}-${gi}">${(g.links || []).map((l, li) => `<div class="item-row"><input type="text" class="admin-input" placeholder="ข้อความ" value="${l.text}" onchange="updateGroupLink(${si},${gi},${li},'text',this.value)"><input type="text" class="admin-input" placeholder="URL" value="${l.url}" onchange="updateGroupLink(${si},${gi},${li},'url',this.value)"><button class="admin-btn-del" onclick="deleteGroupLink(${si},${gi},${li})"><i class="fas fa-trash"></i></button></div>`).join('')}</div>
+              <div id="glinks-${si}-${gi}">${(g.links || []).map((l, li) => `<div class="item-row"><input type="text" class="admin-input" placeholder="ข้อความ" value="${l.text}" onchange="updateGroupLink(${si},${gi},${li},'text',this.value)"><input type="text" class="admin-input" placeholder="URL" value="${l.url}" onchange="updateGroupLink($${si},${gi},${li},'url',this.value)"><button class="admin-btn-del" onclick="deleteGroupLink(${si},${gi},${li})"><i class="fas fa-trash"></i></button></div>`).join('')}</div>
               <button class="admin-btn-add" onclick="addGroupLink(${si},${gi})"><i class="fas fa-plus"></i> เพิ่มลิงก์</button>
             </div>`;
         }
@@ -2743,7 +3063,6 @@
             }
         }
 
-        // ===================== BADGES ADMIN =====================
         function renderBadgesAdmin() {
             const d = loadData();
             const bl = document.getElementById('badges-list'); if (!bl) return; bl.innerHTML = '';
@@ -2753,11 +3072,11 @@
                 bl.appendChild(div);
             });
         }
+
         function updateBadge(i, v) { const d = loadData(); d.header.badges[i] = v; saveData(d, false, false); }
         function deleteBadge(i) { const d = loadData(); d.header.badges.splice(i, 1); saveData(d, true, true); renderBadgesAdmin(); }
         function addBadge() { const d = loadData(); if (!d.header.badges) d.header.badges = []; d.header.badges.push('✨ Badge ใหม่'); saveData(d, true, true); renderBadgesAdmin(); }
 
-        // ===================== BG EMOJI ADMIN =====================
         function renderBgEmojiAdmin() {
             const d = loadData();
             const bl = document.getElementById('bgemoji-list'); if (!bl) return; bl.innerHTML = '';
@@ -2773,12 +3092,12 @@
                 bl.appendChild(div);
             });
         }
+
         function updateBgEmoji(i, f, v) { const d = loadData(); if (!d.bgEmojis[i]) return; d.bgEmojis[i][f] = v; saveData(d, false, false); }
         function deleteBgEmoji(i) { const d = loadData(); d.bgEmojis.splice(i, 1); saveData(d, true, true); renderBgEmojiAdmin(); }
         function addBgEmoji() { const d = loadData(); if (!d.bgEmojis) d.bgEmojis = []; d.bgEmojis.push({ emoji: '⭐', left: '50%', delay: 0 }); saveData(d, true, true); renderBgEmojiAdmin(); }
         function saveBgEmoji() { const d = loadData(); saveData(d, true, true); showToast('✅ บันทึก BG อิโมจิแล้ว'); }
 
-        // ===================== CONTACT ADMIN =====================
         function renderContactAdmin() {
             const d = loadData();
             const list = document.getElementById('contact-btns-list'); list.innerHTML = '';
@@ -2799,13 +3118,13 @@
             });
             const note = document.getElementById('a-contact-note'); if (note) note.value = d.contact.note || '';
         }
+
         function updateContactBtn(i, f, v) { const d = loadData(); d.contact.buttons[i][f] = v; const st = getStyleById(d.contact.buttons[i].style); const p = document.getElementById('cp-' + i); if (p) { p.className = 'contact-btn-preview ' + st.cssClass; p.innerHTML = d.contact.buttons[i].icon + ' ' + d.contact.buttons[i].text; } saveData(d, false, false); }
         function updateContactBtnStyle(i, sid) { const d = loadData(); d.contact.buttons[i].style = sid; saveData(d, false, false); renderContactAdmin(); }
         function deleteContactBtn(i) { showModal({ icon: 'warning', title: 'ยืนยันลบ', html: 'ลบปุ่มนี้?', confirmText: 'ใช่', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => { if (r.isConfirmed) { const d = loadData(); d.contact.buttons.splice(i, 1); saveData(d, true, true); renderContactAdmin(); } }); }
         function addContactBtn() { const d = loadData(); if (!d.contact.buttons) d.contact.buttons = []; d.contact.buttons.push({ icon: '<i class="fas fa-star"></i>', text: 'ปุ่มใหม่', link: '#', style: 'custom' }); saveData(d, true, true); renderContactAdmin(); }
         function saveContact() { const d = loadData(); d.contact.note = document.getElementById('a-contact-note').value; saveData(d, true, true); }
 
-        // ===================== UPDATE FUNCTIONS =====================
         function updateSectionHeader(i, hi) { const d = loadData(); d.sections[i].headerIndex = hi; saveData(d, true, true); renderAdminSections(); }
         function updateSection(i, f, v) { const d = loadData(); d.sections[i][f] = v; saveData(d, true, true); }
         function updateTag(si, ti, v) { const d = loadData(); d.sections[si].tags[ti] = v; saveData(d, false, false); }
@@ -2864,7 +3183,6 @@
         function deleteAllGroupsSection(i) { showModal({ icon: 'warning', title: 'ยืนยันลบ', html: 'ลบปุ่มนี้?', confirmText: 'ใช่', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => { if (r.isConfirmed) { const d = loadData(); d.allGroupsSections.splice(i, 1); saveData(d, true, true); renderAdminSections(); } }); }
         function addAllGroupsSection() { const d = loadData(); d.allGroupsSections.push({ title: '🔍 ดูทั้งหมด', buttonText: '📋 ดูเพิ่มเติม', buttonLink: '#' }); saveData(d, true, true); renderAdminSections(); }
 
-        // ===================== SAVE HEADER / FOOTER =====================
         function saveHeader() {
             const d = loadData();
             d.header.logoImg = document.getElementById('a-logo-img').value;
@@ -2879,111 +3197,6 @@
         }
         function saveFooter() { const d = loadData(); d.footer.name = document.getElementById('a-footer-name').value; d.footer.text = document.getElementById('a-footer-text').value; saveData(d, true, true); showToast('✅ บันทึกส่วนท้ายแล้ว'); }
 
-        // ===================== ADMIN OPEN/CLOSE =====================
-        function getCreds() { try { return JSON.parse(localStorage.getItem(ADMIN_CREDS_KEY)) || { user: 'admin', pass: 'admin2026' }; } catch { return { user: 'admin', pass: 'admin2026' }; } }
-
-        function openAdmin() {
-            if (!isAdminLoggedIn) {
-                document.getElementById('login-overlay').classList.add('show');
-                setTimeout(() => document.getElementById('login-user').focus(), 100);
-                return;
-            }
-            const d = loadData();
-            document.getElementById('a-logo-img').value = d.header.logoImg || '';
-            document.getElementById('a-shop-name').value = d.header.shopName || '';
-            document.getElementById('a-shop-desc').value = d.header.shopDesc || '';
-            document.getElementById('a-status-text').value = d.header.statusText || '';
-            document.getElementById('a-queue-text').value = d.header.queueText || '';
-            document.getElementById('a-queue-link').value = d.header.queueLink || '';
-            document.getElementById('a-detail-title').value = d.header.detailTitle || '';
-            document.getElementById('a-detail-img').value = d.header.detailImg || '';
-            document.getElementById('a-footer-name').value = d.footer.name || '';
-            document.getElementById('a-footer-text').value = d.footer.text || '';
-            const gs = getGsConfig();
-            document.getElementById('gs-webapp-url').value = gs.webAppUrl || '';
-            document.getElementById('gs-sheet-id').value = gs.sheetId || '';
-            document.getElementById('gs-api-key').value = gs.apiKey || '';
-            fillColorAdmin(loadColors());
-            loadBgImageSettings();
-            renderAdminSections();
-            renderContactAdmin();
-            renderFontGrid();
-            document.getElementById('admin-overlay').classList.add('show');
-        }
-
-        function closeAdmin() { document.getElementById('admin-overlay').classList.remove('show'); }
-        function closeLogin() { document.getElementById('login-overlay').classList.remove('show'); document.getElementById('login-user').value = ''; document.getElementById('login-pass').value = ''; }
-
-        function doLogin() {
-            const u = document.getElementById('login-user').value.trim(), p = document.getElementById('login-pass').value.trim(), creds = getCreds();
-            if (u === creds.user && p === creds.pass) { closeLogin(); isAdminLoggedIn = true; openAdmin(); }
-            else { showModal({ icon: 'error', title: 'เข้าสู่ระบบล้มเหลว', html: 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง', confirmText: 'ตกลง' }); document.getElementById('login-pass').value = ''; }
-        }
-        function adminLogout() { isAdminLoggedIn = false; closeAdmin(); showToast('👋 ออกจากระบบแล้ว'); }
-
-        function switchTab(tabId, btn) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            if (btn) btn.classList.add('active');
-            if (tabId === 'tab-font') renderFontGrid();
-            if (tabId === 'tab-contact') renderContactAdmin();
-            if (tabId === 'tab-colors') fillColorAdmin(loadColors());
-            if (tabId === 'tab-security') refreshSecurityTab();
-        }
-
-        // ===================== SECURITY =====================
-        function refreshSecurityTab() {
-            const creds = getCreds();
-            const el = document.getElementById('current-username-display');
-            if (el) el.textContent = creds.user;
-            ['new-username', 'confirm-pass-for-user', 'old-password', 'new-password', 'confirm-new-password'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
-            const bar = document.getElementById('pass-strength-bar'); const label = document.getElementById('pass-strength-label');
-            if (bar) { bar.style.width = '0%'; bar.style.background = ''; } if (label) label.textContent = '';
-        }
-        function togglePassVis(inputId, iconId) {
-            const inp = document.getElementById(inputId); const ico = document.getElementById(iconId); if (!inp) return;
-            if (inp.type === 'password') { inp.type = 'text'; if (ico) { ico.classList.remove('fa-eye'); ico.classList.add('fa-eye-slash'); } }
-            else { inp.type = 'password'; if (ico) { ico.classList.remove('fa-eye-slash'); ico.classList.add('fa-eye'); } }
-        }
-        function checkPassStrength(val) {
-            const bar = document.getElementById('pass-strength-bar'); const label = document.getElementById('pass-strength-label');
-            if (!bar || !label) return; if (!val) { bar.style.width = '0%'; label.textContent = ''; return; }
-            let score = 0; if (val.length >= 6) score++; if (val.length >= 10) score++; if (/[A-Z]/.test(val)) score++; if (/[0-9]/.test(val)) score++; if (/[^A-Za-z0-9]/.test(val)) score++;
-            const levels = [{ pct: '20%', color: '#ff4444', text: 'อ่อนมาก' }, { pct: '40%', color: '#ff8800', text: 'อ่อน' }, { pct: '60%', color: '#ffcc00', text: 'ปานกลาง' }, { pct: '80%', color: '#88cc00', text: 'แข็งแรง' }, { pct: '100%', color: '#4cde80', text: 'แข็งแรงมาก' }];
-            const lv = levels[Math.min(score - 1, 4)] || levels[0]; bar.style.width = lv.pct; bar.style.background = lv.color; label.style.color = lv.color; label.textContent = 'ความแข็งแรง: ' + lv.text;
-        }
-        function changeUsername() {
-            if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
-            const newUser = document.getElementById('new-username').value.trim();
-            const confirmPass = document.getElementById('confirm-pass-for-user').value.trim();
-            const creds = getCreds();
-            if (!newUser) { showToast('⚠️ กรุณากรอก Username ใหม่', 'warning'); return; }
-            if (newUser.length < 3) { showToast('⚠️ Username ต้องมีอย่างน้อย 3 ตัวอักษร', 'warning'); return; }
-            if (!confirmPass) { showToast('⚠️ กรุณายืนยัน Password ปัจจุบัน', 'warning'); return; }
-            if (confirmPass !== creds.pass) { showModal({ icon: 'error', title: 'Password ไม่ถูกต้อง', html: 'Password ปัจจุบันที่กรอกไม่ถูกต้อง', confirmText: 'ตกลง' }); document.getElementById('confirm-pass-for-user').value = ''; return; }
-            if (newUser === creds.user) { showToast('⚠️ Username ใหม่ต้องไม่ซ้ำกับของเดิม', 'warning'); return; }
-            showModal({ icon: 'question', title: 'ยืนยันเปลี่ยน Username', html: `เปลี่ยนจาก <b style="color:var(--main);">${creds.user}</b> เป็น <b style="color:var(--accent);">${newUser}</b>?`, confirmText: 'ยืนยัน', cancelText: 'ยกเลิก' }).then(r => { if (!r.isConfirmed) return; localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({ user: newUser, pass: creds.pass })); refreshSecurityTab(); showToast('✅ เปลี่ยน Username เรียบร้อย — กรุณา Login ใหม่', 'success', 3500); setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000); });
-        }
-        function changePassword() {
-            if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
-            const oldPass = document.getElementById('old-password').value;
-            const newPass = document.getElementById('new-password').value;
-            const confirmPass = document.getElementById('confirm-new-password').value;
-            const creds = getCreds();
-            if (!oldPass) { showToast('⚠️ กรุณากรอก Password ปัจจุบัน', 'warning'); return; }
-            if (oldPass !== creds.pass) { showModal({ icon: 'error', title: 'Password ปัจจุบันไม่ถูกต้อง', html: 'กรุณาตรวจสอบ Password เดิมของคุณ', confirmText: 'ตกลง' }); document.getElementById('old-password').value = ''; return; }
-            if (!newPass || newPass.length < 6) { showToast('⚠️ Password ใหม่ต้องมีอย่างน้อย 6 ตัวอักษร', 'warning'); return; }
-            if (newPass !== confirmPass) { showModal({ icon: 'error', title: 'Password ไม่ตรงกัน', html: 'Password ใหม่และการยืนยันไม่ตรงกัน', confirmText: 'ตกลง' }); document.getElementById('confirm-new-password').value = ''; return; }
-            if (newPass === oldPass) { showToast('⚠️ Password ใหม่ต้องไม่ซ้ำกับรหัสเดิม', 'warning'); return; }
-            showModal({ icon: 'question', title: 'ยืนยันเปลี่ยน Password', html: 'คุณต้องการเปลี่ยน Password ใหม่ใช่ไหม?<br><small style="color:rgba(255,255,255,0.5);">ระบบจะ Logout อัตโนมัติ</small>', confirmText: 'ยืนยัน', cancelText: 'ยกเลิก' }).then(r => { if (!r.isConfirmed) return; localStorage.setItem(ADMIN_CREDS_KEY, JSON.stringify({ user: creds.user, pass: newPass })); showToast('🔐 เปลี่ยน Password เรียบร้อย — กรุณา Login ใหม่', 'success', 3500); setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000); });
-        }
-        function resetCreds() {
-            if (!isAdminLoggedIn) { showToast('⛔ กรุณา Login ก่อน', 'error'); return; }
-            showModal({ icon: 'warning', title: 'รีเซ็ตข้อมูล Admin?', html: 'จะรีเซ็ต Username และ Password กลับเป็น<br><b style="color:var(--main);">admin / admin123</b>', confirmText: 'รีเซ็ต', cancelText: 'ยกเลิก', dangerConfirm: true }).then(r => { if (!r.isConfirmed) return; localStorage.removeItem(ADMIN_CREDS_KEY); showToast('↩️ รีเซ็ตเรียบร้อย — กรุณา Login ใหม่', 'info', 3500); setTimeout(() => { isAdminLoggedIn = false; closeAdmin(); }, 2000); });
-        }
-
-        // ===================== EXPORT / IMPORT =====================
         function exportData() { const d = loadData(); const blob = new Blob([JSON.stringify(d, null, 2)], { type: 'application/json' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = `fumiko-backup-${new Date().toISOString().slice(0, 10)}.json`; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); }
         function importData(e) { const f = e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = ev => { try { const d = JSON.parse(ev.target.result); saveData(d, true, true); showToast('✅ นำเข้าข้อมูลสำเร็จ'); openAdmin(); } catch { showModal({ icon: 'error', title: 'ไฟล์ไม่ถูกต้อง', html: 'กรุณาเลือกไฟล์ JSON', confirmText: 'ตกลง' }); } }; r.readAsText(f); e.target.value = ''; }
 
@@ -3000,11 +3213,9 @@
             applyColors(loadColors());
             applyBgImage();
 
-            const gsUrl = GS_WEBAPP_URL || (() => {
-                try { return JSON.parse(localStorage.getItem(GS_CONFIG_KEY) || '{}').webAppUrl || ''; } catch { return ''; }
-            })();
-
-            if (gsUrl) {
+            // โหลดข้อมูลจาก Sheets (ถ้ามี)
+            const cfg = getGsConfig();
+            if (cfg.webAppUrl) {
                 const ok = await loadFromGoogleSheets(false);
                 if (ok) console.log('✅ Loaded from Google Sheets');
                 else console.warn('⚠️ Using cached/default data');
@@ -3026,7 +3237,3 @@
 </body>
 
 </html>
-
-
-
-
